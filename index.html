@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>아침 영어 10</title>
+<style>
+:root{
+  --bg:#ffffff; --surface:#F8FAFD; --surface2:#F1F5FB; --line:#E4EAF3;
+  --ink:#151934; --ink2:#4A5169; --muted:#8790A6;
+  --primary:#4B63F5; --primary-soft:#EEF1FE;
+  --new:#0E9F6E; --new-soft:#E7F7F0;
+  --rev:#D9822B; --rev-soft:#FDF3E7;
+  --mine:#7C5CE0; --mine-soft:#F1ECFD;
+  --ok:#0E9F6E; --no:#E5484D; --no-soft:#FDECEC;
+  --r:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI Variable','Segoe UI',Roboto,'Noto Sans KR','Malgun Gothic',sans-serif;
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;letter-spacing:-0.011em}
+.wrap{max-width:800px;margin:0 auto;padding:32px 22px 90px}
+
+.top{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+.mark{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:var(--primary-soft);display:grid;place-items:center}
+h1{font-size:23px;font-weight:800;margin:0;letter-spacing:-0.03em}
+.sub{color:var(--muted);font-size:13.5px;margin:0}
+
+/* tabs */
+.tabbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);margin:0 -22px 26px;padding:0 22px}
+.tabs{display:flex;gap:3px;max-width:800px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{position:relative;font-family:inherit;font-size:14.5px;font-weight:700;color:var(--muted);
+  background:none;border:0;padding:14px 15px 13px;cursor:pointer;white-space:nowrap;
+  border-bottom:2.5px solid transparent;margin-bottom:-1px;transition:.14s;letter-spacing:-0.015em}
+.tab:hover{color:var(--ink2)}
+.tab.on{color:var(--primary);border-bottom-color:var(--primary)}
+.tab .dot{display:inline-block;min-width:17px;height:17px;line-height:17px;padding:0 5px;border-radius:999px;
+  background:var(--primary);color:#fff;font-size:10.5px;font-weight:800;margin-left:6px;vertical-align:1px}
+.tab .dot.q{background:var(--rev)}
+.tab.on .dot{background:var(--primary)}
+.panel{animation:fade .18s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.statbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 14px;min-width:96px}
+.stat b{display:block;font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.25}
+.stat span{font-size:11.5px;color:var(--muted);font-weight:600}
+
+.blk{margin-bottom:32px}
+.bhead{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.bhead h2{font-size:16px;font-weight:800;margin:0;letter-spacing:-0.02em}
+.bhead .ico{width:21px;height:21px;flex:0 0 21px;color:var(--primary)}
+.bhead .cnt{margin-left:auto;font-size:12.5px;color:var(--muted);font-weight:700}
+
+.today{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-bottom:24px}
+.today .d{font-size:17px;font-weight:800;letter-spacing:-0.02em}
+.today .t{color:var(--ink2);font-size:14px;margin-top:3px}
+.pills{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap}
+.pill{font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px}
+.pill.n{background:var(--new-soft);color:var(--new)}
+.pill.r{background:var(--rev-soft);color:var(--rev)}
+.pill.m{background:var(--mine-soft);color:var(--mine)}
+.pill.g{background:var(--surface2);color:var(--ink2)}
+
+.card{border:1px solid var(--line);border-radius:var(--r);padding:17px 19px;margin-bottom:11px;background:#fff;transition:border-color .15s}
+.card:hover{border-color:#CFD9EC}
+.card .hd{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px}
+.num{width:23px;height:23px;flex:0 0 23px;border-radius:8px;background:var(--surface2);color:var(--ink2);
+  font-size:12px;font-weight:800;display:grid;place-items:center;margin-top:3px}
+.card .en{font-size:17.5px;font-weight:700;letter-spacing:-0.015em;line-height:1.45;flex:1}
+.tag{font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:6px;white-space:nowrap;margin-top:4px}
+.tag.n{background:var(--new-soft);color:var(--new)}
+.tag.r{background:var(--rev-soft);color:var(--rev)}
+.tag.m{background:var(--mine-soft);color:var(--mine)}
+.card .ko{color:var(--ink2);font-size:15px;margin:0 0 12px 33px}
+.ex{margin-left:33px;padding:11px 14px;background:var(--surface);border-radius:11px;font-size:14px}
+.ex .e{font-weight:600;color:var(--ink)}
+.ex .k{color:var(--muted);margin-top:2px}
+.note{margin:9px 0 0 33px;font-size:13px;color:var(--rev);display:flex;gap:6px;align-items:flex-start}
+.note svg{flex:0 0 14px;margin-top:4px}
+
+.q{border:1px solid var(--line);border-radius:var(--r);padding:17px 19px;margin-bottom:11px;background:#fff}
+.q .qh{display:flex;gap:10px;align-items:flex-start;margin-bottom:13px}
+.q .qn{width:23px;height:23px;flex:0 0 23px;border-radius:8px;background:var(--primary-soft);color:var(--primary);
+  font-size:12px;font-weight:800;display:grid;place-items:center;margin-top:2px}
+.q .qt{font-size:16px;font-weight:700;line-height:1.5;flex:1}
+.q .dir{font-size:10.5px;font-weight:800;color:var(--muted);background:var(--surface2);padding:3px 8px;border-radius:6px;white-space:nowrap;margin-top:3px}
+.opts{display:flex;flex-direction:column;gap:7px;margin-left:33px}
+.opt{display:flex;gap:9px;align-items:flex-start;padding:10px 13px;border:1.5px solid var(--line);border-radius:11px;
+  cursor:pointer;font-size:14.5px;background:#fff;transition:.13s;text-align:left;width:100%;font-family:inherit;color:var(--ink);line-height:1.5}
+.opt:hover{background:var(--surface);border-color:#CFD9EC}
+.opt .k{width:19px;height:19px;flex:0 0 19px;border-radius:50%;border:1.5px solid #C9D2E4;color:var(--muted);
+  font-size:11px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.opt.sel{border-color:var(--primary);background:var(--primary-soft)}
+.opt.sel .k{border-color:var(--primary);background:var(--primary);color:#fff}
+.opt.right{border-color:var(--ok);background:var(--new-soft)}
+.opt.right .k{border-color:var(--ok);background:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--no);background:var(--no-soft)}
+.opt.wrong .k{border-color:var(--no);background:var(--no);color:#fff}
+.locked .opt{cursor:default}
+.locked .opt:hover{background:#fff}
+.locked .opt.right:hover{background:var(--new-soft)}
+.locked .opt.wrong:hover{background:var(--no-soft)}
+
+.score{background:var(--primary-soft);border-radius:var(--r);padding:20px;text-align:center;margin-bottom:16px}
+.score b{font-size:32px;font-weight:800;letter-spacing:-0.03em;display:block;line-height:1.2}
+.score span{font-size:13.5px;color:var(--ink2);font-weight:600}
+.arow{display:flex;gap:11px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.arow:last-child{border-bottom:0}
+.abadge{width:22px;height:22px;flex:0 0 22px;border-radius:7px;display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff;margin-top:2px}
+.abadge.o{background:var(--ok)} .abadge.x{background:var(--no)}
+.arow .ans{font-weight:700}
+.arow .exp{color:var(--muted);font-size:13.5px;margin-top:2px}
+
+.btn{font-family:inherit;font-size:14.5px;font-weight:700;padding:12px 22px;border-radius:12px;border:1.5px solid var(--line);
+  background:#fff;color:var(--ink);cursor:pointer;transition:.13s;letter-spacing:-0.01em}
+.btn:hover{background:var(--surface);border-color:#CFD9EC}
+.btn.p{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.p:hover{background:#3A52E8;border-color:#3A52E8}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:13px;padding:9px 15px;border-radius:10px}
+.btn.dgr{color:var(--no);border-color:#F3D3D4}
+.btn.dgr:hover{background:var(--no-soft);border-color:var(--no)}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+
+/* 질문 탭 */
+.search{display:flex;gap:9px;margin-bottom:8px}
+.inp{font-family:inherit;font-size:15px;padding:13px 16px;border:1.5px solid var(--line);border-radius:12px;
+  width:100%;background:#fff;color:var(--ink);transition:.13s}
+.inp:focus{outline:0;border-color:var(--primary);background:var(--primary-soft)}
+.inp::placeholder{color:#AEB6C7}
+textarea.inp{resize:vertical;min-height:74px;line-height:1.6}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px}
+.flabel{font-size:12.5px;font-weight:700;color:var(--ink2);margin-bottom:5px;display:block}
+.fbox{border:1px solid var(--line);border-radius:var(--r);padding:19px;background:var(--surface)}
+.res{border:1px solid var(--line);border-radius:13px;padding:14px 16px;margin-bottom:9px;background:#fff}
+.res .re{font-size:16px;font-weight:700;letter-spacing:-0.015em}
+.res .rk{color:var(--ink2);font-size:14px;margin-top:2px}
+.res .rx{color:var(--muted);font-size:13px;margin-top:7px;padding-top:7px;border-top:1px solid var(--line)}
+.res .rf{display:flex;align-items:center;gap:8px;margin-top:10px}
+.chip{font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:6px;background:var(--surface2);color:var(--ink2)}
+.chip.done{background:var(--new-soft);color:var(--new)}
+.qrow{display:flex;gap:11px;align-items:flex-start;padding:13px 15px;border-bottom:1px solid var(--line)}
+.qrow:last-child{border-bottom:0}
+.qrow .qx{flex:1;min-width:0}
+.qrow .qq{font-weight:600;font-size:14.5px}
+.qrow .qd{color:var(--muted);font-size:12px;margin-top:2px}
+.list{border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+
+.recgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px;margin-bottom:16px}
+.rec{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.rec b{display:block;font-size:21px;font-weight:800;letter-spacing:-0.02em;line-height:1.3}
+.rec span{font-size:11.5px;color:var(--muted);font-weight:600}
+.wrow{display:flex;gap:11px;align-items:center;padding:11px 15px;border-bottom:1px solid var(--line);font-size:14px}
+.wrow:last-child{border-bottom:0}
+.wrow .we{font-weight:600;flex:1;min-width:0}
+.wrow .wk{color:var(--muted);font-size:12.5px}
+.wcount{font-size:11.5px;font-weight:800;color:var(--no);background:var(--no-soft);padding:3px 9px;border-radius:999px;white-space:nowrap}
+.empty{color:var(--muted);font-size:14px;padding:26px;text-align:center;background:var(--surface);border-radius:var(--r);line-height:1.7}
+.hint{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.6}
+.warn{background:var(--rev-soft);color:#8A5214;border-radius:12px;padding:12px 15px;font-size:13.5px;margin-bottom:16px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(12px);background:var(--ink);color:#fff;
+  padding:12px 20px;border-radius:12px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.22s;z-index:80;
+  box-shadow:0 8px 24px rgba(21,25,52,.22)}
+.toast.on{opacity:1;transform:translateX(-50%)}
+
+/* ---------- 한 화면에 하나씩 ---------- */
+.stepper{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.prog{flex:1;height:6px;background:var(--surface2);border-radius:999px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--primary);border-radius:999px;transition:width .25s ease}
+.stepn{font-size:13px;font-weight:800;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.solo{border:1px solid var(--line);border-radius:20px;padding:30px 28px;background:var(--bg);
+  min-height:270px;display:flex;flex-direction:column;justify-content:center}
+.solo .stag{align-self:flex-start;margin:0 0 14px}
+.solo .sen{font-size:26px;font-weight:800;line-height:1.36;letter-spacing:-0.025em;margin-bottom:9px;text-wrap:balance}
+.solo .sko{font-size:17px;color:var(--ink2);margin-bottom:21px}
+.solo .ex{margin-left:0;padding:15px 18px;font-size:15px}
+.solo .note{margin-left:0;margin-top:14px;font-size:13.5px}
+.qsolo{border:1px solid var(--line);border-radius:20px;padding:28px;background:var(--bg)}
+.qsolo .sdir{display:inline-block;font-size:10.5px;font-weight:800;color:var(--muted);
+  background:var(--surface2);padding:3px 9px;border-radius:6px;margin-bottom:13px}
+.qsolo .sqt{font-size:22px;font-weight:800;line-height:1.42;letter-spacing:-0.02em;margin-bottom:21px;text-wrap:balance}
+.qsolo .opts{margin-left:0;gap:9px}
+.qsolo .opt{padding:14px 17px;font-size:15.5px}
+.nav{display:flex;gap:9px;align-items:center;margin-top:18px}
+.nav .sp{flex:1}
+.lnk{font-family:inherit;background:none;border:0;color:var(--muted);font-size:12.5px;font-weight:700;
+  cursor:pointer;padding:2px 0;text-decoration:underline;text-underline-offset:3px}
+.lnk:hover{color:var(--primary)}
+@media (max-width:600px){
+  .solo{padding:24px 20px;min-height:230px}
+  .solo .sen{font-size:22px}
+  .qsolo{padding:22px 20px}
+  .qsolo .sqt{font-size:19px}
+}
+[hidden]{display:none !important}
+input[type=file]{display:none}
+
+@media (max-width:600px){
+  .wrap{padding:24px 16px 70px}
+  .card .ko,.ex,.note,.opts{margin-left:0}
+  .frow{grid-template-columns:1fr}
+  h1{font-size:20px}
+  .tab{padding:13px 11px;font-size:13.5px}
+}
+@media print{
+  body{font-size:12pt}
+  .btn,.actions,.tabbar,.statbar,.toast{display:none !important}
+  .panel{display:block !important}
+  .card,.q{break-inside:avoid;border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="mark">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B63F5" stroke-width="1.9" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+      </svg>
+    </div>
+    <div>
+      <h1>아침 영어 10</h1>
+      <p class="sub">평택마이스터고 · 하루 표현 10개와 퀴즈 10문항</p>
+    </div>
+  </div>
+
+  <div class="tabbar">
+    <div class="tabs">
+      <button class="tab on" data-tab="today">오늘</button>
+      <button class="tab" data-tab="quiz">퀴즈<span class="dot" id="dotQuiz" hidden></span></button>
+      <button class="tab" data-tab="ask">질문<span class="dot q" id="dotAsk" hidden></span></button>
+      <button class="tab" data-tab="rec">기록</button>
+    </div>
+  </div>
+
+  <div class="warn" id="storeWarn" hidden>
+    브라우저 저장소를 쓸 수 없어 학습이 기록되지 않습니다. 사생활 보호 모드라면 일반 창에서 열어 주세요.
+  </div>
+
+  <!-- ===== 오늘 ===== -->
+  <div class="panel" id="p-today">
+    <div class="statbar" id="statbar"></div>
+    <div class="today" id="today"></div>
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H19v3H6.5A2.5 2.5 0 0 1 4 20.5z"/>
+        </svg>
+        <h2>오늘의 표현 10개</h2>
+        <span class="cnt" id="exprCnt"></span>
+      </div>
+      <div id="exprs"></div>
+      <div class="actions"><button class="btn p" id="goQuiz">퀴즈 풀러 가기</button></div>
+    </div>
+  </div>
+
+  <!-- ===== 퀴즈 ===== -->
+  <div class="panel" id="p-quiz" hidden>
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9"/><path d="M9.2 9.3a2.9 2.9 0 0 1 5.6 1c0 1.9-2.8 2.4-2.8 2.4"/><circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none"/>
+        </svg>
+        <h2>퀴즈 10문항</h2>
+        <span class="cnt" id="quizCnt"></span>
+      </div>
+      <div id="quiz"></div>
+      <div class="actions">
+        <button class="btn p" id="gradeBtn">채점하기</button>
+        <button class="btn" id="retryBtn" hidden>다시 풀어보기</button>
+      </div>
+      <p class="hint" id="quizHint"></p>
+    </div>
+    <div class="blk" id="ansBlk" hidden>
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <h2>정답</h2>
+      </div>
+      <div class="score" id="score"></div>
+      <div id="answers"></div>
+    </div>
+  </div>
+
+  <!-- ===== 질문 ===== -->
+  <div class="panel" id="p-ask" hidden>
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/>
+        </svg>
+        <h2>표현 찾기</h2>
+        <span class="cnt">전체 <b id="poolN"></b>개</span>
+      </div>
+      <div class="search">
+        <input class="inp" id="sq" placeholder="한글이든 영어든 — 예: 결재, 급식, sign off">
+      </div>
+      <p class="hint" style="margin-top:0">찾는 표현이 없으면 아래 <b>직접 추가</b>에 적어 넣으세요. 바로 복습에 들어갑니다.</p>
+      <div id="sres" style="margin-top:16px"></div>
+    </div>
+
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>
+        </svg>
+        <h2>내 표현 직접 추가</h2>
+      </div>
+      <div class="fbox">
+        <div class="frow">
+          <div><label class="flabel">영어 표현 *</label><input class="inp" id="aEn" placeholder="Could you cover my class?"></div>
+          <div><label class="flabel">한글 뜻 *</label><input class="inp" id="aKo" placeholder="제 수업 좀 대신 들어가 주실 수 있어요?"></div>
+        </div>
+        <div class="frow">
+          <div><label class="flabel">예문</label><input class="inp" id="aExEn" placeholder="비워두면 표현이 예문으로 들어갑니다"></div>
+          <div><label class="flabel">예문 뜻</label><input class="inp" id="aExKo" placeholder="비워두면 한글 뜻이 들어갑니다"></div>
+        </div>
+        <div><label class="flabel">메모</label><input class="inp" id="aNote" placeholder="헷갈리는 포인트 (선택)"></div>
+        <div class="actions"><button class="btn p" id="addBtn">복습에 추가</button></div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <path d="M4 4h16v12H8l-4 4z"/>
+        </svg>
+        <h2>물어볼 것</h2>
+        <span class="cnt" id="qCnt"></span>
+      </div>
+      <div class="search">
+        <input class="inp" id="qq" placeholder="영어로 뭐라고 하는지 궁금한 것 — 예: 강사료 정산 언제 되냐고 묻기">
+        <button class="btn" id="qAdd" style="white-space:nowrap">담기</button>
+      </div>
+      <p class="hint" style="margin-top:0">여기 담아 두었다가 클로드에게 한 번에 물어보세요. <b>목록 복사</b>를 누르면 그대로 붙여넣을 수 있습니다.</p>
+      <div id="qlist" style="margin-top:16px"></div>
+    </div>
+  </div>
+
+  <!-- ===== 기록 ===== -->
+  <div class="panel" id="p-rec" hidden>
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <path d="M3 21h18"/><rect x="5" y="12" width="3.6" height="6" rx="1.2"/><rect x="10.2" y="7" width="3.6" height="11" rx="1.2"/><rect x="15.4" y="10" width="3.6" height="8" rx="1.2"/>
+        </svg>
+        <h2>학습 현황</h2>
+      </div>
+      <div class="recgrid" id="recgrid"></div>
+    </div>
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2.4 17.5A1.9 1.9 0 0 0 4 20.4h16a1.9 1.9 0 0 0 1.6-2.9L13.7 3.9a1.9 1.9 0 0 0-3.4 0z"/></svg>
+        <h2>자주 틀리는 표현</h2>
+      </div>
+      <div id="wrongBox"></div>
+    </div>
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 5.9L12 15.9 6.7 19l1.4-5.9-4.6-4 6.1-.5z"/></svg>
+        <h2>내가 추가한 표현</h2>
+        <span class="cnt" id="mineCnt"></span>
+      </div>
+      <div id="mineBox"></div>
+    </div>
+    <div class="blk">
+      <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        <h2>백업</h2>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn sm" id="exportBtn">기록 내보내기</button>
+        <button class="btn sm" id="importBtn">기록 불러오기</button>
+        <button class="btn sm" id="printBtn">인쇄</button>
+        <input type="file" id="importFile" accept="application/json,.json">
+      </div>
+      <p class="hint">
+        기록은 이 브라우저 안에만 저장됩니다. 인터넷 사용 기록·쿠키를 지우면 함께 사라지니,
+        가끔 <b>기록 내보내기</b>로 learning-log.json을 받아 구글 드라이브 '영어표현' 폴더에 올려 두세요.
+        내보낸 파일에는 내가 추가한 표현과 물어볼 것 목록도 함께 담깁니다.
+      </p>
+    </div>
+  </div>
+
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const POOL = [{"en":"How was your summer?","ko":"방학 어떻게 보내셨어요?","cat":"lunch","exEn":"Welcome back! How was your summer?","exKo":"오랜만이에요! 방학 어떻게 보내셨어요?","note":""},{"en":"We're back to full periods this week.","ko":"이번 주부터 정상 수업이에요.","cat":"class","exEn":"We're back to full periods this week, so no more short days.","exKo":"이번 주부터 정상 수업이라 단축수업은 끝이에요.","note":""},{"en":"I've got sixth and seventh period today.","ko":"오늘 6, 7교시 수업이 있어요.","cat":"class","exEn":"I've got sixth and seventh period today, so I'll be free at lunch.","exKo":"오늘 6, 7교시라 점심때는 시간 돼요.","note":"'교시'는 period. 6교시는 sixth period."},{"en":"It's not a regular lesson — it's a mandated topic.","ko":"정규 수업이 아니라 법정 의무 교육이에요.","cat":"class","exEn":"It's not a regular lesson — it's a mandated topic we cover every semester.","exKo":"정규 수업이 아니라 매 학기 해야 하는 의무 교육이에요.","note":"창의적 체험활동의 법정 의무교육을 설명할 때."},{"en":"Every school has to cover it.","ko":"모든 학교가 해야 하는 거예요.","cat":"class","exEn":"Labor rights education — every school has to cover it.","exKo":"노동인권교육이요, 모든 학교가 해야 하는 거예요.","note":""},{"en":"How did your morning go?","ko":"오전 수업 어떠셨어요?","cat":"lunch","exEn":"How did your morning go? You look tired.","exKo":"오전 수업 어떠셨어요? 피곤해 보이시네요.","note":""},{"en":"They were pretty wound up today.","ko":"오늘 애들이 좀 들떠 있었어요.","cat":"lunch","exEn":"Second period was rough — they were pretty wound up today.","exKo":"2교시가 힘들었어요. 애들이 좀 들떠 있었어요.","note":"wound up은 흥분해서 산만한 상태."},{"en":"The first-years are still settling in.","ko":"1학년은 아직 적응 중이에요.","cat":"class","exEn":"Give them time. The first-years are still settling in.","exKo":"시간을 좀 주세요. 1학년은 아직 적응 중이에요.","note":""},{"en":"I had to slow down and go over it again.","ko":"속도를 늦추고 다시 짚어야 했어요.","cat":"class","exEn":"Nobody got it, so I had to slow down and go over it again.","exKo":"아무도 이해를 못 해서 속도를 늦추고 다시 짚었어요.","note":""},{"en":"Same here.","ko":"저도 그래요.","cat":"lunch","exEn":"Same here — my third period was exactly like that.","exKo":"저도요. 3교시가 딱 그랬어요.","note":""},{"en":"Any plans for the weekend?","ko":"주말에 뭐 하세요?","cat":"lunch","exEn":"Any plans for the weekend, or just resting?","exKo":"주말에 뭐 하세요, 아니면 그냥 쉬세요?","note":""},{"en":"He's out of the country until next Wednesday.","ko":"그분 다음 주 수요일까지 해외에 계세요.","cat":"team","exEn":"He's out of the country until next Wednesday, so he'll miss the meeting.","exKo":"다음 주 수요일까지 해외에 계셔서 회의엔 못 오세요.","note":""},{"en":"Who's covering his classes?","ko":"그분 수업은 누가 대신 들어가요?","cat":"team","exEn":"Who's covering his classes while he's away?","exKo":"안 계신 동안 그분 수업은 누가 들어가요?","note":"cover는 결강 보강·대체 수업에 쓰는 표준 표현."},{"en":"I'll take his Thursday period.","ko":"목요일 수업은 제가 들어갈게요.","cat":"team","exEn":"Don't worry, I'll take his Thursday period.","exKo":"걱정 마세요, 목요일 수업은 제가 들어갈게요.","note":""},{"en":"Have a good one.","ko":"좋은 주말 보내세요.","cat":"lunch","exEn":"See you Monday — have a good one.","exKo":"월요일에 봬요. 좋은 주말 보내세요.","note":"금요일 퇴근 인사로 가장 흔한 말."},{"en":"I finally got around to it.","ko":"드디어 그걸 했어요.","cat":"lunch","exEn":"I've been putting it off for months, but I finally got around to it.","exKo":"몇 달을 미뤘는데 드디어 했어요.","note":"미뤄두던 일을 마침내 할 때."},{"en":"I ran a few errands.","ko":"볼일 좀 봤어요.","cat":"lunch","exEn":"Nothing much — I just ran a few errands.","exKo":"별거 없어요. 볼일 좀 봤어요.","note":"errand는 은행·장보기 같은 자잘한 볼일."},{"en":"The weather's finally letting up.","ko":"날씨가 드디어 좀 누그러졌어요.","cat":"lunch","exEn":"The weather's finally letting up. It was unbearable last week.","exKo":"날씨가 드디어 누그러졌네요. 지난주엔 못 견딜 정도였는데.","note":""},{"en":"I just stayed in.","ko":"그냥 집에 있었어요.","cat":"lunch","exEn":"It was too hot to go anywhere, so I just stayed in.","exKo":"너무 더워서 그냥 집에 있었어요.","note":""},{"en":"Nothing special, just recharging.","ko":"특별한 건 없고, 그냥 좀 충전했어요.","cat":"lunch","exEn":"Nothing special, just recharging for the week ahead.","exKo":"특별한 건 없고, 다음 주를 위해 충전했어요.","note":""},{"en":"I'm getting a head start on next week.","ko":"다음 주 일을 미리 좀 해두고 있어요.","cat":"admin","exEn":"I'm getting a head start on next week so Monday isn't chaos.","exKo":"월요일이 아수라장이 안 되게 다음 주 일을 미리 하고 있어요.","note":"get a head start = 미리 앞서 시작하다."},{"en":"I still have to write up the plan.","ko":"계획서를 아직 써야 해요.","cat":"admin","exEn":"I still have to write up the plan before I can submit it.","exKo":"상신하려면 계획서를 아직 써야 해요.","note":"write up = 문서로 작성하다."},{"en":"It's due Monday.","ko":"월요일까지예요.","cat":"admin","exEn":"No rush on the rest, but this one's due Monday.","exKo":"나머지는 급하지 않은데 이건 월요일까지예요.","note":""},{"en":"I'd rather do it now than scramble tomorrow.","ko":"내일 허둥대느니 지금 하는 게 낫죠.","cat":"admin","exEn":"I'd rather do it now than scramble tomorrow morning.","exKo":"내일 아침에 허둥대느니 지금 하는 게 낫죠.","note":"scramble = 급하게 허둥지둥하다."},{"en":"Let's touch base Monday.","ko":"월요일에 얘기 나눠요.","cat":"team","exEn":"I'll look it over tonight. Let's touch base Monday.","exKo":"오늘 밤에 볼게요. 월요일에 얘기 나눠요.","note":""},{"en":"How was your weekend?","ko":"주말 잘 보내셨어요?","cat":"lunch","exEn":"Morning! How was your weekend?","exKo":"안녕하세요! 주말 잘 보내셨어요?","note":""},{"en":"Could you pass this on to your homeroom?","ko":"반 학생들한테 전달해 주실 수 있을까요?","cat":"team","exEn":"Could you pass this on to your homeroom before Friday?","exKo":"금요일 전에 반 학생들한테 전달해 주실 수 있을까요?","note":"homeroom은 담임 학급. 담임 교사는 homeroom teacher."},{"en":"I'm looking for students to sign up.","ko":"참가할 학생을 모집하고 있어요.","cat":"admin","exEn":"I'm looking for students to sign up — about ten per grade.","exKo":"참가할 학생을 모집하고 있어요. 학년당 열 명 정도요.","note":""},{"en":"It's voluntary, but we'd like a good turnout.","ko":"자율 참가지만 많이 왔으면 해요.","cat":"admin","exEn":"It's voluntary, but we'd like a good turnout this year.","exKo":"자율 참가지만 올해는 많이 왔으면 해요.","note":"turnout = 실제 참가 인원."},{"en":"I'll send the details in a message.","ko":"자세한 건 메시지로 보낼게요.","cat":"team","exEn":"I'll send the details in a message this afternoon.","exKo":"오후에 자세한 건 메시지로 보낼게요.","note":""},{"en":"Where are we in the textbook?","ko":"교과서 어디까지 나갔죠?","cat":"class","exEn":"Where are we in the textbook with class 2-3?","exKo":"2학년 3반은 교과서 어디까지 나갔죠?","note":"진도를 확인하는 가장 자연스러운 말."},{"en":"We're a lesson behind.","ko":"한 과 뒤처졌어요.","cat":"class","exEn":"Because of the holiday, we're a lesson behind.","exKo":"연휴 때문에 한 과 뒤처졌어요.","note":"'진도가 밀렸다'는 be behind."},{"en":"I'd like to split the class this time.","ko":"이번엔 반을 나눠서 하고 싶어요.","cat":"class","exEn":"I'd like to split the class this time so they get more speaking.","exKo":"말하기를 더 시키게 이번엔 반을 나눠서 하고 싶어요.","note":""},{"en":"You take the speaking half, I'll do the grammar.","ko":"말하기는 선생님이, 문법은 제가 할게요.","cat":"class","exEn":"You take the speaking half, I'll do the grammar — sound okay?","exKo":"말하기는 선생님이, 문법은 제가 할게요. 괜찮으세요?","note":""},{"en":"Let's swap next week.","ko":"다음 주엔 바꿔서 해요.","cat":"class","exEn":"Let's swap next week so neither of us gets bored.","exKo":"둘 다 지겹지 않게 다음 주엔 바꿔서 해요.","note":""},{"en":"Club activities take up sixth and seventh period.","ko":"동아리 활동이 6, 7교시를 차지해요.","cat":"event","exEn":"Club activities take up sixth and seventh period today.","exKo":"오늘은 동아리 활동이 6, 7교시예요.","note":"동아리 활동 = club activities."},{"en":"Which club are you attached to?","ko":"어느 동아리 맡으셨어요?","cat":"team","exEn":"Which club are you attached to this semester?","exKo":"이번 학기엔 어느 동아리 맡으셨어요?","note":"be attached to = (조직에) 배속되다."},{"en":"We're required to log the hours.","ko":"시수를 기록해야 해요.","cat":"admin","exEn":"We're required to log the hours for the activity record.","exKo":"활동 기록을 위해 시수를 기록해야 해요.","note":"창체 시수 누계 기록을 설명할 때."},{"en":"The kids run most of it themselves.","ko":"애들이 대부분 알아서 해요.","cat":"event","exEn":"I just supervise — the kids run most of it themselves.","exKo":"저는 감독만 해요. 애들이 대부분 알아서 하거든요.","note":""},{"en":"It's a nice break from regular lessons.","ko":"정규 수업에서 벗어나서 좋아요.","cat":"class","exEn":"Honestly, it's a nice break from regular lessons.","exKo":"솔직히 정규 수업에서 벗어나서 좋아요.","note":""},{"en":"Today's our sports day and school festival.","ko":"오늘은 체육대회하고 학교 축제예요.","cat":"event","exEn":"Today's our sports day and school festival, all in one.","exKo":"오늘은 체육대회하고 축제를 한 번에 해요.","note":"체육대회 = sports day, 축제 = school festival."},{"en":"Classes are canceled for the whole day.","ko":"하루 종일 수업이 없어요.","cat":"event","exEn":"Classes are canceled for the whole day, so no lesson prep.","exKo":"하루 종일 수업이 없어서 수업 준비도 없어요.","note":""},{"en":"I'm on crowd duty by the entrance.","ko":"저는 입구 쪽 질서 지도예요.","cat":"duty","exEn":"I'm on crowd duty by the entrance from nine.","exKo":"9시부터 입구 쪽 질서 지도예요.","note":"'~ duty'는 배정된 담당 근무. 급식지도는 lunch duty."},{"en":"Each class puts on a performance.","ko":"반마다 공연을 해요.","cat":"event","exEn":"Each class puts on a performance in the afternoon.","exKo":"오후엔 반마다 공연을 해요.","note":"put on a performance = 공연을 올리다."},{"en":"It'll be loud, but the kids love it.","ko":"시끄럽겠지만 애들은 좋아해요.","cat":"event","exEn":"Fair warning — it'll be loud, but the kids love it.","exKo":"미리 말씀드리면 시끄러울 거예요. 그래도 애들은 좋아해요.","note":""},{"en":"I'm wiped out from yesterday.","ko":"어제 일로 완전히 지쳤어요.","cat":"lunch","exEn":"I'm wiped out from yesterday. My legs are killing me.","exKo":"어제 일로 완전히 지쳤어요. 다리가 너무 아파요.","note":"wiped out = 녹초가 된."},{"en":"The clean-up took longer than the event.","ko":"정리가 행사보다 오래 걸렸어요.","cat":"event","exEn":"The clean-up took longer than the event itself.","exKo":"정리가 행사보다 더 오래 걸렸어요.","note":""},{"en":"Did you get any photos?","ko":"사진 좀 찍으셨어요?","cat":"lunch","exEn":"Did you get any photos? I forgot my phone.","exKo":"사진 좀 찍으셨어요? 저는 폰을 두고 왔어요.","note":""},{"en":"We're back to the normal timetable today.","ko":"오늘부터 정상 시간표예요.","cat":"class","exEn":"We're back to the normal timetable today, unfortunately.","exKo":"아쉽게도 오늘부터 정상 시간표예요.","note":"시간표 = timetable (영국식) / schedule (미국식)."},{"en":"Let's keep today light.","ko":"오늘은 좀 가볍게 가죠.","cat":"class","exEn":"Everyone's exhausted. Let's keep today light.","exKo":"다들 지쳤어요. 오늘은 좀 가볍게 가죠.","note":""},{"en":"I slept in.","ko":"늦잠 잤어요.","cat":"lunch","exEn":"I slept in until eleven and I regret nothing.","exKo":"11시까지 늦잠 잤는데 후회 없어요.","note":"sleep in = 의도적으로 늦게까지 자다."},{"en":"I've been meaning to try that place.","ko":"그 집 한번 가보려고 했었어요.","cat":"lunch","exEn":"I've been meaning to try that place near the station.","exKo":"역 근처 그 집 한번 가보려고 했었어요.","note":"have been meaning to = 계속 ~하려고 마음먹고 있었다."},{"en":"It's a bit of a trek from here.","ko":"여기서 가기엔 좀 멀어요.","cat":"commute","exEn":"It's good, but it's a bit of a trek from here.","exKo":"괜찮긴 한데 여기서 가기엔 좀 멀어요.","note":"trek = 멀고 번거로운 이동."},{"en":"We should go sometime.","ko":"언제 한번 같이 가요.","cat":"lunch","exEn":"We should go sometime — maybe after exams.","exKo":"언제 한번 같이 가요. 시험 끝나고쯤요.","note":""},{"en":"Let me know when you're free.","ko":"시간 되실 때 알려주세요.","cat":"lunch","exEn":"No rush. Just let me know when you're free.","exKo":"급하지 않아요. 시간 되실 때 알려주세요.","note":""},{"en":"Did you see the news about that?","ko":"그 뉴스 보셨어요?","cat":"news","exEn":"Did you see the news about that? It's been everywhere.","exKo":"그 뉴스 보셨어요? 계속 나오던데요.","note":""},{"en":"It's been all over the news here.","ko":"여기선 뉴스에 계속 나와요.","cat":"news","exEn":"It's been all over the news here for about a week.","exKo":"여기선 일주일째 뉴스에 계속 나와요.","note":"all over the news = 온 뉴스에 도배되다."},{"en":"What's the reaction been like back home?","ko":"본국에서는 반응이 어때요?","cat":"news","exEn":"What's the reaction been like back home to all this?","exKo":"이 일에 대해 본국 반응은 어때요?","note":"back home은 원어민 교사의 고국을 가리키는 자연스러운 말."},{"en":"I'm not sure what to make of it.","ko":"어떻게 봐야 할지 모르겠어요.","cat":"news","exEn":"I've read a lot about it but I'm not sure what to make of it.","exKo":"많이 읽어봤는데 어떻게 봐야 할지 모르겠어요.","note":"make of = 판단하다, 해석하다."},{"en":"It's more complicated than it looks.","ko":"보기보다 복잡한 문제예요.","cat":"news","exEn":"From the outside it seems simple, but it's more complicated than it looks.","exKo":"밖에서 보면 단순해 보이는데 보기보다 복잡해요.","note":""},{"en":"This is a Meister high school — it's vocational.","ko":"여기는 마이스터고예요, 직업 계열이죠.","cat":"class","exEn":"This is a Meister high school — it's vocational, not academic.","exKo":"여기는 마이스터고예요. 인문계가 아니라 직업 계열이죠.","note":"고유명사는 그대로 쓰고 vocational로 부연하면 바로 통합니다."},{"en":"Our students take national skills certification exams.","ko":"우리 학생들은 국가기술자격 시험을 봐요.","cat":"class","exEn":"Our students take national skills certification exams every year.","exKo":"우리 학생들은 매년 국가기술자격 시험을 봐요.","note":"기능사는 craftsman-level certificate로 풀어 설명하면 됩니다."},{"en":"The practical exam runs for two weeks.","ko":"실기 시험이 2주 동안 이어져요.","cat":"class","exEn":"The practical exam runs for two weeks, so attendance is all over the place.","exKo":"실기 시험이 2주라 출결이 들쭉날쭉해요.","note":"실기 = practical, 필기 = written."},{"en":"Most of them go straight into work after graduation.","ko":"대부분 졸업하면 바로 취업해요.","cat":"class","exEn":"Most of them go straight into work after graduation, not university.","exKo":"대부분 대학이 아니라 졸업하면 바로 취업해요.","note":""},{"en":"That's why the workshop matters more than the textbook.","ko":"그래서 교과서보다 실습실이 중요해요.","cat":"class","exEn":"That's why the workshop matters more than the textbook here.","exKo":"그래서 여기선 교과서보다 실습실이 중요해요.","note":"실습실 = workshop."},{"en":"What's on the menu today?","ko":"오늘 식단이 뭐예요?","cat":"lunch","exEn":"What's on the menu today? It smells good.","exKo":"오늘 식단이 뭐예요? 냄새 좋은데요.","note":""},{"en":"It's a spicy pork stir-fry.","ko":"제육볶음이에요.","cat":"lunch","exEn":"It's a spicy pork stir-fry — one of the better days.","exKo":"제육볶음이에요. 그나마 나은 날이죠.","note":"제육볶음은 spicy stir-fried pork로 설명하면 통합니다."},{"en":"The soup is kimchi-based, so it's got a kick.","ko":"김치로 끓인 국이라 좀 얼큰해요.","cat":"lunch","exEn":"The soup is kimchi-based, so it's got a kick to it.","exKo":"김치로 끓인 국이라 좀 얼큰해요.","note":"have a kick = 맵싸하게 톡 쏘는 맛이 있다."},{"en":"Try it with rice — it's less salty that way.","ko":"밥이랑 드셔보세요, 그럼 덜 짜요.","cat":"lunch","exEn":"Try it with rice — it's less salty that way.","exKo":"밥이랑 드셔보세요. 그럼 덜 짜요.","note":""},{"en":"Go easy on that one, it's hotter than it looks.","ko":"그건 조심하세요, 보기보다 매워요.","cat":"lunch","exEn":"Go easy on that one, it's hotter than it looks.","exKo":"그건 조심하세요. 보기보다 매워요.","note":"go easy on = 적당히 하다, 살살 하다."},{"en":"The written exam starts today.","ko":"오늘부터 필기 시험이에요.","cat":"class","exEn":"The written exam starts today and runs through Sunday.","exKo":"오늘부터 일요일까지 필기 시험이에요.","note":""},{"en":"We're required to run these sessions every semester.","ko":"이 교육은 매 학기 의무로 해야 해요.","cat":"class","exEn":"We're required to run these sessions every semester by law.","exKo":"법으로 매 학기 의무로 해야 하는 교육이에요.","note":""},{"en":"Both are mandated.","ko":"둘 다 법정 의무예요.","cat":"class","exEn":"Suicide prevention and teacher protection — both are mandated.","exKo":"생명존중 교육하고 교권 보호 교육, 둘 다 법정 의무예요.","note":"mandated = 법령으로 의무화된."},{"en":"It's one period each, back to back.","ko":"각각 한 시간씩, 연달아 해요.","cat":"class","exEn":"It's one period each, back to back, sixth and seventh.","exKo":"각각 한 시간씩 연달아 6, 7교시에 해요.","note":"back to back = 쉬는 시간 없이 연달아."},{"en":"I'll send you the slides beforehand.","ko":"자료를 미리 보내드릴게요.","cat":"team","exEn":"I'll send you the slides beforehand so you can follow along.","exKo":"따라오실 수 있게 자료를 미리 보내드릴게요.","note":""},{"en":"I'm putting in for leave.","ko":"휴가를 신청하려고요.","cat":"duty","exEn":"I'm putting in for leave next week — three days.","exKo":"다음 주에 사흘 휴가를 신청하려고요.","note":"put in for = 정식으로 신청하다. 연가 신청에 딱 맞는 표현."},{"en":"You get it after so many years.","ko":"몇 년 근무하면 나오는 거예요.","cat":"duty","exEn":"It's long-service leave — you get it after so many years.","exKo":"장기재직휴가예요. 몇 년 근무하면 나오는 거요.","note":"장기재직휴가는 long-service leave가 가장 가깝습니다."},{"en":"I need to leave early today.","ko":"오늘 조퇴해야 해요.","cat":"duty","exEn":"I need to leave early today — around fifth period.","exKo":"오늘 5교시쯤 조퇴해야 해요.","note":"조퇴 = leave early. 명사로는 early departure."},{"en":"Do I need to log it in the system?","ko":"시스템에 등록해야 하나요?","cat":"duty","exEn":"Do I need to log it in the system, or is telling you enough?","exKo":"시스템에 등록해야 하나요, 아니면 말씀드리면 되나요?","note":"복무 시스템 입력을 물을 때."},{"en":"I've used up most of my annual leave.","ko":"연가를 거의 다 썼어요.","cat":"duty","exEn":"I've used up most of my annual leave already.","exKo":"연가를 벌써 거의 다 썼어요.","note":"연가 = annual leave."},{"en":"I need to get this approved first.","ko":"이건 먼저 결재를 받아야 해요.","cat":"admin","exEn":"I need to get this approved first before I can order anything.","exKo":"뭘 주문하려면 먼저 결재를 받아야 해요.","note":"내부결재 = internal approval."},{"en":"It's still working its way up.","ko":"아직 결재 라인을 올라가는 중이에요.","cat":"admin","exEn":"I submitted it Tuesday, but it's still working its way up.","exKo":"화요일에 올렸는데 아직 결재 라인을 올라가는 중이에요.","note":"상신 후 대기 상태를 설명할 때."},{"en":"Who signs off on this?","ko":"이건 누가 결재하나요?","cat":"admin","exEn":"Who signs off on this — the vice principal or the principal?","exKo":"이건 누가 결재하나요? 교감 선생님이요, 교장 선생님이요?","note":"sign off on = 최종 승인하다."},{"en":"I submitted it for approval this morning.","ko":"오전에 상신했어요.","cat":"admin","exEn":"I submitted it for approval this morning, so we should hear back today.","exKo":"오전에 상신해서 오늘 중엔 답이 올 거예요.","note":"상신하다 = submit for approval."},{"en":"It got sent back for revisions.","ko":"반려돼서 수정해야 해요.","cat":"admin","exEn":"It got sent back for revisions — the budget section was wrong.","exKo":"반려됐어요. 예산 부분이 틀렸대요.","note":"반려 = sent back."},{"en":"We've got an open house today.","ko":"오늘 입학설명회가 있어요.","cat":"event","exEn":"We've got an open house today, so the building will be busy.","exKo":"오늘 입학설명회가 있어서 학교가 붐빌 거예요.","note":"입학설명회는 open house 또는 admissions info session."},{"en":"Parents and middle schoolers come to look around.","ko":"학부모하고 중학생들이 학교를 둘러보러 와요.","cat":"event","exEn":"Parents and middle schoolers come to look around the workshops.","exKo":"학부모하고 중학생들이 실습실을 둘러보러 와요.","note":""},{"en":"I'm on the department booth.","ko":"저는 학과 부스를 맡았어요.","cat":"event","exEn":"I'm on the department booth from ten to two.","exKo":"10시부터 2시까지 학과 부스를 맡았어요.","note":""},{"en":"Most questions are about job placement.","ko":"질문은 대부분 취업에 관한 거예요.","cat":"event","exEn":"Most questions are about job placement rather than the curriculum.","exKo":"질문은 교육과정보다 취업에 관한 게 대부분이에요.","note":"취업 = job placement."},{"en":"We get a day off in return.","ko":"대신 대체 휴무를 받아요.","cat":"duty","exEn":"It's a Saturday, so we get a day off in return.","exKo":"토요일이라 대신 대체 휴무를 받아요.","note":"대체 휴무를 설명하는 자연스러운 말."},{"en":"I'm taking it easy today.","ko":"오늘은 좀 쉬려고요.","cat":"lunch","exEn":"I'm taking it easy today — nothing on the calendar.","exKo":"오늘은 좀 쉬려고요. 일정이 아무것도 없어요.","note":""},{"en":"I could use a quiet day.","ko":"조용한 하루가 필요해요.","cat":"lunch","exEn":"After this week, I could use a quiet day.","exKo":"이번 주를 보내고 나니 조용한 하루가 필요해요.","note":"could use = ~가 있으면 좋겠다."},{"en":"The exam period wore everyone out.","ko":"시험 기간에 다들 지쳤어요.","cat":"class","exEn":"The exam period wore everyone out, students and teachers.","exKo":"시험 기간에 학생도 교사도 다 지쳤어요.","note":"wear someone out = 진을 빼다."},{"en":"Only a few days until the holiday.","ko":"연휴까지 며칠 안 남았어요.","cat":"lunch","exEn":"Hang in there — only a few days until the holiday.","exKo":"조금만 버텨요. 연휴까지 며칠 안 남았어요.","note":""},{"en":"I'm counting down.","ko":"손꼽아 기다리고 있어요.","cat":"lunch","exEn":"Four more days. I'm counting down.","exKo":"나흘 남았어요. 손꼽아 기다리고 있어요.","note":""},{"en":"I'm in charge of the after-school program.","ko":"제가 방과후학교를 맡고 있어요.","cat":"admin","exEn":"I'm in charge of the after-school program for the whole school.","exKo":"제가 학교 전체 방과후학교를 맡고 있어요.","note":"부장 교사는 head of 또는 in charge of로 표현합니다."},{"en":"We hire outside instructors for most classes.","ko":"대부분 수업은 외부 강사를 채용해요.","cat":"admin","exEn":"We hire outside instructors for most classes, not our own teachers.","exKo":"교사가 아니라 외부 강사를 대부분 채용해요.","note":"외부강사 = outside instructor."},{"en":"We post the opening and screen applications.","ko":"공고를 내고 지원서를 심사해요.","cat":"admin","exEn":"We post the opening and screen applications, then interview.","exKo":"공고를 내고 지원서를 심사한 뒤 면접을 봐요.","note":"공고를 내다 = post the opening."},{"en":"Their contracts run by the quarter.","ko":"계약은 분기 단위예요.","cat":"admin","exEn":"Their contracts run by the quarter, so we redo this four times a year.","exKo":"계약이 분기 단위라 1년에 네 번 이걸 해요.","note":""},{"en":"I have to check they're keeping attendance.","ko":"출석 관리를 하고 있는지 확인해야 해요.","cat":"admin","exEn":"I have to check they're keeping attendance properly.","exKo":"출석 관리를 제대로 하는지 확인해야 해요.","note":""},{"en":"I'm sorting out the instructor payments.","ko":"강사료 정산 중이에요.","cat":"money","exEn":"I'm sorting out the instructor payments before the deadline.","exKo":"마감 전에 강사료 정산 중이에요.","note":"정산하다는 sort out 또는 settle."},{"en":"It's paid by the hour.","ko":"시간당으로 지급돼요.","cat":"money","exEn":"It's paid by the hour, based on the attendance sheets.","exKo":"출석부를 기준으로 시간당 지급돼요.","note":""},{"en":"I need their attendance sheets to process it.","ko":"정산하려면 출석부가 필요해요.","cat":"money","exEn":"I need their attendance sheets to process it by Friday.","exKo":"금요일까지 정산하려면 출석부가 필요해요.","note":"process = 처리하다, 정산 절차를 밟다."},{"en":"Payroll needs it by the end of the month.","ko":"행정실에서 월말까지 달라고 해요.","cat":"money","exEn":"Payroll needs it by the end of the month, no exceptions.","exKo":"행정실에서 월말까지 달라고 해요, 예외 없이요.","note":"payroll은 급여 담당 부서."},{"en":"The numbers don't add up.","ko":"숫자가 안 맞아요.","cat":"money","exEn":"I've checked twice and the numbers don't add up.","exKo":"두 번 확인했는데 숫자가 안 맞아요.","note":"add up = 계산이 맞아떨어지다."},{"en":"We're running Friday's timetable today.","ko":"오늘은 금요일 시간표로 해요.","cat":"class","exEn":"Heads up — we're running Friday's timetable today.","exKo":"알려드려요. 오늘은 금요일 시간표로 해요.","note":"수업 교체일을 설명하는 가장 짧은 말."},{"en":"The schedule got swapped around.","ko":"시간표가 서로 바뀌었어요.","cat":"class","exEn":"The schedule got swapped around because of the holiday.","exKo":"연휴 때문에 시간표가 서로 바뀌었어요.","note":""},{"en":"Check the board before you head to class.","ko":"수업 들어가기 전에 게시판 확인하세요.","cat":"class","exEn":"Check the board before you head to class — rooms changed too.","exKo":"수업 들어가기 전에 게시판 확인하세요. 교실도 바뀌었어요.","note":""},{"en":"I've got a free period second.","ko":"2교시가 공강이에요.","cat":"class","exEn":"I've got a free period second, so come find me then.","exKo":"2교시가 공강이니 그때 오세요.","note":"공강 = free period."},{"en":"Can we push our co-teaching to next week?","ko":"코티칭을 다음 주로 미룰 수 있을까요?","cat":"class","exEn":"With all this shuffling, can we push our co-teaching to next week?","exKo":"이렇게 뒤죽박죽이니 코티칭을 다음 주로 미룰 수 있을까요?","note":""},{"en":"Chuseok is our harvest holiday.","ko":"추석은 우리 추수 명절이에요.","cat":"event","exEn":"Chuseok is our harvest holiday — the biggest one of the year.","exKo":"추석은 우리 추수 명절이에요. 일 년 중 제일 큰 명절이죠.","note":""},{"en":"It's a bit like Thanksgiving.","ko":"추수감사절이랑 좀 비슷해요.","cat":"event","exEn":"It's a bit like Thanksgiving, but with ancestral rites.","exKo":"추수감사절이랑 좀 비슷한데 차례를 지내요.","note":"ancestral rites로 차례를 설명하면 대체로 통합니다."},{"en":"Everyone travels to their hometown.","ko":"다들 고향에 내려가요.","cat":"event","exEn":"Everyone travels to their hometown at the same time.","exKo":"다들 같은 때에 고향에 내려가요.","note":""},{"en":"The traffic is unbelievable.","ko":"차가 정말 말도 안 되게 막혀요.","cat":"commute","exEn":"The traffic is unbelievable — four hours for a two-hour drive.","exKo":"차가 말도 안 되게 막혀요. 두 시간 거리가 네 시간이에요.","note":""},{"en":"Are you staying in Korea for the break?","ko":"연휴 동안 한국에 계세요?","cat":"lunch","exEn":"Are you staying in Korea for the break, or traveling?","exKo":"연휴 동안 한국에 계세요, 아니면 여행 가세요?","note":""},{"en":"We make songpyeon — steamed rice cakes.","ko":"송편을 만들어요, 찐 떡이요.","cat":"lunch","exEn":"We make songpyeon — steamed rice cakes with sesame inside.","exKo":"송편을 만들어요. 안에 깨가 든 찐 떡이에요.","note":""},{"en":"The whole family gathers at my parents' place.","ko":"온 가족이 부모님 댁에 모여요.","cat":"lunch","exEn":"The whole family gathers at my parents' place for two days.","exKo":"온 가족이 이틀 동안 부모님 댁에 모여요.","note":""},{"en":"There's always way too much food.","ko":"음식이 항상 너무 많아요.","cat":"lunch","exEn":"There's always way too much food, and we eat it for a week after.","exKo":"음식이 항상 너무 많아서 일주일 내내 먹어요.","note":""},{"en":"I always eat too much over the holidays.","ko":"연휴엔 항상 과식해요.","cat":"lunch","exEn":"I always eat too much over the holidays and regret it.","exKo":"연휴엔 항상 과식하고 후회해요.","note":""},{"en":"It's exhausting, honestly.","ko":"솔직히 좀 피곤해요.","cat":"lunch","exEn":"It's nice to see everyone, but it's exhausting, honestly.","exKo":"다들 보는 건 좋은데 솔직히 좀 피곤해요.","note":""},{"en":"The break went by fast.","ko":"연휴가 빨리 갔네요.","cat":"lunch","exEn":"The break went by fast. I feel like it just started.","exKo":"연휴가 빨리 갔네요. 방금 시작한 것 같은데.","note":""},{"en":"I barely left the house.","ko":"거의 집에만 있었어요.","cat":"lunch","exEn":"I barely left the house the whole time.","exKo":"내내 거의 집에만 있었어요.","note":""},{"en":"I need a holiday from the holiday.","ko":"연휴에서 쉴 연휴가 필요해요.","cat":"lunch","exEn":"After all that driving, I need a holiday from the holiday.","exKo":"그렇게 운전하고 나니 연휴에서 쉴 연휴가 필요해요.","note":"농담조로 쓰는 관용 표현."},{"en":"Back to reality tomorrow.","ko":"내일부터 다시 현실이네요.","cat":"lunch","exEn":"Back to reality tomorrow. Don't remind me.","exKo":"내일부터 다시 현실이네요. 말도 마세요.","note":""},{"en":"Did you get to travel at all?","ko":"어디 좀 다녀오셨어요?","cat":"lunch","exEn":"Did you get to travel at all, or did you stay put?","exKo":"어디 좀 다녀오셨어요, 아니면 그냥 계셨어요?","note":"stay put = 움직이지 않고 그대로 있다."},{"en":"I'm easing back into it.","ko":"서서히 감을 되찾는 중이에요.","cat":"lunch","exEn":"I'm easing back into it. Give me till Wednesday.","exKo":"서서히 감을 되찾는 중이에요. 수요일까지만요.","note":""},{"en":"I've got a pile of paperwork waiting.","ko":"처리할 서류가 산더미예요.","cat":"admin","exEn":"I've got a pile of paperwork waiting from before the holiday.","exKo":"연휴 전부터 밀린 서류가 산더미예요.","note":""},{"en":"First thing tomorrow, I'll deal with it.","ko":"내일 아침 제일 먼저 처리할게요.","cat":"admin","exEn":"First thing tomorrow, I'll deal with it — promise.","exKo":"내일 아침 제일 먼저 처리할게요. 약속해요.","note":"first thing = 무엇보다 먼저, 아침에."},{"en":"Let's hit the ground running.","ko":"시작하자마자 바로 달리죠.","cat":"team","exEn":"October is packed, so let's hit the ground running.","exKo":"10월이 빡빡하니 시작하자마자 바로 달리죠.","note":"hit the ground running = 준비 기간 없이 곧바로 전력으로."},{"en":"It's going to be a busy month.","ko":"바쁜 달이 될 것 같아요.","cat":"admin","exEn":"Between admissions and the new quarter, it's going to be a busy month.","exKo":"입학 전형에 새 분기까지, 바쁜 달이 될 것 같아요.","note":""},{"en":"The traffic was brutal this morning.","ko":"오늘 아침 차가 지독하게 막혔어요.","cat":"commute","exEn":"The traffic was brutal this morning — everyone's coming back at once.","exKo":"오늘 아침 차가 지독하게 막혔어요. 다들 한꺼번에 돌아오니까요.","note":"brutal은 '지독한'이라는 뜻으로 일상에서 자주 씁니다."},{"en":"I barely made it on time.","ko":"겨우 시간 맞춰 왔어요.","cat":"commute","exEn":"I barely made it on time. Two more minutes and I'd have been late.","exKo":"겨우 시간 맞춰 왔어요. 2분만 늦었어도 지각이었어요.","note":""},{"en":"I usually leave around seven.","ko":"보통 7시쯤 나와요.","cat":"commute","exEn":"I usually leave around seven to avoid the worst of it.","exKo":"제일 막힐 때를 피하려고 보통 7시쯤 나와요.","note":""},{"en":"The first day back is always rough.","ko":"연휴 끝나고 첫날은 늘 힘들어요.","cat":"lunch","exEn":"The first day back is always rough, for the kids too.","exKo":"연휴 끝나고 첫날은 애들한테도 늘 힘들어요.","note":""},{"en":"How's your commute these days?","ko":"요즘 출퇴근은 어떠세요?","cat":"commute","exEn":"How's your commute these days? Still taking the bus?","exKo":"요즘 출퇴근은 어떠세요? 아직 버스 타세요?","note":""},{"en":"We're having a staff dinner on Friday.","ko":"금요일에 교직원 회식이 있어요.","cat":"team","exEn":"We're having a staff dinner on Friday, around seven.","exKo":"금요일 7시쯤 교직원 회식이 있어요.","note":"회식 = staff dinner. company dinner는 회사에 씁니다."},{"en":"It's a send-off for someone leaving.","ko":"떠나는 분 환송회예요.","cat":"team","exEn":"It's a send-off for someone leaving at the end of the month.","exKo":"이달 말에 떠나시는 분 환송회예요.","note":"환송회 = send-off."},{"en":"Attendance is optional, but most people go.","ko":"참석은 자유지만 대부분 가요.","cat":"team","exEn":"Attendance is optional, but most people go. No pressure.","exKo":"참석은 자유지만 대부분 가요. 부담 갖지 마세요.","note":""},{"en":"I'll put you down for one.","ko":"한 분으로 명단에 올릴게요.","cat":"team","exEn":"If you're coming, I'll put you down for one.","exKo":"오시면 한 분으로 명단에 올릴게요.","note":"put someone down for = 명단·예약에 올리다."},{"en":"You don't have to drink if you don't want to.","ko":"원하지 않으면 안 마셔도 돼요.","cat":"team","exEn":"Just so you know, you don't have to drink if you don't want to.","exKo":"미리 말씀드리면, 원하지 않으면 안 마셔도 돼요.","note":""},{"en":"I'm drafting the fourth-quarter plan.","ko":"4분기 계획서를 작성 중이에요.","cat":"admin","exEn":"I'm drafting the fourth-quarter plan — it starts October nineteenth.","exKo":"4분기 계획서를 작성 중이에요. 10월 19일 개강이에요.","note":"draft = 초안을 쓰다."},{"en":"It has to be approved before classes can start.","ko":"수업 시작 전에 결재가 나야 해요.","cat":"admin","exEn":"It has to be approved before classes can start, so I'm cutting it close.","exKo":"수업 시작 전에 결재가 나야 해서 빠듯해요.","note":"cut it close = 시간이 아슬아슬하다."},{"en":"We open registration in mid-October.","ko":"10월 중순에 수강 신청을 받아요.","cat":"admin","exEn":"We open registration in mid-October and close it in a week.","exKo":"10월 중순에 수강 신청을 받고 일주일 만에 닫아요.","note":"수강 신청 = registration."},{"en":"If a class doesn't fill, we have to cancel it.","ko":"인원이 안 차면 폐강해야 해요.","cat":"admin","exEn":"If a class doesn't fill, we have to cancel it and refund.","exKo":"인원이 안 차면 폐강하고 환불해야 해요.","note":"폐강 = cancel a class."},{"en":"I'll circulate the draft for feedback first.","ko":"먼저 초안을 돌려서 의견을 받을게요.","cat":"admin","exEn":"I'll circulate the draft for feedback first, then submit it.","exKo":"먼저 초안을 돌려 의견을 받고 상신할게요.","note":"circulate = 회람하다."},{"en":"Mind if I join you?","ko":"여기 같이 앉아도 될까요?","cat":"lunch","exEn":"Mind if I join you? Everywhere else is packed.","exKo":"같이 앉아도 될까요? 다른 자리는 꽉 찼네요.","note":""},{"en":"We should be through Lesson 5 by Friday.","ko":"금요일까지는 5단원 끝내야 해요.","cat":"class","exEn":"We should be through Lesson 5 by Friday, or midterms will be tight.","exKo":"금요일까지 5단원 끝내야 해요. 안 그러면 중간고사가 빠듯해요.","note":""},{"en":"Can you run it by the vice principal first?","ko":"교감선생님께 먼저 한번 여쭤봐 주실래요?","cat":"admin","exEn":"Before I send it up, can you run it by the vice principal first?","exKo":"상신하기 전에, 교감선생님께 먼저 한번 여쭤봐 주실래요?","note":"run it by 사람 = 정식 결재 전에 가볍게 의견 묻는 것. ask보다 자연스러움."},{"en":"Could you cover for me fifth period?","ko":"5교시 제 수업 좀 대신 봐주실 수 있어요?","cat":"team","exEn":"I've got a meeting downtown — could you cover for me fifth period?","exKo":"시내에서 회의가 있어서요. 5교시 제 수업 좀 대신 봐주실 수 있어요?","note":"cover for me = 내 자리를 대신 메워주다. take my class보다 훨씬 자연스러움."},{"en":"The festival's coming up in November.","ko":"축제가 11월에 있어요.","cat":"event","exEn":"The festival's coming up in November, so the clubs are already busy.","exKo":"축제가 11월에 있어서, 동아리들이 벌써 바빠요.","note":""},{"en":"I'm taking a half-day tomorrow.","ko":"저 내일 반차 써요.","cat":"duty","exEn":"I'm taking a half-day tomorrow, so I'll be gone after fourth period.","exKo":"내일 반차 써서 4교시 끝나고 나가요.","note":"반차는 half-day. half vacation은 안 씀."},{"en":"The instructor fees haven't come through yet.","ko":"강사료가 아직 안 나왔어요.","cat":"money","exEn":"They keep asking me, but the instructor fees haven't come through yet.","exKo":"계속 물어보시는데, 강사료가 아직 안 나왔어요.","note":"come through = 돈이 실제로 들어오다. 지급 맥락의 핵심 표현."},{"en":"Traffic was at a standstill on the way in.","ko":"오는 길에 차가 완전히 멈춰 섰어요.","cat":"commute","exEn":"Sorry I'm late — traffic was at a standstill on the way in.","exKo":"늦어서 죄송해요. 오는 길에 차가 완전히 멈춰 섰더라고요.","note":"at a standstill = 아예 안 움직이는 상태. jam보다 생생함."},{"en":"Did you catch the news this morning?","ko":"아침에 뉴스 보셨어요?","cat":"news","exEn":"Did you catch the news this morning? They were talking about the heat wave.","exKo":"아침에 뉴스 보셨어요? 폭염 얘기 나오더라고요.","note":""},{"en":"Long morning?","ko":"오전에 힘드셨나 봐요?","cat":"lunch","exEn":"You look exhausted. Long morning?","exKo":"피곤해 보이시네요. 오전에 힘드셨나 봐요?","note":"두 단어짜리 질문으로 던지는 게 포인트. 문장으로 늘리면 어색해짐."},{"en":"We lost a period to the assembly.","ko":"조회 때문에 한 시간 날아갔어요.","cat":"class","exEn":"We lost a period to the assembly, so we're pushing the quiz to Thursday.","exKo":"조회 때문에 한 시간 날아가서 쪽지시험을 목요일로 미뤄요.","note":""},{"en":"It's stuck with the department head.","ko":"부장님 선에서 멈춰 있어요.","cat":"admin","exEn":"I sent it Monday, but it's stuck with the department head.","exKo":"월요일에 올렸는데 부장님 선에서 멈춰 있어요.","note":"결재가 특정 단계에서 안 넘어갈 때 stuck with ~ 를 씀."},{"en":"I hate to ask, but could you take my duty tomorrow?","ko":"이런 부탁 드리기 죄송한데, 내일 제 당번 좀 맡아주실 수 있을까요?","cat":"team","exEn":"I hate to ask, but could you take my duty tomorrow? Something came up.","exKo":"이런 부탁 드리기 죄송한데, 내일 제 당번 좀 맡아주실 수 있을까요? 일이 좀 생겨서요.","note":""},{"en":"Who's on setup duty?","ko":"준비 담당이 누구예요?","cat":"event","exEn":"The stage needs to go up Friday — who's on setup duty?","exKo":"무대를 금요일에 세워야 하는데, 준비 담당이 누구예요?","note":""},{"en":"I'm using a day of annual leave on Friday.","ko":"금요일에 연가 하루 쓰려고요.","cat":"duty","exEn":"I'm using a day of annual leave on Friday — my sister's getting married.","exKo":"금요일에 연가 하루 쓰려고요. 동생이 결혼해서요.","note":""},{"en":"Payment's running about two weeks behind.","ko":"지급이 2주쯤 밀리고 있어요.","cat":"money","exEn":"It's not just you — payment's running about two weeks behind for everyone.","exKo":"선생님만 그런 게 아니에요. 지금 다들 지급이 2주쯤 밀리고 있어요.","note":""},{"en":"There was an accident, so everything backed up.","ko":"사고가 나서 다 밀렸어요.","cat":"commute","exEn":"There was an accident near the bridge, so everything backed up behind it.","exKo":"다리 근처에 사고가 나서 뒤로 다 밀렸어요.","note":""},{"en":"Have you been following that story?","ko":"그 소식 계속 보고 계세요?","cat":"news","exEn":"Have you been following that story? It's been going on for weeks now.","exKo":"그 소식 계속 보고 계세요? 몇 주째 이어지네요.","note":""},{"en":"You look like you didn't sleep.","ko":"한숨도 못 주무신 얼굴인데요.","cat":"lunch","exEn":"You look like you didn't sleep. Everything okay?","exKo":"한숨도 못 주무신 얼굴인데요. 무슨 일 있어요?","note":""},{"en":"The other classes are a bit ahead of us.","ko":"다른 반들이 우리보다 진도가 좀 앞서 있어요.","cat":"class","exEn":"The other classes are a bit ahead of us — 2반 lost two days to the field trip.","exKo":"다른 반들이 우리보다 좀 앞서 있어요. 2반은 현장체험학습으로 이틀 날렸거든요.","note":""},{"en":"It has to go through three people before it's final.","ko":"최종 결재까지 세 명을 거쳐야 해요.","cat":"admin","exEn":"Don't hold your breath — it has to go through three people before it's final.","exKo":"기대는 마세요. 최종 결재까지 세 명을 거쳐야 하거든요.","note":"결재 라인 = go through 사람들. approval line은 콩글리시에 가까움."},{"en":"I owe you one.","ko":"제가 신세 졌네요.","cat":"team","exEn":"You saved me today — I owe you one.","exKo":"오늘 덕분에 살았어요. 제가 신세 졌네요.","note":""},{"en":"We drew lots for the shifts.","ko":"당번은 제비뽑기로 정했어요.","cat":"event","exEn":"Nobody wanted the morning slot, so we drew lots for the shifts.","exKo":"아무도 오전 시간대를 안 하려고 해서, 당번은 제비뽑기로 정했어요.","note":""},{"en":"Something came up at home.","ko":"집에 일이 좀 생겨서요.","cat":"duty","exEn":"Something came up at home, so I need the afternoon off.","exKo":"집에 일이 좀 생겨서 오후에 좀 빠져야 할 것 같아요.","note":""},{"en":"I can't process it without a receipt.","ko":"영수증이 없으면 처리를 못 해요.","cat":"money","exEn":"I know it was only ten thousand won, but I can't process it without a receipt.","exKo":"만 원밖에 안 되는 거 아는데, 영수증이 없으면 처리를 못 해요.","note":"정산 처리하다 = process. settle은 빚 갚는 느낌이 강함."},{"en":"I nearly clocked in late.","ko":"지각할 뻔했어요.","cat":"commute","exEn":"I got in at 8:29 — I nearly clocked in late.","exKo":"8시 29분에 도착했어요. 지각할 뻔했네요.","note":""},{"en":"Did you watch the game last night?","ko":"어제 경기 보셨어요?","cat":"news","exEn":"Did you watch the game last night? I stayed up for the whole thing.","exKo":"어제 경기 보셨어요? 저는 끝까지 다 봤어요.","note":""},{"en":"I'm running on coffee today.","ko":"오늘은 커피 힘으로 버티고 있어요.","cat":"lunch","exEn":"Third cup already — I'm running on coffee today.","exKo":"벌써 세 잔째예요. 오늘은 커피 힘으로 버티고 있어요.","note":"run on ~ 는 '~로 굴러간다'는 뜻. 연료 비유라 매우 구어적."},{"en":"I'm going to trim the reading part.","ko":"읽기 부분은 좀 줄이려고요.","cat":"class","exEn":"I'm going to trim the reading part and give them more speaking time.","exKo":"읽기 부분은 좀 줄이고 말하기 시간을 더 주려고요.","note":"trim = 통째로 빼는 게 아니라 분량을 깎는 것. skip과 구분."},{"en":"He kicked it back with comments.","ko":"의견 달아서 반려하셨어요.","cat":"admin","exEn":"I thought it was done, but he kicked it back with comments.","exKo":"다 된 줄 알았는데 의견 달아서 반려하셨어요.","note":"kick back = 반려하다. send back보다 구어적이고 자주 씀."},{"en":"I'll make it up to you.","ko":"제가 나중에 꼭 갚을게요.","cat":"team","exEn":"Thanks for taking my class. I'll make it up to you.","exKo":"제 수업 맡아주셔서 고마워요. 제가 나중에 꼭 갚을게요.","note":"make up to는 '보답하다'. make up with(화해하다)와 헷갈리지 말 것."},{"en":"I got stuck with clean-up.","ko":"저는 뒷정리에 걸렸어요.","cat":"event","exEn":"You got the photo booth and I got stuck with clean-up.","exKo":"선생님은 포토부스 맡고 저는 뒷정리에 걸렸네요.","note":"get stuck with ~ = 하기 싫은 일을 떠맡다."},{"en":"I'm heading out early today.","ko":"오늘 좀 일찍 나가려고요.","cat":"duty","exEn":"I'm heading out early today — I've got a doctor's appointment at four.","exKo":"오늘 좀 일찍 나가요. 4시에 병원 예약이 있어서요.","note":""},{"en":"Hang on to the receipt — I'll need it later.","ko":"영수증 잘 갖고 계세요. 나중에 필요해요.","cat":"money","exEn":"Buy the materials today, but hang on to the receipt — I'll need it later.","exKo":"오늘 재료 사시되, 영수증은 잘 갖고 계세요. 나중에 필요하거든요.","note":""},{"en":"I had to scrape the ice off my windshield.","ko":"차 앞유리 성에 긁어내느라 혼났어요.","cat":"commute","exEn":"I left ten minutes early, but I had to scrape the ice off my windshield.","exKo":"10분 일찍 나왔는데 앞유리 성에 긁어내느라 시간 다 썼어요.","note":""},{"en":"They blew a two-goal lead.","ko":"두 골 앞서다가 다 까먹었어요.","cat":"news","exEn":"We were winning easily, and then they blew a two-goal lead.","exKo":"편하게 이기고 있었는데 두 골 앞서다가 다 까먹었어요.","note":"blow a lead = 앞서던 걸 날려먹다. 스포츠 대화 단골."},{"en":"How are you holding up?","ko":"좀 버틸 만해요?","cat":"lunch","exEn":"Two weeks of exams — how are you holding up?","exKo":"시험 2주째잖아요. 좀 버틸 만해요?","note":"힘든 시기를 보내는 사람에게 쓰는 안부. How are you?보다 따뜻함."},{"en":"Let's not rush it — they're not solid on this yet.","ko":"서두르지 말죠. 애들이 아직 이걸 확실히 몰라요.","cat":"class","exEn":"Let's not rush it — they're not solid on this yet, especially the passive voice.","exKo":"서두르지 말죠. 애들이 아직 확실히 몰라요, 특히 수동태요.","note":"be solid on ~ = ~을 확실히 안다. 원어민 교사들이 실제로 자주 씀."},{"en":"I fixed what he flagged and sent it back up.","ko":"지적하신 부분 고쳐서 다시 올렸어요.","cat":"admin","exEn":"I fixed what he flagged and sent it back up this morning.","exKo":"지적하신 부분 고쳐서 오늘 아침에 다시 올렸어요.","note":""},{"en":"Sorry to spring this on you.","ko":"갑자기 이런 얘기 꺼내서 미안해요.","cat":"team","exEn":"Sorry to spring this on you, but the deadline moved up to Friday.","exKo":"갑자기 이런 얘기 꺼내서 미안한데, 마감이 금요일로 당겨졌어요.","note":"spring something on someone = 예고 없이 툭 던지다."},{"en":"The field trip's just a day trip this year.","ko":"올해 현장체험학습은 당일치기예요.","cat":"event","exEn":"The field trip's just a day trip this year — we're back by five.","exKo":"올해 현장체험학습은 당일치기예요. 5시면 돌아와요.","note":""},{"en":"I've got an official trip on Thursday.","ko":"목요일에 출장 있어요.","cat":"duty","exEn":"I've got an official trip on Thursday, so let's move our meeting.","exKo":"목요일에 출장이라서 회의를 좀 옮겼으면 해요.","note":"business trip도 되지만 학교 공무는 official trip이 자연스러움."},{"en":"The claim form is missing his bank details.","ko":"청구 서류에 계좌번호가 빠졌어요.","cat":"money","exEn":"I can't send it down yet — the claim form is missing his bank details.","exKo":"아직 못 넘겨요. 청구 서류에 계좌번호가 빠져 있어서요.","note":""},{"en":"The rain was coming down sideways this morning.","ko":"아침에 비가 옆으로 들이쳤어요.","cat":"commute","exEn":"My shoes are soaked — the rain was coming down sideways this morning.","exKo":"신발이 다 젖었어요. 아침에 비가 옆으로 들이쳐서요.","note":""},{"en":"They're saying it'll hit thirty-five this week.","ko":"이번 주에 35도까지 올라간대요.","cat":"news","exEn":"They're saying it'll hit thirty-five this week — the classrooms are going to be rough.","exKo":"이번 주에 35도까지 올라간대요. 교실 좀 힘들겠어요.","note":""},{"en":"I'm just glad it's lunchtime.","ko":"점심시간이라 살 것 같아요.","cat":"lunch","exEn":"Don't even ask about my morning. I'm just glad it's lunchtime.","exKo":"오전 얘기는 묻지도 마세요. 점심시간이라 살 것 같아요.","note":""},{"en":"Can we stretch this unit over two more periods?","ko":"이 단원을 두 차시 더 늘려도 될까요?","cat":"class","exEn":"Can we stretch this unit over two more periods? They need the practice.","exKo":"이 단원을 두 차시 더 늘려도 될까요? 애들한테 연습이 더 필요해요.","note":""},{"en":"The wording needs tightening before it goes up.","ko":"올리기 전에 문구를 좀 다듬어야 해요.","cat":"admin","exEn":"The content's fine, but the wording needs tightening before it goes up.","exKo":"내용은 괜찮은데, 올리기 전에 문구를 좀 다듬어야 해요.","note":""},{"en":"Would you mind swapping periods with me?","ko":"저랑 교시 좀 바꿔주실 수 있을까요?","cat":"team","exEn":"I've got a dentist appointment — would you mind swapping periods with me?","exKo":"치과 예약이 있어서요. 저랑 교시 좀 바꿔주실 수 있을까요?","note":"Would you mind~? 에 '괜찮다'고 답할 땐 No, not at all. 이 맞음."},{"en":"We're taking the second-years to Jeju for the school trip.","ko":"2학년은 수학여행으로 제주도에 가요.","cat":"event","exEn":"We're taking the second-years to Jeju for the school trip — three nights.","exKo":"2학년은 수학여행으로 제주도에 가요. 3박이에요.","note":"수학여행은 school trip 또는 class trip. field trip은 보통 당일 견학."},{"en":"I'm out at a training session all day.","ko":"하루종일 연수 가 있어요.","cat":"duty","exEn":"I'm out at a training session all day Wednesday — it's off-site.","exKo":"수요일은 하루종일 외부 연수예요.","note":""},{"en":"I have to file a spending request first.","ko":"먼저 품의를 올려야 해요.","cat":"money","exEn":"We can't order the books yet — I have to file a spending request first.","exKo":"교재 아직 못 주문해요. 먼저 품의를 올려야 하거든요.","note":"품의 = spending request. 영미권엔 정확한 대응어가 없어 이렇게 풀어 씀."},{"en":"It's bitter out there.","ko":"밖에 진짜 매섭게 추워요.","cat":"commute","exEn":"It's bitter out there — my hands were numb by the time I parked.","exKo":"밖에 진짜 춥네요. 주차할 때쯤엔 손이 다 얼었어요.","note":"bitter cold의 줄임. very cold보다 훨씬 자연스러움."},{"en":"Prices just keep creeping up.","ko":"물가가 계속 야금야금 오르네요.","cat":"news","exEn":"I paid nine thousand for lunch downtown — prices just keep creeping up.","exKo":"시내에서 점심 9천 원 냈어요. 물가가 계속 야금야금 오르네요.","note":""},{"en":"My morning was all over the place.","ko":"오전이 완전 정신없었어요.","cat":"lunch","exEn":"Two classes swapped and a fire drill — my morning was all over the place.","exKo":"수업 두 개 바뀌고 소방 훈련까지, 오전이 완전 정신없었어요.","note":"all over the place = 뒤죽박죽. 사람에게 쓰면 '정신 못 차린다'는 뜻도 됨."},{"en":"We're right on schedule for once.","ko":"모처럼 진도가 딱 맞네요.","cat":"class","exEn":"We're right on schedule for once — I don't want to jinx it.","exKo":"모처럼 진도가 딱 맞네요. 말해놓고 어그러질까 무섭네요.","note":""},{"en":"I'll push it through today.","ko":"오늘 안에 처리해서 넘길게요.","cat":"admin","exEn":"Don't worry about the deadline — I'll push it through today.","exKo":"기한 걱정 마세요. 오늘 안에 처리해서 넘길게요.","note":""},{"en":"Could you keep an eye on my class for ten minutes?","ko":"10분만 제 반 좀 봐주실 수 있어요?","cat":"team","exEn":"I have to run to the office — could you keep an eye on my class for ten minutes?","exKo":"행정실에 잠깐 다녀와야 해서요. 10분만 제 반 좀 봐주실 수 있어요?","note":""},{"en":"I'm one of the chaperones.","ko":"제가 인솔 교사 중 한 명이에요.","cat":"event","exEn":"I'm one of the chaperones, so I'm on call the whole weekend.","exKo":"제가 인솔 교사라서, 주말 내내 대기예요.","note":"chaperone = 학생 인솔·감독 교사. 영미권 학교의 표준 용어."},{"en":"I have to write up a trip report when I get back.","ko":"돌아와서 복명서 써야 해요.","cat":"duty","exEn":"The trip itself is fine, but I have to write up a trip report when I get back.","exKo":"출장은 괜찮은데 돌아와서 복명서 쓰는 게 일이죠.","note":"복명 = trip report. 딱 맞는 영어 단어는 없어서 이렇게 풀어 씀."},{"en":"It has to be approved before we spend anything.","ko":"승인 나기 전엔 한 푼도 못 써요.","cat":"money","exEn":"Don't buy it out of pocket — it has to be approved before we spend anything.","exKo":"사비로 사지 마세요. 승인 나기 전엔 한 푼도 못 써요.","note":""},{"en":"The lot was already full when I got here.","ko":"제가 왔을 땐 주차장이 벌써 꽉 찼더라고요.","cat":"commute","exEn":"I had to park down the street — the lot was already full when I got here.","exKo":"길가에 대야 했어요. 왔을 땐 주차장이 벌써 꽉 찼더라고요.","note":""},{"en":"There's talk of changing the entrance exam again.","ko":"수능 또 바꾼다는 얘기가 있더라고요.","cat":"news","exEn":"There's talk of changing the entrance exam again, but nothing's decided yet.","exKo":"수능 또 바꾼다는 얘기가 있는데 아직 정해진 건 없어요.","note":"There's talk of ~ = ~한다는 말이 돈다. 단정 안 하고 화제 꺼내기 좋음."},{"en":"This is way better than yesterday's.","ko":"이거 어제 거보다 훨씬 낫네요.","cat":"lunch","exEn":"This is way better than yesterday's. I actually went back for more.","exKo":"이거 어제 거보다 훨씬 낫네요. 저 진짜 더 받아 왔어요.","note":""},{"en":"Do you want to take the warm-up?","ko":"도입 부분 맡아주실래요?","cat":"class","exEn":"Do you want to take the warm-up? I'll pick it up from the grammar.","exKo":"도입 부분 맡아주실래요? 문법부터는 제가 이어받을게요.","note":""},{"en":"The deadline crept up on me.","ko":"마감이 코앞인 줄도 몰랐어요.","cat":"admin","exEn":"I meant to start last week, but the deadline crept up on me.","exKo":"지난주에 시작하려 했는데, 마감이 코앞인 줄도 몰랐네요.","note":"creep up on me = 모르는 사이에 닥치다. 한국인이 잘 안 쓰지만 아주 흔함."},{"en":"I'd love to, but I can't make it.","ko":"가고 싶은데 못 갈 것 같아요.","cat":"team","exEn":"The dinner sounds great. I'd love to, but I can't make it this time.","exKo":"회식 좋죠. 가고 싶은데 이번엔 못 갈 것 같아요.","note":""},{"en":"Headcount every time they get back on the bus.","ko":"버스 탈 때마다 인원 점검해요.","cat":"event","exEn":"Rule number one: headcount every time they get back on the bus.","exKo":"제1원칙이요, 버스 탈 때마다 인원 점검하는 거예요.","note":""},{"en":"I won't be back before the end of the day.","ko":"오늘은 학교로 다시 못 들어와요.","cat":"duty","exEn":"The workshop runs until five, so I won't be back before the end of the day.","exKo":"연수가 5시까지라 오늘은 학교로 다시 못 들어와요.","note":""},{"en":"That comes out of a different budget line.","ko":"그건 다른 예산 항목에서 나가요.","cat":"money","exEn":"We can cover the snacks, but that comes out of a different budget line.","exKo":"간식은 되는데, 그건 다른 예산 항목에서 나가요.","note":"budget line = 예산 항목·세목. 회계 대화의 기본 단어."},{"en":"My car wouldn't start, so I took the bus.","ko":"차 시동이 안 걸려서 버스 타고 왔어요.","cat":"commute","exEn":"My car wouldn't start, so I took the bus — it took twice as long.","exKo":"차 시동이 안 걸려서 버스 타고 왔는데 두 배는 걸렸어요.","note":""},{"en":"Apparently it affects schools too.","ko":"학교에도 영향이 있다나 봐요.","cat":"news","exEn":"It started as a budget story, but apparently it affects schools too.","exKo":"처음엔 예산 얘기였는데 학교에도 영향이 있다나 봐요.","note":""},{"en":"I'm going back for seconds.","ko":"저 한 번 더 받아 올게요.","cat":"lunch","exEn":"The stew is really good today — I'm going back for seconds.","exKo":"오늘 국이 진짜 맛있네요. 한 번 더 받아 올게요.","note":"seconds = 두 번째 그릇. 항상 복수형."},{"en":"Can you handle the pronunciation part?","ko":"발음 부분은 좀 맡아주실 수 있어요?","cat":"class","exEn":"Can you handle the pronunciation part? They listen to you more on that.","exKo":"발음 부분 좀 맡아주실 수 있어요? 그건 애들이 선생님 말을 더 들어요.","note":""},{"en":"I need to turn this around by tomorrow.","ko":"이거 내일까지 끝내서 넘겨야 해요.","cat":"admin","exEn":"It just landed on my desk and I need to turn this around by tomorrow.","exKo":"방금 저한테 떨어졌는데 내일까지 끝내서 넘겨야 해요.","note":"turn around = 받은 일을 처리해서 되돌려주다. 마감 맥락 전용 표현."},{"en":"Can I get a rain check?","ko":"다음 기회로 미뤄도 될까요?","cat":"team","exEn":"I'm picking up my kid tonight — can I get a rain check?","exKo":"오늘 밤엔 애를 데리러 가야 해서요. 다음 기회로 미뤄도 될까요?","note":"rain check은 초대를 정중히 미룰 때 쓰는 관용구. 원어민이 아주 자주 씀."},{"en":"The club showcase is on Friday.","ko":"동아리 발표회가 금요일이에요.","cat":"event","exEn":"The club showcase is on Friday — the dance club goes last.","exKo":"동아리 발표회가 금요일이에요. 댄스부가 마지막이고요.","note":""},{"en":"I'm putting in for overtime tonight.","ko":"오늘 초과근무 올리려고요.","cat":"duty","exEn":"I'm putting in for overtime tonight — I'll be here until nine anyway.","exKo":"어차피 9시까지 있을 거라 오늘 초과근무 올리려고요.","note":"put in for ~ = 신청하다. 근태 신청에 두루 씀."},{"en":"There's nothing left in that line.","ko":"그 항목은 예산이 다 떨어졌어요.","cat":"money","exEn":"Ask me again next quarter — there's nothing left in that line.","exKo":"다음 분기에 다시 말씀해 주세요. 그 항목은 예산이 다 떨어졌어요.","note":""},{"en":"I'm heading off — see you tomorrow.","ko":"저 이만 가볼게요. 내일 봬요.","cat":"commute","exEn":"That's me done for today. I'm heading off — see you tomorrow.","exKo":"오늘은 여기까지네요. 이만 가볼게요, 내일 봬요.","note":"퇴근 인사로 가장 무난. 'I go home now'는 어색함."},{"en":"I don't know enough about it to have an opinion.","ko":"제가 잘 몰라서 뭐라 말은 못 하겠어요.","cat":"news","exEn":"People feel strongly about it, but I don't know enough about it to have an opinion.","exKo":"다들 말이 많던데 저는 잘 몰라서 뭐라 말은 못 하겠어요.","note":"민감한 화제에서 빠져나오는 가장 안전한 문장."},{"en":"Careful, the soup's still boiling hot.","ko":"조심하세요, 국 아직 펄펄 끓어요.","cat":"lunch","exEn":"Careful, the soup's still boiling hot. Give it a minute.","exKo":"조심하세요, 국 아직 펄펄 끓어요. 좀 식히세요.","note":""},{"en":"I'll set it up, you run the activity.","ko":"제가 세팅할 테니까 활동은 선생님이 진행해 주세요.","cat":"class","exEn":"I'll set it up, you run the activity — that way we're not both talking.","exKo":"제가 세팅할 테니 활동은 선생님이 진행해 주세요. 그래야 둘이 동시에 안 떠들죠.","note":""},{"en":"I'm chasing three deadlines at once.","ko":"마감 세 개에 동시에 쫓기고 있어요.","cat":"admin","exEn":"Can it wait till Friday? I'm chasing three deadlines at once.","exKo":"금요일까지 미뤄도 될까요? 마감 세 개에 동시에 쫓기고 있어서요.","note":""},{"en":"I'll have to sit this one out.","ko":"이번엔 빠질게요.","cat":"team","exEn":"You guys go ahead — I'll have to sit this one out.","exKo":"다들 가세요. 저는 이번엔 빠질게요.","note":""},{"en":"They've been rehearsing after school for weeks.","ko":"애들이 몇 주째 방과후에 연습하고 있어요.","cat":"event","exEn":"They've been rehearsing after school for weeks, so let them enjoy it.","exKo":"애들이 몇 주째 방과후에 연습했어요. 마음껏 하게 해줘요.","note":""},{"en":"I'm supervising evening study hall tonight.","ko":"오늘 야자 감독이에요.","cat":"duty","exEn":"I'm supervising evening study hall tonight, so I'll grab dinner here.","exKo":"오늘 야자 감독이라 저녁은 여기서 먹을 거예요.","note":"야간자율학습 = evening study hall. self-study라고만 하면 안 통함."},{"en":"We've got about two million won left to spend.","ko":"쓸 수 있는 예산이 2백만 원쯤 남았어요.","cat":"money","exEn":"For the whole program, we've got about two million won left to spend.","exKo":"프로그램 전체로 봤을 때, 쓸 수 있는 예산이 2백만 원쯤 남았어요.","note":""},{"en":"I'm cutting out a bit early today.","ko":"오늘은 좀 일찍 빠질게요.","cat":"commute","exEn":"I'm cutting out a bit early today — I've got to pick up my daughter.","exKo":"오늘은 좀 일찍 빠질게요. 딸 데리러 가야 해서요.","note":""},{"en":"Anyway, enough of that — how's your week going?","ko":"아무튼 그 얘긴 됐고, 이번 주는 좀 어떠세요?","cat":"news","exEn":"Anyway, enough of that — how's your week going? You looked busy yesterday.","exKo":"아무튼 그 얘긴 됐고, 이번 주는 어떠세요? 어제 바빠 보이시던데.","note":""},{"en":"Is there anything you can't eat?","ko":"혹시 못 드시는 거 있어요?","cat":"lunch","exEn":"Is there anything you can't eat? I'll warn you before they serve it.","exKo":"혹시 못 드시는 거 있어요? 나오기 전에 미리 알려드릴게요.","note":"알레르기·비건 등을 조심스럽게 묻는 표준 표현."},{"en":"I'll make the worksheet if you do the slides.","ko":"학습지는 제가 만들 테니 슬라이드는 선생님이 해주세요.","cat":"class","exEn":"I'll make the worksheet if you do the slides. Deal?","exKo":"학습지는 제가 만들 테니 슬라이드는 선생님이 해주세요. 콜?","note":""},{"en":"It came down from the district office.","ko":"교육청에서 내려온 거예요.","cat":"admin","exEn":"Nobody here decided this — it came down from the district office.","exKo":"우리가 정한 게 아니라 교육청에서 내려온 거예요.","note":"교육청은 district office 또는 office of education. come down = 위에서 내려오다."},{"en":"Let's grab a coffee after this.","ko":"이거 끝나고 커피 한잔해요.","cat":"team","exEn":"That meeting was long. Let's grab a coffee after this.","exKo":"회의 진짜 길었네요. 이거 끝나고 커피 한잔해요.","note":""},{"en":"Graduation is on the fifteenth.","ko":"졸업식이 15일이에요.","cat":"event","exEn":"Graduation is on the fifteenth, and the ceremony runs about an hour.","exKo":"졸업식이 15일이고, 식은 한 시간쯤 해요.","note":""},{"en":"I'm on night duty this weekend.","ko":"이번 주말에 당직이에요.","cat":"duty","exEn":"I'm on night duty this weekend, so no plans for me.","exKo":"이번 주말 당직이라 저는 아무 계획 없어요.","note":""},{"en":"Anything we don't use goes back.","ko":"안 쓴 돈은 반납해야 해요.","cat":"money","exEn":"Let's use it on materials — anything we don't use goes back.","exKo":"재료비로 씁시다. 안 쓴 돈은 어차피 반납해야 하거든요.","note":""},{"en":"We could carpool if our schedules line up.","ko":"시간만 맞으면 카풀해도 되겠는데요.","cat":"commute","exEn":"You're coming from Songtan too? We could carpool if our schedules line up.","exKo":"송탄에서 오세요? 시간만 맞으면 카풀해도 되겠는데요.","note":""},{"en":"Did I miss anything big over the weekend?","ko":"주말에 무슨 큰일이라도 있었어요?","cat":"news","exEn":"I was off my phone all weekend — did I miss anything big over the weekend?","exKo":"주말 내내 폰을 안 봤는데, 무슨 큰일이라도 있었어요?","note":""},{"en":"You get used to the spice after a while.","ko":"매운 건 좀 지나면 익숙해져요.","cat":"lunch","exEn":"I know it burns now, but you get used to the spice after a while.","exKo":"지금은 얼얼하겠지만, 매운 건 좀 지나면 익숙해져요.","note":"get used to 뒤에는 명사나 -ing. get used to eat은 틀림."},{"en":"Just jump in whenever you want.","ko":"언제든 편하게 끼어드세요.","cat":"class","exEn":"You don't have to wait for a cue — just jump in whenever you want.","exKo":"신호 기다릴 필요 없어요. 언제든 편하게 끼어드세요.","note":"jump in = 대화·수업에 자연스럽게 끼어들다. 부정적 뉘앙스 없음."},{"en":"I have to draft a reply to that notice.","ko":"그 공문에 회신 기안을 해야 해요.","cat":"admin","exEn":"I can't leave yet — I have to draft a reply to that notice.","exKo":"아직 못 가요. 그 공문에 회신 기안을 해야 하거든요.","note":""},{"en":"Coffee's on me.","ko":"커피는 제가 살게요.","cat":"team","exEn":"You covered my class last week — coffee's on me.","exKo":"지난주에 제 수업 봐주셨잖아요. 커피는 제가 살게요.","note":""},{"en":"It's the closing ceremony next week.","ko":"다음 주가 종업식이에요.","cat":"event","exEn":"It's the closing ceremony next week, then the kids are off.","exKo":"다음 주가 종업식이고, 그다음엔 애들 방학이에요.","note":"종업식 = closing ceremony, 개학식 = opening ceremony."},{"en":"I'm calling in sick today.","ko":"오늘 병가 냅니다.","cat":"duty","exEn":"I'm calling in sick today — I've had a fever since last night.","exKo":"오늘 병가 냅니다. 어젯밤부터 열이 나서요.","note":"call in sick = 아파서 못 나온다고 연락하는 것. 하루짜리 병가에 딱."},{"en":"We can't carry it over to next year.","ko":"내년으로 이월이 안 돼요.","cat":"money","exEn":"It has to be spent by December — we can't carry it over to next year.","exKo":"12월까지 다 써야 해요. 내년으로 이월이 안 되거든요.","note":"이월하다 = carry over. move는 안 씀."},{"en":"I filled up the tank on the way in.","ko":"오는 길에 기름 넣고 왔어요.","cat":"commute","exEn":"I filled up the tank on the way in and it still cost me eighty thousand won.","exKo":"오는 길에 기름 넣었는데 8만 원이나 나왔어요.","note":""},{"en":"My feed's been full of it all week.","ko":"일주일 내내 피드에 그 얘기뿐이에요.","cat":"news","exEn":"My feed's been full of it all week — I can't scroll past it.","exKo":"일주일 내내 피드에 그 얘기뿐이라 넘길 수가 없어요.","note":""},{"en":"It's an acquired taste.","ko":"이건 먹다 보면 맛있어지는 거예요.","cat":"lunch","exEn":"Nobody likes fermented soybean paste at first — it's an acquired taste.","exKo":"청국장은 처음엔 다들 싫어해요. 먹다 보면 맛있어지는 거죠.","note":"낯선 음식 소개할 때 쓰는 정해진 표현. 직역하면 어색함."},{"en":"I'll step in if they get lost.","ko":"애들이 못 따라오면 제가 들어갈게요.","cat":"class","exEn":"Explain it in English first — I'll step in if they get lost.","exKo":"일단 영어로 설명해 주세요. 애들이 못 따라오면 제가 들어갈게요.","note":"step in = (도우려고) 개입하다. 한국어 설명으로 보충한다는 뜻으로 딱."},{"en":"They want it in by the tenth.","ko":"10일까지 제출하래요.","cat":"admin","exEn":"The district office isn't flexible on this — they want it in by the tenth.","exKo":"교육청이 이건 안 봐줘요. 10일까지 제출하래요.","note":""},{"en":"Welcome aboard.","ko":"우리 학교에 오신 걸 환영해요.","cat":"team","exEn":"You're joining the English department? Welcome aboard.","exKo":"영어과로 오셨다고요? 우리 학교에 오신 걸 환영해요.","note":""},{"en":"I've got an open lesson on Thursday.","ko":"목요일에 공개수업이 있어요.","cat":"event","exEn":"I've got an open lesson on Thursday and I'm still tweaking the slides.","exKo":"목요일에 공개수업이 있는데, 아직도 슬라이드 손보고 있어요.","note":"공개수업은 open lesson / open class. demonstration lesson도 통함."},{"en":"I think I'm coming down with something.","ko":"몸살 기운이 좀 있는 것 같아요.","cat":"duty","exEn":"I think I'm coming down with something — my throat's been scratchy all morning.","exKo":"몸살 기운이 좀 있는 것 같아요. 아침 내내 목이 칼칼하네요.","note":""},{"en":"We're only at sixty percent so far.","ko":"집행률이 아직 60퍼센트밖에 안 돼요.","cat":"money","exEn":"They'll ask about it at the audit — we're only at sixty percent so far.","exKo":"감사 때 물어볼 거예요. 집행률이 아직 60퍼센트밖에 안 되거든요.","note":"집행률 = how much of the budget we've spent. execution rate는 안 통함."},{"en":"My car's overdue for a wash.","ko":"세차한 지 너무 오래됐어요.","cat":"commute","exEn":"My car's overdue for a wash — you can barely see the color anymore.","exKo":"세차한 지 너무 오래됐어요. 이제 무슨 색인지도 모르겠어요.","note":"overdue for ~ = ~할 때가 한참 지났다. 정기적인 일에 두루 쓴다."},{"en":"I only read the headline, to be honest.","ko":"솔직히 제목만 봤어요.","cat":"news","exEn":"I only read the headline, to be honest — what actually happened?","exKo":"솔직히 제목만 봤어요. 실제로는 무슨 일이었어요?","note":""},{"en":"Do you want my side dish? I'm not a fan.","ko":"이 반찬 드실래요? 저는 별로라서요.","cat":"lunch","exEn":"Do you want my side dish? I'm not a fan of anchovies.","exKo":"이 반찬 드실래요? 저는 멸치를 별로 안 좋아해서요.","note":"I'm not a fan = 완곡하게 '별로다'. I hate it은 너무 셈."},{"en":"Let's do a quick run-through before class.","ko":"수업 전에 한 번 빠르게 맞춰봐요.","cat":"class","exEn":"Let's do a quick run-through before class — five minutes in the office?","exKo":"수업 전에 한 번 빠르게 맞춰봐요. 교무실에서 5분 정도?","note":"run-through = 리허설, 순서 맞춰보기."},{"en":"We're getting audited next month.","ko":"다음 달에 감사 받아요.","cat":"admin","exEn":"Everything has to be spotless — we're getting audited next month.","exKo":"다 완벽해야 해요. 다음 달에 감사 받거든요.","note":"감사 = audit. inspection은 시설 점검 느낌."},{"en":"Just holler if you need anything.","ko":"뭐 필요하면 편하게 말씀하세요.","cat":"team","exEn":"My desk is right over there — just holler if you need anything.","exKo":"제 자리 바로 저쪽이에요. 뭐 필요하면 편하게 말씀하세요.","note":"holler는 '소리쳐 부르다'지만 실제론 '편하게 말해'라는 뜻의 구어."},{"en":"The whole department sits in on it.","ko":"과 선생님들이 다 참관하세요.","cat":"event","exEn":"It's not just the principal — the whole department sits in on it.","exKo":"교장 선생님만 오시는 게 아니라, 과 선생님들이 다 참관하세요.","note":"sit in on ~ = 수업·회의를 참관하다."},{"en":"Could you cover my last period? I'm going home sick.","ko":"마지막 교시 좀 봐주실 수 있어요? 몸이 안 좋아서 들어가려고요.","cat":"duty","exEn":"Could you cover my last period? I'm going home sick — I can't shake this headache.","exKo":"마지막 교시 좀 봐주실 수 있어요? 두통이 안 가셔서 조퇴하려고요.","note":""},{"en":"The admin office sent the form back.","ko":"행정실에서 서류를 반려했어요.","cat":"money","exEn":"I thought we were done, but the admin office sent the form back.","exKo":"끝난 줄 알았는데 행정실에서 서류를 반려했어요.","note":""},{"en":"I'm taking it in for service on Saturday.","ko":"토요일에 차 정비 맡기려고요.","cat":"commute","exEn":"There's a rattling noise, so I'm taking it in for service on Saturday.","exKo":"덜컹거리는 소리가 나서 토요일에 정비 맡기려고요.","note":"take it in = (수리를 위해) 맡기다. 목적어를 앞에 두는 어순에 주의."},{"en":"I try not to get too deep into that stuff.","ko":"그런 건 너무 깊게 안 파려고 해요.","cat":"news","exEn":"I try not to get too deep into that stuff — it just puts me in a bad mood.","exKo":"그런 건 너무 깊게 안 파려고 해요. 기분만 나빠져서요.","note":"민감한 주제에서 의견을 내지 않고 빠져나올 때 유용."},{"en":"The kids go crazy for this one.","ko":"애들이 이거 나오면 환장해요.","cat":"lunch","exEn":"Fried chicken day — the kids go crazy for this one.","exKo":"오늘 치킨 나오는 날이에요. 애들이 이거 나오면 환장해요.","note":""},{"en":"Whose turn is it to lead this week?","ko":"이번 주는 누가 리드할 차례죠?","cat":"class","exEn":"Whose turn is it to lead this week? I've lost track.","exKo":"이번 주는 누가 리드할 차례죠? 제가 헷갈렸어요.","note":""},{"en":"Everything has to be on file, just in case.","ko":"혹시 모르니 전부 서류로 남겨둬야 해요.","cat":"admin","exEn":"Even the sign-in sheets — everything has to be on file, just in case.","exKo":"출석부까지도요. 혹시 모르니 전부 서류로 남겨둬야 해요.","note":"on file = 서류로 보관되어 있는 상태."},{"en":"Could you show her the ropes?","ko":"그분한테 요령 좀 알려주실래요?","cat":"team","exEn":"She started this week — could you show her the ropes?","exKo":"이번 주에 새로 오신 분이에요. 요령 좀 알려주실래요?","note":"show the ropes = 업무 요령을 알려주다. 신규 직원에게 쓰는 정석 표현."},{"en":"It's parent counseling week.","ko":"이번 주가 학부모 상담 주간이에요.","cat":"event","exEn":"It's parent counseling week, so I'm booked solid every afternoon.","exKo":"이번 주가 학부모 상담 주간이라, 오후마다 상담이 꽉 찼어요.","note":""},{"en":"Did you clock in on the system?","ko":"근태 시스템에 출근 찍으셨어요?","cat":"duty","exEn":"Did you clock in on the system? They're checking it now.","exKo":"근태 시스템에 출근 찍으셨어요? 요즘 확인한대요.","note":"clock in / clock out = 출퇴근 기록. check in은 다른 뜻."},{"en":"They said the dates don't match the attendance sheet.","ko":"날짜가 출석부랑 안 맞는다고 하네요.","cat":"money","exEn":"It got bounced back — they said the dates don't match the attendance sheet.","exKo":"반려됐어요. 날짜가 출석부랑 안 맞는다고 하네요.","note":""},{"en":"I left before six to beat the traffic.","ko":"차 막히기 전에 나오려고 여섯 시 전에 출발했어요.","cat":"commute","exEn":"I left before six to beat the traffic, so I've been here since seven.","exKo":"차 막히기 전에 나오려고 여섯 시 전에 출발해서, 일곱 시부터 여기 있었어요.","note":"beat the traffic = 정체를 피해 먼저 움직이다."},{"en":"On a lighter note —","ko":"좀 가벼운 얘기로 넘어가자면,","cat":"news","exEn":"On a lighter note — did you decide about the trip in October?","exKo":"좀 가벼운 얘기로 넘어가자면, 10월 여행은 정했어요?","note":"무거운 화제를 끊고 넘어갈 때 쓰는 전환 표현."},{"en":"That's fish cake — it's sweeter than it looks.","ko":"그거 어묵이에요. 보기보다 달아요.","cat":"lunch","exEn":"That's fish cake — it's sweeter than it looks. Try a bite.","exKo":"그거 어묵이에요. 보기보다 달아요. 한 입 드셔 보세요.","note":"어묵의 표준 영어는 fish cake. fish bar 아님."},{"en":"Can we sit down and map out next week?","ko":"다음 주 계획 한번 같이 짜볼까요?","cat":"class","exEn":"Can we sit down and map out next week? I'd rather not wing it again.","exKo":"다음 주 계획 한번 같이 짜볼까요? 또 즉흥으로 하긴 좀 그래서요.","note":""},{"en":"I'm pulling the numbers together for the report.","ko":"실적 보고용으로 숫자 취합하고 있어요.","cat":"admin","exEn":"Give me an hour — I'm pulling the numbers together for the report.","exKo":"한 시간만요. 실적 보고용으로 숫자 취합하고 있어요.","note":""},{"en":"He's transferring out in March.","ko":"그 선생님 3월에 다른 학교로 가세요.","cat":"team","exEn":"Mr. Kim's been here five years, but he's transferring out in March.","exKo":"김 선생님 여기 5년 계셨는데, 3월에 다른 학교로 가세요.","note":"한국 공립학교 인사이동은 transfer out / transfer in 으로 설명하면 통함."},{"en":"I'm escorting them to the skills exam.","ko":"제가 기능사 실기 시험에 인솔해 가요.","cat":"event","exEn":"I'm escorting them to the skills exam on Tuesday — twelve students.","exKo":"화요일에 제가 기능사 실기 시험에 인솔해 가요. 12명이에요.","note":""},{"en":"I forgot to put it into the attendance system.","ko":"근태 시스템에 입력하는 걸 깜빡했어요.","cat":"duty","exEn":"I took the leave, but I forgot to put it into the attendance system.","exKo":"휴가는 갔는데 근태 시스템에 입력하는 걸 깜빡했어요.","note":""},{"en":"I'll walk it down to the admin office myself.","ko":"제가 직접 행정실에 갖다줄게요.","cat":"money","exEn":"It'll be faster than the system — I'll walk it down to the admin office myself.","exKo":"시스템보다 빠를 거예요. 제가 직접 행정실에 갖다줄게요.","note":""},{"en":"I get here early and just sit with a coffee for a bit.","ko":"일찍 와서 커피 한 잔 하면서 좀 앉아 있어요.","cat":"commute","exEn":"I get here early and just sit with a coffee for a bit before anyone shows up.","exKo":"일찍 와서 다들 오기 전에 커피 한 잔 하면서 좀 앉아 있어요.","note":""},{"en":"The rice is a bit dry today.","ko":"오늘 밥이 좀 되네요.","cat":"lunch","exEn":"The rice is a bit dry today. Pour some soup over it.","exKo":"오늘 밥이 좀 되네요. 국 좀 부어서 드세요.","note":""},{"en":"I'll float around and help the slower groups.","ko":"저는 돌아다니면서 느린 조 도와줄게요.","cat":"class","exEn":"You explain from the front, and I'll float around and help the slower groups.","exKo":"선생님은 앞에서 설명해 주시고, 저는 돌아다니면서 느린 조 도와줄게요.","note":"float around = 교실을 돌며 순회지도하다. 교사들이 쓰는 표현."},{"en":"Can this wait until after the audit?","ko":"이건 감사 끝나고 하면 안 될까요?","cat":"admin","exEn":"I know it's important, but can this wait until after the audit?","exKo":"중요한 건 아는데, 감사 끝나고 하면 안 될까요?","note":""},{"en":"We're getting two new teachers next semester.","ko":"다음 학기에 선생님 두 분이 새로 오세요.","cat":"team","exEn":"Two people are leaving, so we're getting two new teachers next semester.","exKo":"두 분이 나가시니까, 다음 학기에 선생님 두 분이 새로 오세요.","note":""},{"en":"There's a job fair downtown next month.","ko":"다음 달에 시내에서 취업 박람회가 있어요.","cat":"event","exEn":"There's a job fair downtown next month and our seniors are all going.","exKo":"다음 달에 시내에서 취업 박람회가 있는데, 3학년들이 다 가요.","note":""},{"en":"I'll put the request through this afternoon.","ko":"오후에 결재 올릴게요.","cat":"duty","exEn":"The form's filled out — I'll put the request through this afternoon.","exKo":"서류는 다 썼고 오후에 결재 올릴게요.","note":"put ~ through = 상신하다. 서류가 결재선을 타고 올라가는 느낌."},{"en":"Can you reimburse me for the materials?","ko":"재료비 좀 정산해 주실 수 있어요?","cat":"money","exEn":"I paid for the wire out of pocket — can you reimburse me for the materials?","exKo":"전선은 제 돈으로 샀어요. 재료비 좀 정산해 주실 수 있어요?","note":"reimburse = 먼저 쓴 돈을 돌려받다. pay back보다 공식적."},{"en":"Not my favorite, but it does the job.","ko":"제 취향은 아닌데 그럭저럭 먹을 만해요.","cat":"lunch","exEn":"Not my favorite, but it does the job. At least I won't be hungry.","exKo":"제 취향은 아닌데 그럭저럭 먹을 만해요. 배는 채우겠죠.","note":"it does the job = '제 역할은 한다'. 미지근한 칭찬."},{"en":"Half the class was nodding off.","ko":"반 애들 절반이 졸고 있었어요.","cat":"class","exEn":"Fifth period was rough — half the class was nodding off.","exKo":"5교시가 좀 힘들었어요. 반 애들 절반이 졸고 있었어요.","note":"nod off = 꾸벅꾸벅 졸다. sleep과 달리 '깜빡 조는' 느낌."},{"en":"We're running a survey to see what the kids want.","ko":"애들이 뭘 원하는지 수요조사 돌리고 있어요.","cat":"admin","exEn":"Before we open the courses, we're running a survey to see what the kids want.","exKo":"강좌 개설 전에, 애들이 뭘 원하는지 수요조사 돌리고 있어요.","note":"수요조사 = survey. demand survey는 어색함."},{"en":"Congrats on the promotion!","ko":"승진 축하드려요!","cat":"team","exEn":"I heard you made department head — congrats on the promotion!","exKo":"부장 되셨다면서요. 승진 축하드려요!","note":""},{"en":"Companies come to recruit our seniors.","ko":"기업들이 3학년 채용하러 와요.","cat":"event","exEn":"Companies come to recruit our seniors right after the practical exams.","exKo":"실기 시험 끝나자마자 기업들이 3학년 채용하러 와요.","note":""},{"en":"It's sitting with the vice principal for approval.","ko":"교감선생님 결재 대기 중이에요.","cat":"duty","exEn":"I can't confirm the dates yet — it's sitting with the vice principal for approval.","exKo":"아직 날짜 확정은 못 해요. 교감선생님 결재 대기 중이라서요.","note":""},{"en":"Just put it on the school card.","ko":"그냥 학교 법인카드로 결제하세요.","cat":"money","exEn":"Don't use your own money — just put it on the school card.","exKo":"사비 쓰지 마시고, 그냥 학교 법인카드로 결제하세요.","note":""},{"en":"I could eat this every single day.","ko":"이건 매일 먹어도 안 질릴 것 같아요.","cat":"lunch","exEn":"I could eat this every single day and never get sick of it.","exKo":"이건 매일 먹어도 절대 안 질릴 것 같아요.","note":""},{"en":"They were all over the place today.","ko":"오늘 애들이 완전히 산만했어요.","cat":"class","exEn":"They were all over the place today — I couldn't hold them for ten minutes.","exKo":"오늘 애들이 완전히 산만했어요. 10분도 집중을 못 시키겠더라고요.","note":"all over the place = 산만하다. 물건이 어질러졌다는 뜻으로도 쓰지만 여기선 집중 못 하는 상태."},{"en":"The registration window closes Friday.","ko":"수강 신청은 금요일에 마감이에요.","cat":"admin","exEn":"Tell your homeroom kids the registration window closes Friday.","exKo":"반 애들한테 수강 신청 금요일 마감이라고 전해주세요.","note":""},{"en":"I heard you're expecting — congratulations!","ko":"임신하셨다면서요, 축하드려요!","cat":"team","exEn":"I heard you're expecting — congratulations! When are you due?","exKo":"임신하셨다면서요, 축하드려요! 예정일이 언제예요?","note":"expecting 하나로 '임신 중'이 됨. pregnant보다 부드러운 표현."},{"en":"Let's divvy up the jobs.","ko":"일을 나눠서 맡죠.","cat":"event","exEn":"There's too much for one person — let's divvy up the jobs.","exKo":"혼자 하기엔 너무 많아요. 일을 나눠서 맡죠.","note":"divvy up은 divide up의 구어체. 회의 자리에서 흔히 씀."},{"en":"I'm taking comp time for working the weekend.","ko":"주말 근무한 거 대체휴무로 쓰려고요.","cat":"duty","exEn":"I'm taking comp time for working the weekend — I'll be off next Monday.","exKo":"주말 근무한 거 대체휴무로 써서 다음 주 월요일에 쉬어요.","note":"대체휴무 = comp time (compensatory time off). 줄여서 comp day도 씀."},{"en":"It works out to forty thousand won an hour.","ko":"시급으로 하면 4만 원쯤 돼요.","cat":"money","exEn":"After tax, it works out to forty thousand won an hour.","exKo":"세금 떼고 나면 시급으로 4만 원쯤 돼요.","note":"work out to = 계산하면 ~이 되다. 강사료 산정 설명에 딱 맞음."},{"en":"Save some room — there's dessert today.","ko":"배 좀 남기세요, 오늘 후식 나와요.","cat":"lunch","exEn":"Save some room — there's dessert today. Grapes, I think.","exKo":"배 좀 남기세요, 오늘 후식 나와요. 포도인 것 같던데요.","note":"save room (for) = 배를 비워 두다. 식사 자리 단골 표현."},{"en":"They really got into it.","ko":"애들이 진짜 푹 빠졌어요.","cat":"class","exEn":"I wasn't sure about the debate, but they really got into it.","exKo":"토론 수업 반신반의했는데 애들이 진짜 푹 빠졌어요.","note":""},{"en":"Only four signed up, so it's not going to run.","ko":"네 명밖에 신청을 안 해서 폐강될 것 같아요.","cat":"admin","exEn":"We needed ten for the coding class, but only four signed up, so it's not going to run.","exKo":"코딩반은 열 명이 있어야 하는데, 네 명밖에 신청을 안 해서 폐강될 것 같아요.","note":"폐강 = it's not going to run / we're cancelling it."},{"en":"When's the big day?","ko":"결혼식이 언제예요?","cat":"team","exEn":"So you finally set a date — when's the big day?","exKo":"드디어 날짜 잡으셨네요. 결혼식이 언제예요?","note":"the big day는 보통 결혼식 날을 가리킴."},{"en":"Can you run the sound?","ko":"음향 좀 맡아주실래요?","cat":"event","exEn":"I'll handle the mics if you can run the sound.","exKo":"음향을 맡아주시면 제가 마이크를 챙길게요.","note":""},{"en":"Friday's a discretionary holiday, so there's no school.","ko":"금요일은 재량휴업일이라 학교 안 해요.","cat":"duty","exEn":"Friday's a discretionary holiday, so there's no school — the staff are off too.","exKo":"금요일은 재량휴업일이라 학교 안 하고 교직원도 쉬어요.","note":"재량휴업일은 영미권에 없는 개념이라 discretionary holiday로 풀어 쓰고 설명해 주면 됨."},{"en":"I'll chase it up with the admin office.","ko":"행정실에 제가 다시 확인해 볼게요.","cat":"money","exEn":"If it's still not in by Friday, I'll chase it up with the admin office.","exKo":"금요일까지도 안 들어오면 행정실에 제가 다시 확인해 볼게요.","note":""},{"en":"What have you got this afternoon?","ko":"오후에 뭐 있으세요?","cat":"lunch","exEn":"What have you got this afternoon? I'm hoping for a quiet one.","exKo":"오후에 뭐 있으세요? 저는 좀 조용했으면 좋겠네요.","note":""},{"en":"His English has come a long way.","ko":"걔 영어 실력이 부쩍 늘었어요.","cat":"class","exEn":"His English has come a long way since March — he barely spoke back then.","exKo":"3월 이후로 걔 영어가 부쩍 늘었어요. 그땐 말도 거의 안 했거든요.","note":"come a long way = 많이 발전했다. improve a lot보다 훨씬 구어적."},{"en":"We had to pull two classes this term.","ko":"이번 학기에 두 강좌 폐강했어요.","cat":"admin","exEn":"Numbers were down across the board, so we had to pull two classes this term.","exKo":"전반적으로 인원이 줄어서 이번 학기에 두 강좌 폐강했어요.","note":""},{"en":"Thanks for stepping in yesterday.","ko":"어제 대신 들어가 주셔서 고마워요.","cat":"team","exEn":"Thanks for stepping in yesterday. The kids said you were great.","exKo":"어제 대신 들어가 주셔서 고마워요. 애들이 너무 좋았대요.","note":""},{"en":"We have to have the gym back to normal by six.","ko":"6시까지 체육관을 원상복구해야 해요.","cat":"event","exEn":"The chairs go back on the truck — we have to have the gym back to normal by six.","exKo":"의자는 트럭에 다시 실어야 하고요, 6시까지 체육관을 원상복구해야 해요.","note":""},{"en":"Let's try not to be off the same week.","ko":"우리 같은 주에 겹쳐서 쉬지는 맙시다.","cat":"duty","exEn":"You take the first week and I'll take the second — let's try not to be off the same week.","exKo":"선생님이 첫째 주 쓰시고 저는 둘째 주 쓸게요. 같은 주에 겹치지는 맙시다.","note":""},{"en":"There's a set rate table, so I can't just pick a number.","ko":"단가 기준표가 있어서 제 맘대로 정할 수가 없어요.","cat":"money","exEn":"He asked for more, but there's a set rate table, so I can't just pick a number.","exKo":"더 달라고 하시는데, 단가 기준표가 있어서 제 맘대로 정할 수가 없어요.","note":"rate table = 단가표. 강사료 협상 얘기에 그대로 씀."},{"en":"Two more classes and I'm done.","ko":"두 시간만 더 하면 끝나요.","cat":"lunch","exEn":"Two more classes and I'm done. Then I'm going straight home.","exKo":"두 시간만 더 하면 끝나요. 그러고 바로 집에 갈 거예요.","note":""},{"en":"She's finally starting to speak up.","ko":"걔가 드디어 입을 떼기 시작했어요.","cat":"class","exEn":"She's finally starting to speak up — she answered twice today.","exKo":"걔가 드디어 입을 떼기 시작했어요. 오늘 두 번이나 대답했어요.","note":"speak up은 '크게 말하다'와 '용기 내서 말하다' 둘 다. 여기선 후자."},{"en":"We ended up with a waiting list for that one.","ko":"그 강좌는 대기자까지 생겼어요.","cat":"admin","exEn":"The 3D printing class filled in a day — we ended up with a waiting list for that one.","exKo":"3D프린팅반은 하루 만에 다 찼어요. 대기자까지 생겼다니까요.","note":""},{"en":"I really appreciate you covering for me.","ko":"저 대신 맡아주셔서 정말 감사해요.","cat":"team","exEn":"I made it back in time — I really appreciate you covering for me.","exKo":"제시간에 돌아왔어요. 저 대신 맡아주셔서 정말 감사해요.","note":""},{"en":"Chuseok falls on a weekend this year.","ko":"올해는 추석이 주말이랑 겹쳐요.","cat":"event","exEn":"Chuseok falls on a weekend this year, so we barely get a break.","exKo":"올해는 추석이 주말이랑 겹쳐서, 쉬는 날이 거의 없어요.","note":""},{"en":"How many days have you got left?","ko":"연가 며칠 남았어요?","cat":"duty","exEn":"I've barely touched mine this year — how many days have you got left?","exKo":"저는 올해 거의 안 썼는데, 선생님은 연가 며칠 남았어요?","note":""},{"en":"He's on a higher rate because of his experience.","ko":"그분은 경력이 있어서 단가가 더 높아요.","cat":"money","exEn":"The two of them aren't paid the same — he's on a higher rate because of his experience.","exKo":"두 분 강사료가 달라요. 그분은 경력이 있어서 단가가 더 높거든요.","note":""},{"en":"I'm free until fifth.","ko":"저 5교시까지는 비어요.","cat":"lunch","exEn":"I'm free until fifth, so come find me if you need anything.","exKo":"저 5교시까지는 비니까 필요한 거 있으면 오세요.","note":"교시는 서수만으로 말함. fifth period를 줄여 fifth."},{"en":"They kept up with you the whole time.","ko":"애들이 처음부터 끝까지 잘 따라왔어요.","cat":"class","exEn":"You went pretty fast, but they kept up with you the whole time.","exKo":"꽤 빠르게 나가셨는데도 애들이 끝까지 잘 따라왔어요.","note":""},{"en":"I'll put out the job posting this week.","ko":"이번 주에 채용 공고 낼게요.","cat":"admin","exEn":"We still need a welding instructor, so I'll put out the job posting this week.","exKo":"용접 강사가 아직 없어서 이번 주에 채용 공고 낼게요.","note":"공고를 내다 = put out a posting. announce는 안 씀."},{"en":"Sorry, that one's on me.","ko":"죄송해요, 그건 제 잘못이에요.","cat":"team","exEn":"The room wasn't booked? Sorry, that one's on me.","exKo":"교실 예약이 안 됐다고요? 죄송해요, 그건 제 잘못이에요.","note":"that's on me는 '내 책임이다'와 '내가 낸다' 둘 다 됨. 맥락으로 구분."},{"en":"The college entrance exam is this Thursday.","ko":"수능이 이번 주 목요일이에요.","cat":"event","exEn":"The college entrance exam is this Thursday, so school opens late that day.","exKo":"수능이 이번 주 목요일이라, 그날은 등교가 늦어요.","note":"수능은 the college entrance exam 으로 풀어 설명하면 바로 통함."},{"en":"If I don't use them by February, they're gone.","ko":"2월까지 안 쓰면 그냥 날아가요.","cat":"duty","exEn":"I'm taking three days next month — if I don't use them by February, they're gone.","exKo":"다음 달에 사흘 쓰려고요. 2월까지 안 쓰면 그냥 날아가거든요.","note":""},{"en":"I'm adding up his hours for the month.","ko":"이번 달 시수 계산하고 있어요.","cat":"money","exEn":"Give me ten minutes — I'm adding up his hours for the month.","exKo":"10분만요. 이번 달 시수 계산하고 있어요.","note":""},{"en":"The afternoon ones are always tougher.","ko":"오후 수업이 항상 더 힘들어요.","cat":"lunch","exEn":"They're half asleep after lunch — the afternoon ones are always tougher.","exKo":"점심 먹고 나면 애들이 반쯤 졸아요. 오후 수업이 항상 더 힘들죠.","note":""},{"en":"The back row wouldn't stop chatting.","ko":"뒷줄 애들이 계속 떠들었어요.","cat":"class","exEn":"The back row wouldn't stop chatting, so I moved two of them up front.","exKo":"뒷줄 애들이 계속 떠들어서 둘은 앞자리로 옮겼어요.","note":""},{"en":"We're short on applicants this round.","ko":"이번엔 지원자가 부족해요.","cat":"admin","exEn":"I may have to post it again — we're short on applicants this round.","exKo":"재공고 내야 할 수도 있어요. 이번엔 지원자가 부족해서요.","note":""},{"en":"I dropped the ball on that.","ko":"그건 제가 놓쳤네요.","cat":"team","exEn":"Nobody sent the form to the office. I dropped the ball on that.","exKo":"아무도 행정실에 서류를 안 보냈네요. 그건 제가 놓쳤어요.","note":"drop the ball = 챙겨야 할 걸 깜빡하다. 자기 실수를 인정할 때."},{"en":"We're doing a Secret Santa this year.","ko":"올해는 마니또 선물 교환을 해요.","cat":"event","exEn":"We're doing a Secret Santa this year — twenty thousand won limit.","exKo":"올해는 마니또 선물 교환을 해요. 2만 원 한도로요.","note":"Secret Santa = 제비뽑아 한 명에게 선물하는 서양식 마니또."},{"en":"During the break we take turns coming in.","ko":"방학 중엔 돌아가면서 나와요.","cat":"duty","exEn":"The school isn't empty — during the break we take turns coming in.","exKo":"학교가 비는 건 아니에요. 방학 중엔 돌아가면서 나오거든요.","note":""},{"en":"Two classes got canceled, so they don't count toward his hours.","ko":"두 차시는 휴강이라 시수에서 빠져요.","cat":"money","exEn":"He's claiming for sixteen, but two classes got canceled, so they don't count toward his hours.","exKo":"16시간으로 청구하셨는데, 두 차시는 휴강이라 시수에서 빠져요.","note":"count toward ~ = ~에 산입되다. 시수·연수시간 얘기에 두루 씀."},{"en":"I'm just trying to get through today.","ko":"오늘 하루만 버티자는 심정이에요.","cat":"lunch","exEn":"Don't ask me about next week. I'm just trying to get through today.","exKo":"다음 주 얘기는 하지 마세요. 오늘 하루만 버티자는 심정이에요.","note":"get through = 견뎌 내다. 물리적 통과 아님."},{"en":"They perked up once the game started.","ko":"게임 시작하니까 애들이 확 살아나더라고요.","cat":"class","exEn":"They looked half asleep, but they perked up once the game started.","exKo":"반쯤 자는 것 같더니 게임 시작하니까 확 살아나더라고요.","note":"perk up = 갑자기 생기가 돌다. 사람·분위기 둘 다에 씀."},{"en":"Could you sit in on the interview?","ko":"면접에 같이 들어와 주실 수 있어요?","cat":"admin","exEn":"It's the conversation class instructor — could you sit in on the interview?","exKo":"회화반 강사 면접인데, 같이 들어와 주실 수 있어요?","note":"sit in on = 정식 위원은 아니어도 배석하다. attend보다 부담 없는 느낌."},{"en":"That's rough — hang in there.","ko":"힘드시겠네요. 조금만 버텨요.","cat":"team","exEn":"Three classes back to back? That's rough — hang in there.","exKo":"연달아 세 시간이요? 힘드시겠네요. 조금만 버텨요.","note":""},{"en":"Let's tie up loose ends before the break.","ko":"방학 전에 남은 일들 마무리하죠.","cat":"event","exEn":"Grades, records, everything — let's tie up loose ends before the break.","exKo":"성적, 생기부, 다요. 방학 전에 남은 일들 마무리하죠.","note":"tie up loose ends = 자잘하게 남은 일을 정리하다."},{"en":"I'm on duty the first week of the break.","ko":"저는 방학 첫 주에 근무예요.","cat":"duty","exEn":"I'll be around if you need anything — I'm on duty the first week of the break.","exKo":"필요한 거 있으면 말씀하세요. 저 방학 첫 주에 근무거든요.","note":""},{"en":"Tax comes out before he sees the money.","ko":"세금 떼고 나서 입금돼요.","cat":"money","exEn":"He was surprised by the amount, but tax comes out before he sees the money.","exKo":"금액 보고 놀라시던데, 원천징수하고 나서 입금되는 거예요.","note":"원천징수는 tax is withheld 보다 comes out (of the pay) 가 구어적."},{"en":"It finally feels like fall.","ko":"이제야 가을 같네요.","cat":"lunch","exEn":"I walked here without sweating — it finally feels like fall.","exKo":"땀 안 흘리고 걸어왔어요. 이제야 가을 같네요.","note":""},{"en":"Nobody would volunteer today.","ko":"오늘은 아무도 손을 안 들더라고요.","cat":"class","exEn":"Nobody would volunteer today, so I ended up calling on people.","exKo":"오늘은 아무도 손을 안 들어서 결국 제가 지목했어요.","note":""},{"en":"Two candidates dropped out before the interview.","ko":"면접 전에 두 명이 지원을 취소했어요.","cat":"admin","exEn":"We had five on paper, but two candidates dropped out before the interview.","exKo":"서류상으론 다섯이었는데, 면접 전에 두 명이 취소했어요.","note":""},{"en":"I know exactly what you mean.","ko":"무슨 말씀인지 완전 알죠.","cat":"team","exEn":"The paperwork never ends — I know exactly what you mean.","exKo":"서류 일은 끝이 없죠. 무슨 말씀인지 완전 알아요.","note":""},{"en":"I'm getting quotes from three vendors.","ko":"업체 세 군데에 견적 넣어 놨어요.","cat":"event","exEn":"For the stage rental I'm getting quotes from three vendors before we decide.","exKo":"무대 대여는 결정하기 전에 업체 세 군데에 견적 넣어 놨어요.","note":""},{"en":"After that I'm on self-directed training.","ko":"그다음은 자율연수(41조 연수)예요.","cat":"duty","exEn":"I'm in school until the tenth, and after that I'm on self-directed training.","exKo":"10일까지는 출근하고, 그다음은 자율연수예요.","note":"41조 연수 = self-directed training. '휴가'가 아니라 '연수'라는 점이 핵심."},{"en":"Our budget got cut this year.","ko":"올해 예산이 깎였어요.","cat":"money","exEn":"We're running one less class because our budget got cut this year.","exKo":"올해 예산이 깎여서 강좌를 하나 줄였어요.","note":""},{"en":"The mornings are getting chilly.","ko":"아침에 쌀쌀해졌어요.","cat":"lunch","exEn":"The mornings are getting chilly. I nearly wore a jacket today.","exKo":"아침에 쌀쌀해졌어요. 오늘 하마터면 자켓 입을 뻔했어요.","note":""},{"en":"They're always dead right after lunch.","ko":"점심 직후엔 애들이 항상 축 처져 있어요.","cat":"class","exEn":"They're always dead right after lunch, so I save the quiet work for then.","exKo":"점심 직후엔 애들이 항상 축 처져서, 그 시간엔 조용한 활동을 넣어요.","note":"dead = (구어) 기운이 하나도 없다. 학생 얘기에 흔히 씀."},{"en":"His paperwork hasn't come in yet.","ko":"그분 서류가 아직 안 들어왔어요.","cat":"admin","exEn":"I can't write up the contract — his paperwork hasn't come in yet.","exKo":"계약서를 못 쓰고 있어요. 그분 서류가 아직 안 들어와서요.","note":""},{"en":"Do you want to vent about it?","ko":"좀 털어놓고 싶으세요?","cat":"team","exEn":"You look done in. Do you want to vent about it over lunch?","exKo":"많이 지쳐 보이세요. 점심 먹으면서 좀 털어놓으실래요?","note":"vent = 쌓인 걸 말로 풀다. complain보다 훨씬 따뜻한 뉘앙스."},{"en":"Is there enough in the budget for a stage?","ko":"무대 세울 예산은 남아 있나요?","cat":"event","exEn":"We talked about lights and sound, but is there enough in the budget for a stage?","exKo":"조명이랑 음향은 얘기했는데, 무대 세울 예산은 남아 있나요?","note":""},{"en":"Technically I'm still on the clock, just not at school.","ko":"엄밀히 말하면 근무 중인 거예요, 학교에 없을 뿐이지.","cat":"duty","exEn":"It's not vacation — technically I'm still on the clock, just not at school.","exKo":"휴가가 아니에요. 엄밀히 말하면 근무 중인 거죠, 학교에 없을 뿐이고.","note":"on the clock = 근무 시간 중. 41조 연수 설명할 때 딱 맞음."},{"en":"I'm asking for more money for the second half of the year.","ko":"하반기 예산 증액 요청하려고요.","cat":"money","exEn":"Demand went up, so I'm asking for more money for the second half of the year.","exKo":"수요가 늘어서 하반기 예산 증액 요청하려고요.","note":""},{"en":"I had to dig out my coat this morning.","ko":"오늘 아침에 코트 꺼내 입었어요.","cat":"lunch","exEn":"I had to dig out my coat this morning. It came out of nowhere.","exKo":"오늘 아침에 코트 꺼내 입었어요. 갑자기 추워졌네요.","note":""},{"en":"A couple of them have completely checked out.","ko":"몇 명은 아예 마음을 놨어요.","cat":"class","exEn":"A couple of them have completely checked out since they got their job offers.","exKo":"몇 명은 취업 확정되고 나서 아예 마음을 놨어요.","note":"check out = 관심을 끄고 손을 놓다. '체크아웃'과 헷갈리기 쉬움."},{"en":"I still need a copy of his certificate.","ko":"자격증 사본을 아직 못 받았어요.","cat":"admin","exEn":"Everything else is in, but I still need a copy of his certificate.","exKo":"나머지는 다 왔는데, 자격증 사본을 아직 못 받았어요.","note":""},{"en":"I've been there.","ko":"저도 그런 적 있어요.","cat":"team","exEn":"A parent called you at nine at night? I've been there.","exKo":"학부모가 밤 9시에 전화했다고요? 저도 그런 적 있어요.","note":""},{"en":"I'll draw up a supply list before Thursday's meeting.","ko":"목요일 회의 전에 물품 목록 뽑아 놓을게요.","cat":"event","exEn":"I'll draw up a supply list before Thursday's meeting so we can order in one go.","exKo":"목요일 회의 전에 물품 목록 뽑아 놓을게요. 한 번에 주문하게요.","note":""},{"en":"I got in late, so I have to file for it after the fact.","ko":"지각해서 사후에 처리해야 해요.","cat":"duty","exEn":"The train was stopped — I got in late, so I have to file for it after the fact.","exKo":"전철이 멈춰서 지각했어요. 사후에 처리해야 해요.","note":"after the fact = 사후에. 사후 결재·사후 신청에 그대로 씀."},{"en":"There's a supplementary budget round coming up.","ko":"곧 추경이 있어요.","cat":"money","exEn":"If we miss this one, there's a supplementary budget round coming up in June.","exKo":"이번에 못 받아도 6월에 추경이 있어요.","note":"추경 = supplementary budget. 원어민에게도 통하는 정식 표현."},{"en":"The leaves are starting to turn.","ko":"단풍이 들기 시작했어요.","cat":"lunch","exEn":"The leaves are starting to turn behind the workshop building.","exKo":"실습동 뒤쪽에 단풍이 들기 시작했어요.","note":"단풍 들다 = leaves turn. change color라고 안 해도 됨."},{"en":"The performance assessment is worth thirty percent.","ko":"수행평가가 30퍼센트 반영이에요.","cat":"class","exEn":"The performance assessment is worth thirty percent, so it's not a throwaway.","exKo":"수행평가가 30퍼센트 반영이라 대충 할 게 아니에요.","note":""},{"en":"His contract starts the first week of term.","ko":"계약은 개학 첫 주부터예요.","cat":"admin","exEn":"He's signed and cleared, and his contract starts the first week of term.","exKo":"서명도 끝나고 검증도 됐고, 계약은 개학 첫 주부터예요.","note":""},{"en":"I see where you're coming from, but...","ko":"무슨 뜻인지는 알겠어요, 그런데요...","cat":"team","exEn":"I see where you're coming from, but the kids need more speaking time.","exKo":"무슨 뜻인지는 알겠어요, 그런데 애들한테 말하기 시간이 더 필요해요.","note":"반대할 때 상대 입장을 먼저 인정하는 완충 표현. 매우 자주 씀."},{"en":"The banner won't be ready until Wednesday.","ko":"현수막이 수요일에나 나온대요.","cat":"event","exEn":"I chased the print shop — the banner won't be ready until Wednesday.","exKo":"인쇄소에 재촉했는데 현수막이 수요일에나 나온대요.","note":""},{"en":"I forgot to sign out yesterday, so I'm fixing it now.","ko":"어제 퇴근 처리를 안 해서 지금 수정하고 있어요.","cat":"duty","exEn":"The system has me here all night — I forgot to sign out yesterday, so I'm fixing it now.","exKo":"시스템상 제가 밤새 학교에 있는 걸로 돼 있어요. 어제 퇴근 처리를 안 해서 지금 수정 중이에요.","note":""},{"en":"He's asking when he'll actually get paid.","ko":"언제 실제로 입금되냐고 물어보시네요.","cat":"money","exEn":"It's been three weeks, and he's asking when he'll actually get paid.","exKo":"3주 됐는데, 언제 실제로 입금되냐고 물어보시네요.","note":""},{"en":"It's supposed to drop below zero tonight.","ko":"오늘 밤에 영하로 떨어진대요.","cat":"lunch","exEn":"It's supposed to drop below zero tonight, so bundle up tomorrow.","exKo":"오늘 밤에 영하로 떨어진대요. 내일 따뜻하게 입고 오세요.","note":""},{"en":"I'm grading their speaking clips tonight.","ko":"오늘 밤에 애들 말하기 영상 채점하려고요.","cat":"class","exEn":"I'm grading their speaking clips tonight — thirty of them, thirty seconds each.","exKo":"오늘 밤에 말하기 영상 채점해요. 30명, 각각 30초짜리요.","note":""},{"en":"Can we get everyone in a room on Thursday?","ko":"목요일에 다 같이 한번 모일까요?","cat":"admin","exEn":"There's too much to settle over messages — can we get everyone in a room on Thursday?","exKo":"메신저로는 정리가 안 되겠어요. 목요일에 다 같이 한번 모일까요?","note":""},{"en":"Can we meet halfway on this?","ko":"이건 서로 조금씩 양보할까요?","cat":"team","exEn":"You want a test, I want a project — can we meet halfway on this?","exKo":"선생님은 시험, 저는 수행평가를 원하니까, 서로 조금씩 양보할까요?","note":""},{"en":"Don't post any faces without permission.","ko":"초상권 동의 없이 얼굴 올리면 안 돼요.","cat":"event","exEn":"Take all the photos you want, but don't post any faces without permission.","exKo":"사진은 얼마든지 찍으셔도 되는데, 초상권 동의 없이 얼굴 올리면 안 돼요.","note":"초상권을 영어로 옮길 땐 photo consent / permission으로 푸는 게 자연스러움."},{"en":"I've got a meeting at the district office Tuesday.","ko":"화요일에 교육청에서 회의가 있어요.","cat":"duty","exEn":"I won't be in for second period — I've got a meeting at the district office Tuesday.","exKo":"2교시에 자리 비워요. 화요일에 교육청 회의가 있거든요.","note":"교육청 = the district office. education office는 잘 안 씀."},{"en":"The transfer bounced back — the account number was off by one digit.","ko":"계좌번호가 한 자리 틀려서 이체가 반송됐어요.","cat":"money","exEn":"His pay didn't go through — the transfer bounced back, the account number was off by one digit.","exKo":"강사료가 안 들어갔어요. 계좌번호가 한 자리 틀려서 이체가 반송됐거든요.","note":""},{"en":"We might get our first snow this week.","ko":"이번 주에 첫눈 올 수도 있대요.","cat":"lunch","exEn":"We might get our first snow this week. The kids will be impossible.","exKo":"이번 주에 첫눈 올 수도 있대요. 애들 감당 안 되겠네요.","note":""},{"en":"A few of them need a retake.","ko":"몇 명은 재시험 봐야 해요.","cat":"class","exEn":"A few of them need a retake — they were out for the certification exam.","exKo":"몇 명은 재시험 봐야 해요. 자격증 시험 때문에 빠졌거든요.","note":""},{"en":"Does Wednesday afternoon work for you?","ko":"수요일 오후 괜찮으세요?","cat":"admin","exEn":"I'd like to go over the schedule — does Wednesday afternoon work for you?","exKo":"일정 좀 같이 보고 싶은데, 수요일 오후 괜찮으세요?","note":""},{"en":"Sorry if that came across wrong.","ko":"제 말이 좀 이상하게 들렸다면 미안해요.","cat":"team","exEn":"Sorry if that came across wrong — I just meant the deadline's tight.","exKo":"제 말이 좀 이상하게 들렸다면 미안해요. 마감이 촉박하다는 뜻이었어요.","note":"come across = (의도와 다르게) ~하게 들리다/보이다. 오해 풀 때 1순위 표현."},{"en":"I'll film the opening so we've got it on record.","ko":"기록용으로 개회식은 제가 찍어 놓을게요.","cat":"event","exEn":"The office wants proof we ran it — I'll film the opening so we've got it on record.","exKo":"행정실에서 진행했다는 증빙을 원해서요. 기록용으로 개회식은 제가 찍어 놓을게요.","note":""},{"en":"I'm doing an online course in the evenings.","ko":"저녁에 원격연수 듣고 있어요.","cat":"duty","exEn":"That's why I look half asleep — I'm doing an online course in the evenings.","exKo":"그래서 제가 반쯤 졸아 보이는 거예요. 저녁에 원격연수 듣거든요.","note":""},{"en":"Everything has to be settled up by the twentieth.","ko":"정산은 20일까지 마감이에요.","cat":"money","exEn":"Send me your receipts today — everything has to be settled up by the twentieth.","exKo":"영수증 오늘 주세요. 정산은 20일까지 마감이에요.","note":""},{"en":"It's still muggy for September.","ko":"9월인데 아직 후덥지근하네요.","cat":"lunch","exEn":"It's still muggy for September. My classroom was unbearable third period.","exKo":"9월인데 아직 후덥지근하네요. 3교시에 교실이 못 견딜 정도였어요.","note":"muggy = 습하고 더운. humid보다 불평조."},{"en":"Grades have to be in the system by Friday.","ko":"성적은 금요일까지 시스템에 입력해야 해요.","cat":"class","exEn":"Grades have to be in the system by Friday, and I haven't started.","exKo":"성적을 금요일까지 시스템에 입력해야 하는데 아직 시작도 못 했어요.","note":""},{"en":"Could you give me a hand with this one?","ko":"이건 좀 도와주실 수 있어요?","cat":"admin","exEn":"You know the system better than I do — could you give me a hand with this one?","exKo":"저보다 시스템을 잘 아시잖아요. 이건 좀 도와주실 수 있어요?","note":""},{"en":"I don't think he meant it that way.","ko":"그분이 그런 뜻으로 한 건 아닐 거예요.","cat":"team","exEn":"I don't think he meant it that way — he's just blunt with everyone.","exKo":"그분이 그런 뜻으로 한 건 아닐 거예요. 원래 누구한테나 무뚝뚝하세요.","note":""},{"en":"I'll bring up the rear so nobody gets left behind.","ko":"뒤처지는 애 없게 제가 맨 뒤에서 따라갈게요.","cat":"event","exEn":"You lead them to the museum and I'll bring up the rear so nobody gets left behind.","exKo":"박물관까지 앞에서 인솔해 주시면, 뒤처지는 애 없게 제가 맨 뒤에서 따라갈게요.","note":"bring up the rear = 대열 맨 뒤에서 따라가다. 인솔할 때 쓰는 정형 표현."},{"en":"I need fifteen more hours to hit my training quota.","ko":"연수 이수 시간 15시간 더 채워야 해요.","cat":"duty","exEn":"I've done most of it, but I need fifteen more hours to hit my training quota.","exKo":"거의 다 했는데, 연수 이수 시간 15시간 더 채워야 해요.","note":""},{"en":"The books close in December, so nothing goes through after that.","ko":"12월에 회계 마감이라 그 뒤로는 아무것도 못 써요.","cat":"money","exEn":"Buy it now if you need it — the books close in December, so nothing goes through after that.","exKo":"필요하면 지금 사세요. 12월에 회계 마감이라 그 뒤로는 아무것도 처리가 안 돼요.","note":"the books close = 회계 장부 마감. 회계연도 마감의 표준 표현."},{"en":"The days are getting shorter.","ko":"해가 많이 짧아졌어요.","cat":"lunch","exEn":"The days are getting shorter. It's already dark when I leave.","exKo":"해가 많이 짧아졌어요. 퇴근할 때 벌써 깜깜해요.","note":""},{"en":"We have to post the rubric ahead of time.","ko":"채점 기준표를 미리 공지해야 해요.","cat":"class","exEn":"We have to post the rubric ahead of time — it's a rule here, not a suggestion.","exKo":"채점 기준표를 미리 공지해야 해요. 여기선 권고가 아니라 규정이에요.","note":"rubric = 채점 기준표. 수행평가 얘기할 때 반드시 나오는 단어."},{"en":"That one's on your plate, I think.","ko":"그건 선생님 담당인 것 같은데요.","cat":"admin","exEn":"I'm handling the instructors, but that one's on your plate, I think.","exKo":"강사 쪽은 제가 맡고 있고, 그건 선생님 담당인 것 같은데요.","note":"on your plate = 맡은 업무. 업무 분장 말할 때 딱 맞음."},{"en":"That's just how it's done here — nothing personal.","ko":"여기선 원래 그렇게 해요. 선생님 때문이 아니에요.","cat":"team","exEn":"Everyone signs in on paper too. That's just how it's done here — nothing personal.","exKo":"다들 종이로도 서명해요. 여기선 원래 그렇게 해요, 선생님 때문이 아니에요.","note":""},{"en":"Two teachers per group, no exceptions.","ko":"조당 교사 두 명씩이에요, 예외 없어요.","cat":"event","exEn":"Safety rule from the office: two teachers per group, no exceptions.","exKo":"행정실에서 내려온 안전 지침이에요. 조당 교사 두 명씩, 예외 없어요.","note":""},{"en":"I've got my health check-up first thing tomorrow.","ko":"내일 아침 일찍 건강검진 있어요.","cat":"duty","exEn":"I'll be in around eleven — I've got my health check-up first thing tomorrow.","exKo":"11시쯤 들어올게요. 내일 아침 일찍 건강검진이 있어서요.","note":""},{"en":"I'm heading up to Seoul this weekend.","ko":"이번 주말에 서울 올라가요.","cat":"lunch","exEn":"I'm heading up to Seoul this weekend to see an old friend.","exKo":"이번 주말에 옛 친구 보러 서울 올라가요.","note":"head up to = 북쪽으로 가다. 지방에서 서울 갈 때 딱 맞음."},{"en":"One of them is contesting his score.","ko":"한 명이 점수에 이의를 제기했어요.","cat":"class","exEn":"One of them is contesting his score, so I have to pull up the recording.","exKo":"한 명이 점수에 이의를 제기해서 녹음 파일을 다시 꺼내봐야 해요.","note":""},{"en":"We split the paperwork between the two of us.","ko":"서류는 저희 둘이 나눠서 해요.","cat":"admin","exEn":"It's too much for one person, so we split the paperwork between the two of us.","exKo":"혼자 하기엔 너무 많아서 서류는 저희 둘이 나눠서 해요.","note":""},{"en":"Do you want me to translate that for you?","ko":"그거 통역해 드릴까요?","cat":"team","exEn":"The vice principal's explaining the schedule change — do you want me to translate that for you?","exKo":"교감선생님이 일정 변경 설명하시는데, 통역해 드릴까요?","note":""},{"en":"There's a first-aid kit at the info desk.","ko":"구급함은 안내 데스크에 있어요.","cat":"event","exEn":"If anyone scrapes a knee, there's a first-aid kit at the info desk.","exKo":"누가 무릎 까지거나 하면, 구급함은 안내 데스크에 있어요.","note":""},{"en":"I'm getting my flu shot after lunch.","ko":"점심 먹고 독감 주사 맞으러 가요.","cat":"duty","exEn":"I'll be out for about an hour — I'm getting my flu shot after lunch.","exKo":"한 시간 정도 자리 비워요. 점심 먹고 독감 주사 맞으러 가거든요.","note":"예방접종은 vaccination보다 shot이 훨씬 일상적."},{"en":"I've been getting into hiking lately.","ko":"요즘 등산에 빠졌어요.","cat":"lunch","exEn":"I've been getting into hiking lately. There's a nice trail near my place.","exKo":"요즘 등산에 빠졌어요. 집 근처에 괜찮은 코스가 있거든요.","note":""},{"en":"I'm writing the midterm items this weekend.","ko":"주말에 중간고사 문항 출제하려고요.","cat":"class","exEn":"I'm writing the midterm items this weekend — twenty multiple choice, five short answer.","exKo":"주말에 중간고사 문항 낼 거예요. 객관식 20개, 서답형 5개요.","note":""},{"en":"Just cc me on it.","ko":"저도 참조로 넣어주세요.","cat":"admin","exEn":"You don't have to forward everything — just cc me on it.","exKo":"매번 전달 안 하셔도 돼요. 그냥 저도 참조로 넣어주세요.","note":"cc는 동사로도 씀: cc me, cc'd me."},{"en":"It's all in Korean — I'll walk you through it.","ko":"다 한국어로 돼 있어요. 제가 하나하나 알려드릴게요.","cat":"team","exEn":"The form's all in Korean — I'll walk you through it after lunch.","exKo":"서류가 다 한국어예요. 점심 먹고 제가 하나하나 알려드릴게요.","note":"walk someone through = 처음부터 끝까지 차근차근 설명해 주다."},{"en":"If it rains, we move the whole thing into the gym.","ko":"비 오면 전부 체육관으로 옮겨요.","cat":"event","exEn":"The forecast looks iffy — if it rains, we move the whole thing into the gym.","exKo":"일기예보가 애매해요. 비 오면 전부 체육관으로 옮겨요.","note":""},{"en":"That doesn't come out of your leave.","ko":"그건 연가에서 안 까요.","cat":"duty","exEn":"Go ahead and book it — that doesn't come out of your leave.","exKo":"그냥 예약하세요. 그건 연가에서 안 까요.","note":"come out of ~ = ~에서 차감되다. 공가·특별휴가 설명할 때 유용."},{"en":"I didn't do much, honestly.","ko":"솔직히 별거 안 했어요.","cat":"lunch","exEn":"I didn't do much, honestly. Laundry and a nap, that's about it.","exKo":"솔직히 별거 안 했어요. 빨래하고 낮잠 잔 게 다예요.","note":""},{"en":"He missed the test, so he'll sit a make-up.","ko":"걔는 시험을 못 봐서 추가시험 봐야 해요.","cat":"class","exEn":"He missed the test for a hospital visit, so he'll sit a make-up on Monday.","exKo":"걔는 병원 때문에 시험을 못 봐서 월요일에 추가시험 봐요.","note":"make-up (test) = 추가·보충 시험. retake(재시험)와 뉘앙스가 다름."},{"en":"I'm working off an old version of this.","ko":"저 지금 옛날 버전으로 작업하고 있었네요.","cat":"admin","exEn":"Wait, is there a newer file? I think I'm working off an old version of this.","exKo":"잠깐, 더 최신 파일 있어요? 저 옛날 버전으로 작업하고 있었나 봐요.","note":"work off ~ = ~를 기준으로 작업하다. use 보다 훨씬 자연스러움."},{"en":"The gist of it is, you have to submit it twice.","ko":"요점은 두 번 내야 한다는 거예요.","cat":"team","exEn":"I'll spare you the details — the gist of it is, you have to submit it twice.","exKo":"자세한 건 넘어갈게요. 요점은 두 번 내야 한다는 거예요.","note":"the gist = 요지. 긴 한국어 공문을 짧게 요약해 줄 때 딱 맞는 말."},{"en":"We'll make the call by seven that morning.","ko":"당일 아침 7시까지는 결정할 거예요.","cat":"event","exEn":"Nobody wants to decide now, so we'll make the call by seven that morning.","exKo":"지금 정하기는 다들 부담스러우니까, 당일 아침 7시까지는 결정할 거예요.","note":"make the call = (최종) 결정을 내리다. 전화한다는 뜻이 아님."},{"en":"I binge-watched a whole series.","ko":"드라마 한 편을 정주행했어요.","cat":"lunch","exEn":"I binge-watched a whole series on Saturday and regretted it Sunday.","exKo":"토요일에 드라마 한 편을 정주행하고 일요일에 후회했어요.","note":"binge-watch = 몰아 보기. 요즘 원어민이 제일 많이 쓰는 표현."},{"en":"Their shop class runs over, so they trickle in late.","ko":"실습 수업이 늘어져서 애들이 늦게 하나둘 들어와요.","cat":"class","exEn":"Their shop class runs over, so they trickle in late — don't take it personally.","exKo":"실습 수업이 늘어져서 애들이 하나둘 늦게 들어와요. 기분 나빠하지 마세요.","note":"shop class = 실습 수업. trickle in = 한꺼번에가 아니라 띄엄띄엄 들어오다."},{"en":"I used last year's form by mistake.","ko":"작년 양식을 잘못 썼어요.","cat":"admin","exEn":"They sent it straight back — I used last year's form by mistake.","exKo":"바로 반려됐어요. 작년 양식을 잘못 썼거든요.","note":""},{"en":"Just sign where I've marked it.","ko":"제가 표시해 둔 데만 서명하시면 돼요.","cat":"team","exEn":"Don't worry about the rest — just sign where I've marked it.","exKo":"나머지는 신경 안 쓰셔도 돼요. 제가 표시해 둔 데만 서명하시면 돼요.","note":""},{"en":"I'll push a notice out to the homerooms.","ko":"각 반에 공지 돌릴게요.","cat":"event","exEn":"The time changed, so I'll push a notice out to the homerooms this afternoon.","exKo":"시간이 바뀌어서 오늘 오후에 각 반에 공지 돌릴게요.","note":""},{"en":"My daughter's got exams coming up.","ko":"딸이 곧 시험이에요.","cat":"lunch","exEn":"My daughter's got exams coming up, so the house is very quiet.","exKo":"딸이 곧 시험이라 집이 아주 조용해요.","note":""},{"en":"Half my third-years are out on job placements.","ko":"3학년 절반은 현장실습 나가 있어요.","cat":"class","exEn":"Half my third-years are out on job placements, so I've got twelve kids in class.","exKo":"3학년 절반이 현장실습 나가서 수업엔 열두 명 있어요.","note":"현장실습·취업 나감 = out on job placements. internship과는 좀 다른 개념."},{"en":"I forgot to attach the file.","ko":"파일 첨부하는 걸 깜빡했어요.","cat":"admin","exEn":"Ignore that last email — I forgot to attach the file.","exKo":"방금 그 메일은 무시하세요. 파일 첨부를 깜빡했어요.","note":""},{"en":"I'll put it into Korean before it goes up.","ko":"올리기 전에 제가 한국어로 옮겨 놓을게요.","cat":"team","exEn":"Just write it in English — I'll put it into Korean before it goes up.","exKo":"영어로만 써 주세요. 올리기 전에 제가 한국어로 옮겨 놓을게요.","note":""},{"en":"The start time's been bumped back an hour.","ko":"시작 시간이 한 시간 뒤로 밀렸어요.","cat":"event","exEn":"Heads up — the start time's been bumped back an hour, so we begin at ten.","exKo":"알려드려요. 시작 시간이 한 시간 뒤로 밀려서 10시에 시작해요.","note":"bump back = 뒤로 미루다 / bump up = 앞당기다. 방향이 헷갈리기 쉬움."},{"en":"We're taking the kids somewhere Saturday.","ko":"토요일에 애들 데리고 어디 좀 가려고요.","cat":"lunch","exEn":"We're taking the kids somewhere Saturday — probably the aquarium.","exKo":"토요일에 애들 데리고 어디 좀 가려고요. 아마 아쿠아리움요.","note":""},{"en":"They're all cramming for the certification test.","ko":"다들 자격증 시험 벼락치기 중이에요.","cat":"class","exEn":"Don't expect much this week — they're all cramming for the certification test.","exKo":"이번 주는 기대하지 마세요. 다들 자격증 시험 벼락치기 중이에요.","note":""},{"en":"The whole thing has to go up for approval again.","ko":"처음부터 다시 상신해야 해요.","cat":"admin","exEn":"One number changed, and now the whole thing has to go up for approval again.","exKo":"숫자 하나 바뀌었다고 처음부터 다시 상신해야 해요.","note":""},{"en":"Can I add something to the agenda?","ko":"안건 하나 추가해도 될까요?","cat":"team","exEn":"Before we start — can I add something to the agenda?","exKo":"시작하기 전에, 안건 하나 추가해도 될까요?","note":""},{"en":"It went off without a hitch.","ko":"별 탈 없이 잘 끝났어요.","cat":"event","exEn":"Honestly, I was worried all week, but it went off without a hitch.","exKo":"솔직히 일주일 내내 걱정했는데, 별 탈 없이 잘 끝났어요.","note":"go off = (행사가) 진행되다. without a hitch = 아무 문제 없이."},{"en":"What do you do to unwind?","ko":"평소에 뭐 하면서 푸세요?","cat":"lunch","exEn":"After a week like this, what do you do to unwind?","exKo":"이런 한 주 보내고 나면 평소에 뭐 하면서 푸세요?","note":"unwind = 긴장을 풀다. relax보다 세련된 구어."},{"en":"My classes empty out during practical exam week.","ko":"실기시험 주간엔 우리 반이 텅텅 비어요.","cat":"class","exEn":"My classes empty out during practical exam week — sometimes it's five kids.","exKo":"실기시험 주간엔 반이 텅텅 비어요. 어떨 땐 다섯 명이에요.","note":""},{"en":"I pulled it back before it got to the principal.","ko":"교장선생님한테 가기 전에 회수했어요.","cat":"admin","exEn":"I spotted the typo in time and pulled it back before it got to the principal.","exKo":"오타를 제때 발견해서 교장선생님한테 가기 전에 회수했어요.","note":"결재 회수 = pull it back. withdraw는 딱딱함."},{"en":"Let's park that for now.","ko":"그건 일단 넘어가죠.","cat":"team","exEn":"That's a whole separate issue — let's park that for now and come back to it.","exKo":"그건 완전히 다른 문제니까, 일단 넘어갔다가 나중에 다시 얘기하죠.","note":"park = 보류하다. 회의에서 주제가 새면 쓰는 말. skip과 달리 '나중에 다룬다'는 뉘앙스."},{"en":"We're doing a debrief Monday — anything you'd change?","ko":"월요일에 평가회 해요. 바꿨으면 하는 거 있으세요?","cat":"event","exEn":"We're doing a debrief Monday — anything you'd change about the speech contest?","exKo":"월요일에 평가회 해요. 영어 말하기 대회에서 바꿨으면 하는 거 있으세요?","note":"debrief = 행사 후 평가회. evaluation meeting은 딱딱하고 어색함."},{"en":"How's your Korean coming along?","ko":"한국어는 좀 늘고 있어요?","cat":"lunch","exEn":"How's your Korean coming along? You ordered lunch by yourself today.","exKo":"한국어는 좀 늘고 있어요? 오늘 혼자 주문하시던데요.","note":""},{"en":"They'd rather be in the workshop than in here.","ko":"애들은 여기보다 실습장에 있고 싶어 해요.","cat":"class","exEn":"They'd rather be in the workshop than in here, and honestly I get it.","exKo":"애들은 여기보다 실습장에 있고 싶어 해요. 솔직히 이해는 가요.","note":""},{"en":"The guidelines changed halfway through.","ko":"하다 말고 지침이 바뀌었어요.","cat":"admin","exEn":"I'd already finished the budget part, and then the guidelines changed halfway through.","exKo":"예산 부분 다 끝냈는데 하다 말고 지침이 바뀌었어요.","note":""},{"en":"Just so we're all on the same page —","ko":"다들 같은 얘기 하는 건지 확인차 말씀드리면요,","cat":"team","exEn":"Just so we're all on the same page — the deadline is Friday, not Monday.","exKo":"다들 같은 얘기 하는 건지 확인차 말씀드리면, 마감은 월요일이 아니라 금요일이에요.","note":""},{"en":"Report cards go out on the last day of term.","ko":"성적표는 종업식 날 나가요.","cat":"event","exEn":"Grades close Friday and report cards go out on the last day of term.","exKo":"성적은 금요일에 마감이고, 성적표는 종업식 날 나가요.","note":"종업식·방학식은 the last day of term으로 풀어 쓰는 게 가장 통함."},{"en":"Do you miss home much?","ko":"고향 많이 그리우세요?","cat":"lunch","exEn":"Do you miss home much, or are you pretty settled now?","exKo":"고향 많이 그리우세요? 아니면 이제 좀 적응되셨어요?","note":""},{"en":"Eyes up here for a second.","ko":"잠깐 여기 보세요.","cat":"class","exEn":"Eyes up here for a second — I'll only say this once.","exKo":"잠깐 여기 보세요. 이건 한 번만 말할 거예요.","note":""},{"en":"They keep moving the goalposts.","ko":"자꾸 말이 바뀌어요.","cat":"admin","exEn":"That's the third format they've asked for — they keep moving the goalposts.","exKo":"벌써 세 번째 양식이에요. 자꾸 말이 바뀐다니까요.","note":"상급기관이 요구를 계속 바꿀 때 원어민이 딱 쓰는 관용구."},{"en":"I'll take the minutes.","ko":"제가 회의록 쓸게요.","cat":"team","exEn":"You lead the discussion and I'll take the minutes.","exKo":"선생님이 진행하시면 제가 회의록 쓸게요.","note":"minutes(복수형)가 '회의록'. meeting record라고 하면 어색함."},{"en":"The year-end dinner is on the eighteenth — are you in?","ko":"송년회가 18일인데, 오실 거죠?","cat":"event","exEn":"The year-end dinner is on the eighteenth — are you in? It's early this year.","exKo":"송년회가 18일인데, 오실 거죠? 올해는 좀 이르네요.","note":""},{"en":"Is there anything you can't find here?","ko":"여기서 구하기 힘든 거 있어요?","cat":"lunch","exEn":"Is there anything you can't find here? I might know a shop.","exKo":"여기서 구하기 힘든 거 있어요? 제가 아는 가게가 있을지도 몰라요.","note":""},{"en":"Pair up with the person next to you.","ko":"옆 사람이랑 짝 지으세요.","cat":"class","exEn":"Pair up with the person next to you and take turns reading.","exKo":"옆 사람이랑 짝 지어서 번갈아 읽으세요.","note":""},{"en":"Now they want it broken down by grade.","ko":"이번엔 학년별로 쪼개서 내래요.","cat":"admin","exEn":"I submitted one total, but now they want it broken down by grade.","exKo":"총계로 냈는데 이번엔 학년별로 쪼개서 내래요.","note":"broken down by ~ = ~별로 세분해서. 통계·보고 서류의 필수 표현."},{"en":"Go on ahead, I'll get the rest of this.","ko":"먼저 가세요, 나머지는 제가 치울게요.","cat":"team","exEn":"You've got class in five minutes — go on ahead, I'll get the rest of this.","exKo":"5분 뒤에 수업이시잖아요. 먼저 가세요, 나머지는 제가 치울게요.","note":""},{"en":"Would you judge the English speech contest?","ko":"영어 말하기 대회 심사 좀 맡아 주실래요?","cat":"event","exEn":"Would you judge the English speech contest? It's two hours, and we'll cover your afternoon classes.","exKo":"영어 말하기 대회 심사 좀 맡아 주실래요? 두 시간이고 오후 수업은 저희가 대신 들어갈게요.","note":""},{"en":"You've picked that up fast.","ko":"그거 되게 빨리 배우셨네요.","cat":"lunch","exEn":"You said it perfectly — you've picked that up fast.","exKo":"발음 완벽했어요. 그거 되게 빨리 배우셨네요.","note":"pick up = 자연스럽게 습득하다. 언어·습관 모두에 씀."},{"en":"You've got three minutes, starting now.","ko":"지금부터 3분 줄게요.","cat":"class","exEn":"You've got three minutes, starting now — I want at least four sentences.","exKo":"지금부터 3분 줄게요. 최소 네 문장은 쓰세요.","note":""},{"en":"We got a parent call about it this morning.","ko":"오늘 아침에 학부모 전화가 왔어요.","cat":"admin","exEn":"The class time changed, so we got a parent call about it this morning.","exKo":"수업 시간이 바뀌어서 오늘 아침에 학부모 전화가 왔어요.","note":"민원 전화는 complaint 대신 그냥 a parent call 이라고 하면 자연스러움."},{"en":"Sorry to leave you with the mess.","ko":"뒷정리 떠넘겨서 미안해요.","cat":"team","exEn":"I had to run to a meeting — sorry to leave you with the mess.","exKo":"회의 때문에 급히 가느라고요. 뒷정리 떠넘겨서 미안해요.","note":""},{"en":"Do you want to MC the opening in English?","ko":"개회식 영어 진행 한번 맡아 보실래요?","cat":"event","exEn":"Do you want to MC the opening in English? The kids would get a kick out of it.","exKo":"개회식 영어 진행 한번 맡아 보실래요? 애들이 엄청 좋아할 거예요.","note":"MC는 동사로도 씀 (MC an event = 사회를 보다)."},{"en":"Has it started to feel like home yet?","ko":"이제 여기가 좀 집처럼 느껴지세요?","cat":"lunch","exEn":"You've been here almost a year. Has it started to feel like home yet?","exKo":"오신 지 거의 1년 됐잖아요. 이제 여기가 좀 집처럼 느껴지세요?","note":""},{"en":"Nice, that's exactly it.","ko":"좋아요, 바로 그거예요.","cat":"class","exEn":"Nice, that's exactly it — say it once more for everyone.","exKo":"좋아요, 바로 그거예요. 다 같이 듣게 한 번만 더 말해볼래요?","note":""},{"en":"One parent wasn't happy about the fee.","ko":"수강료 때문에 학부모 한 분이 언짢아하셨어요.","cat":"admin","exEn":"Most of them were fine with it, but one parent wasn't happy about the fee.","exKo":"대부분 괜찮다고 하셨는데, 수강료 때문에 한 분이 언짢아하셨어요.","note":""},{"en":"Let's split the cleanup.","ko":"뒷정리 나눠서 하죠.","cat":"team","exEn":"Let's split the cleanup — you do the chairs, I'll take the tables.","exKo":"뒷정리 나눠서 하죠. 의자는 선생님이, 책상은 제가 할게요.","note":""},{"en":"Enjoy the break — happy new year.","ko":"방학 잘 보내시고, 새해 복 많이 받으세요.","cat":"event","exEn":"That's us done for the year. Enjoy the break — happy new year.","exKo":"올해는 이걸로 끝이네요. 방학 잘 보내시고, 새해 복 많이 받으세요.","note":""},{"en":"Tell me about it.","ko":"그러니까 말이에요.","cat":"lunch","exEn":"\"The printer's broken again.\" \"Tell me about it. I gave up this morning.\"","exKo":"\"프린터 또 고장 났어요.\" \"그러니까 말이에요. 저는 아침에 포기했어요.\"","note":"'자세히 말해 봐'가 아니라 '내 말이!'라는 강한 공감. 한국인이 가장 많이 오해하는 표현."},{"en":"Phones away, please.","ko":"휴대폰 집어넣으세요.","cat":"class","exEn":"Phones away, please — you'll get them back at the end of the period.","exKo":"휴대폰 집어넣으세요. 수업 끝나면 돌려줄게요.","note":""},{"en":"I'll write up a notice and send it home with the kids.","ko":"안내장 만들어서 애들 편에 보낼게요.","cat":"admin","exEn":"Rather than call everyone, I'll write up a notice and send it home with the kids.","exKo":"일일이 전화하느니 안내장 만들어서 애들 편에 보낼게요.","note":"가정통신문 = a notice sent home. '가정통신문' 직역 필요 없음."},{"en":"Are you renewing for another year?","ko":"1년 더 연장하실 거예요?","cat":"team","exEn":"They'll ask you soon — are you renewing for another year?","exKo":"곧 물어보실 텐데, 1년 더 연장하실 거예요?","note":"renew a contract = 재계약하다. extend는 기간만 늘리는 느낌이라 계약엔 renew가 자연스러움."},{"en":"No way, really?","ko":"에이 설마, 진짜요?","cat":"lunch","exEn":"No way, really? They changed the schedule again?","exKo":"에이 설마, 진짜요? 시간표를 또 바꿨다고요?","note":""},{"en":"Hand those in on your way out.","ko":"나가면서 제출하세요.","cat":"class","exEn":"Hand those in on your way out — name at the top, please.","exKo":"나가면서 제출하세요. 위에 이름 쓰고요.","note":"hand in = 제출하다. submit은 문서·서류 느낌이라 교실에선 hand in."},{"en":"I have to word this carefully.","ko":"이건 문구를 신중하게 써야 해요.","cat":"admin","exEn":"Parents are going to read every line, so I have to word this carefully.","exKo":"학부모들이 한 줄 한 줄 다 읽으실 테니 문구를 신중하게 써야 해요.","note":"word가 동사로 '표현하다'. 민원 답변·안내장에 딱 맞는 말."},{"en":"My contract's up in February.","ko":"제 계약이 2월에 끝나요.","cat":"team","exEn":"My contract's up in February, so I have to decide by December.","exKo":"제 계약이 2월에 끝나서 12월까지는 결정해야 해요.","note":"be up = (기간이) 만료되다. finish나 end보다 구어적."},{"en":"That reminds me —","ko":"아 그러고 보니까 —","cat":"lunch","exEn":"That reminds me — are you free for the department dinner Thursday?","exKo":"아 그러고 보니까, 목요일 부서 회식 시간 되세요?","note":"화제 전환의 가장 부드러운 신호. 뒤 문장을 바로 이어 붙임."},{"en":"That lesson just fell flat.","ko":"그 수업 완전 망했어요.","cat":"class","exEn":"That lesson just fell flat — I don't know what I'd change, honestly.","exKo":"그 수업 완전 망했어요. 솔직히 뭘 바꿔야 할지도 모르겠어요.","note":"fall flat = 반응 없이 시들해지다. 농담·수업·발표 모두에 씀."},{"en":"One of our instructors canceled on me this morning.","ko":"강사 한 분이 오늘 아침에 갑자기 못 온다고 했어요.","cat":"admin","exEn":"One of our instructors canceled on me this morning, so I'm scrambling to find someone.","exKo":"강사 한 분이 오늘 아침에 갑자기 못 온다고 해서 사람 구하느라 정신없어요.","note":"cancel on me = 나한테 갑자기 취소 통보하다. 결강 통보에 딱."},{"en":"He's retiring at the end of the year.","ko":"그 선생님 연말에 정년퇴직하세요.","cat":"team","exEn":"He's retiring at the end of the year — forty years in the same district.","exKo":"그 선생님 연말에 정년퇴직하세요. 같은 지역에서 40년 계셨어요.","note":""},{"en":"Anyway, enough about me.","ko":"아무튼, 제 얘기는 그만하고요.","cat":"lunch","exEn":"Anyway, enough about me. How did your class go this morning?","exKo":"아무튼, 제 얘기는 그만하고요. 오전 수업은 어떠셨어요?","note":""},{"en":"I lost them about ten minutes in.","ko":"10분쯤 지나서 애들을 놓쳤어요.","cat":"class","exEn":"It started fine, but I lost them about ten minutes in.","exKo":"시작은 괜찮았는데 10분쯤 지나서 애들을 놓쳤어요.","note":"lose them = 학생들의 집중을 놓치다. 교사들이 자주 쓰는 표현."},{"en":"He's dropping out halfway through the term.","ko":"그 강사분 학기 중간에 그만두신대요.","cat":"admin","exEn":"He took another job, so he's dropping out halfway through the term.","exKo":"다른 데 취직하셔서 학기 중간에 그만두신대요.","note":""},{"en":"Let's grab dinner sometime — my treat.","ko":"언제 저녁 한번 먹어요, 제가 살게요.","cat":"team","exEn":"You've helped me out a lot this term. Let's grab dinner sometime — my treat.","exKo":"이번 학기에 도움 많이 받았어요. 언제 저녁 한번 먹어요, 제가 살게요.","note":"my treat = 내가 낼게. I will pay보다 훨씬 자연스럽고 부담 없음."},{"en":"I should get going — I've got a class.","ko":"저 이만 가 볼게요, 수업이 있어서요.","cat":"lunch","exEn":"I should get going — I've got a class. Enjoy the rest of your lunch.","exKo":"저 이만 가 볼게요, 수업이 있어서요. 식사 마저 맛있게 하세요.","note":"자리 뜰 때는 I go 말고 I should get going."},{"en":"That one actually went really well.","ko":"그 수업은 진짜 잘 됐어요.","cat":"class","exEn":"That one actually went really well — let's use the same format next time.","exKo":"그 수업은 진짜 잘 됐어요. 다음에도 같은 형식으로 가죠.","note":""},{"en":"We need someone to fill in for Tuesday's class.","ko":"화요일 수업 대신 들어갈 사람이 필요해요.","cat":"admin","exEn":"Until we find a replacement, we need someone to fill in for Tuesday's class.","exKo":"후임 구할 때까지 화요일 수업 대신 들어갈 사람이 필요해요.","note":"fill in for ~ 는 일시적 대타, replace는 완전 교체. 구분해서 쓸 것."},{"en":"You should come over once we're settled in.","ko":"저희 좀 정리되면 집에 한번 놀러 오세요.","cat":"team","exEn":"We just moved into a new place — you should come over once we're settled in.","exKo":"저희 새로 이사했어요. 좀 정리되면 집에 한번 놀러 오세요.","note":"집들이 초대는 come over가 기본. visit my house는 딱딱하게 들림."},{"en":"I'll let you finish your lunch.","ko":"식사 마저 하시게 저는 일어날게요.","cat":"lunch","exEn":"I've talked your ear off. I'll let you finish your lunch.","exKo":"제가 말이 너무 많았네요. 식사 마저 하시게 저는 일어날게요.","note":""},{"en":"The copier jammed on me again.","ko":"복사기가 또 걸렸어요.","cat":"class","exEn":"Sorry I'm late — the copier jammed on me again and I had to redo the whole set.","exKo":"늦어서 미안해요. 복사기가 또 걸려서 전부 다시 뽑았어요.","note":"jam이 종이 걸림. 'jammed on me'는 나한테 하필 그랬다는 뉘앙스."},{"en":"He'll make that class up next week.","ko":"그 수업은 다음 주에 보강하신대요.","cat":"admin","exEn":"He missed Thursday, but he'll make that class up next week.","exKo":"목요일에 빠지셨는데 다음 주에 보강하신대요.","note":"보강 = make up a class. make-up class(명사)로도 씀."},{"en":"I'll have a quiet word with him.","ko":"제가 조용히 한번 얘기해 볼게요.","cat":"team","exEn":"Don't bring it up in the meeting — I'll have a quiet word with him.","exKo":"회의에서는 꺼내지 마세요. 제가 조용히 한번 얘기해 볼게요.","note":"a quiet word = 따로 조용히 하는 말. 중재할 때 쓰는 전형적 표현."},{"en":"Are you going anywhere for Christmas?","ko":"크리스마스에 어디 가세요?","cat":"lunch","exEn":"Are you going anywhere for Christmas, or staying put?","exKo":"크리스마스에 어디 가세요, 아니면 그냥 계세요?","note":""},{"en":"I'm two handouts short for fourth period.","ko":"4교시 프린트가 두 장 모자라요.","cat":"class","exEn":"I'm two handouts short for fourth period — can I grab a couple from your pile?","exKo":"4교시 프린트가 두 장 모자라는데, 그쪽 거 두 장만 가져가도 될까요?","note":""},{"en":"I'm already thinking ahead to March.","ko":"벌써 3월 생각하고 있어요.","cat":"admin","exEn":"This term isn't even over and I'm already thinking ahead to March.","exKo":"이번 학기 끝나지도 않았는데 벌써 3월 생각하고 있어요.","note":""},{"en":"Let's not blow this out of proportion.","ko":"이걸 너무 크게 만들지는 말죠.","cat":"team","exEn":"It was one mix-up. Let's not blow this out of proportion.","exKo":"한 번 착오가 있었던 거잖아요. 너무 크게 만들지는 말죠.","note":""},{"en":"What are you doing over winter break?","ko":"겨울방학 때 뭐 하실 거예요?","cat":"lunch","exEn":"What are you doing over winter break? Ours runs almost six weeks.","exKo":"겨울방학 때 뭐 하실 거예요? 저희는 거의 6주예요.","note":"방학은 vacation보다 break가 학교 현장 표현."},{"en":"Can you run these off double-sided?","ko":"이거 양면으로 좀 뽑아 주실래요?","cat":"class","exEn":"Can you run these off double-sided? It's forty copies and we're low on paper.","exKo":"이거 양면으로 좀 뽑아 주실래요? 40부인데 종이가 얼마 없어서요.","note":"run off = 복사하다. copy보다 자연스러운 교무실 표현."},{"en":"I want the lineup locked in before the term ends.","ko":"학기 끝나기 전에 개설 과목을 확정해두고 싶어요.","cat":"admin","exEn":"If I wait until January it'll be chaos, so I want the lineup locked in before the term ends.","exKo":"1월까지 미루면 난리 나니까, 학기 끝나기 전에 개설 과목을 확정해두고 싶어요.","note":""},{"en":"The end of the year always sneaks up on me.","ko":"연말은 늘 순식간에 다가오는 것 같아요.","cat":"lunch","exEn":"It's December already? The end of the year always sneaks up on me.","exKo":"벌써 12월이에요? 연말은 늘 순식간에 다가오는 것 같아요.","note":""},{"en":"Their textbooks still haven't come in.","ko":"애들 교과서가 아직 안 들어왔어요.","cat":"class","exEn":"Their textbooks still haven't come in, so we'll have to share for another week.","exKo":"애들 교과서가 아직 안 들어와서 한 주 더 같이 봐야 할 것 같아요.","note":""},{"en":"Going by last year's numbers, we'll need two sections.","ko":"작년 인원 보면 두 반은 열어야 할 것 같아요.","cat":"admin","exEn":"Going by last year's numbers, we'll need two sections of the coding class.","exKo":"작년 인원 보면 코딩 수업은 두 반은 열어야 할 것 같아요.","note":"section = 같은 과목의 분반. class 대신 쓰면 훨씬 정확함."},{"en":"Let's do this again tomorrow.","ko":"내일도 같이 먹어요.","cat":"lunch","exEn":"That was a good chat. Let's do this again tomorrow.","exKo":"얘기 즐거웠어요. 내일도 같이 먹어요.","note":""},{"en":"I just tweaked last year's worksheet.","ko":"작년 학습지 조금만 손봤어요.","cat":"class","exEn":"I didn't make it from scratch — I just tweaked last year's worksheet.","exKo":"새로 만든 건 아니고 작년 학습지 조금만 손봤어요.","note":""},{"en":"I'm handing this job over in March.","ko":"이 업무 3월에 인계해요.","cat":"admin","exEn":"I've done it for three years, so I'm handing this job over in March.","exKo":"3년 했으니까 이 업무 3월에 인계해요.","note":""},{"en":"My mouth is on fire.","ko":"입에 불난 것 같아요.","cat":"lunch","exEn":"Water, please — my mouth is on fire.","exKo":"물 좀 주세요. 입에 불난 것 같아요.","note":""},{"en":"The projector's washed out — you can't read a thing.","ko":"프로젝터가 뿌예서 글자가 안 보여요.","cat":"class","exEn":"The projector's washed out — you can't read a thing from the back row.","exKo":"프로젝터가 뿌예서 뒷자리에선 글자가 하나도 안 보여요.","note":"washed out = 빛이 바래 흐릿한 상태. 램프 수명이 다 됐을 때 쓰는 말."},{"en":"There's a new person in that seat now.","ko":"그 자리 담당자가 바뀌었어요.","cat":"admin","exEn":"Don't email the old address — there's a new person in that seat now.","exKo":"예전 주소로 메일 보내지 마세요. 그 자리 담당자가 바뀌었어요.","note":"in that seat = 그 자리(보직)에. 사람 이름 몰라도 쓸 수 있음."},{"en":"This one's got a nice crunch to it.","ko":"이건 씹는 맛이 좋네요.","cat":"lunch","exEn":"Try the radish salad — this one's got a nice crunch to it.","exKo":"무생채 드셔보세요. 씹는 맛이 좋아요.","note":""},{"en":"The speakers cut out halfway through the listening.","ko":"듣기 하다가 스피커가 중간에 끊겼어요.","cat":"class","exEn":"The speakers cut out halfway through the listening, so I just read the script myself.","exKo":"듣기 하다가 스피커가 중간에 끊겨서 그냥 제가 대본을 읽었어요.","note":""},{"en":"I'll leave a handover file for whoever takes over.","ko":"후임자를 위해 인수인계 자료 남겨둘게요.","cat":"admin","exEn":"Half of this is in my head, so I'll leave a handover file for whoever takes over.","exKo":"이 일 절반은 제 머릿속에만 있어서, 후임자를 위해 인수인계 자료 남겨둘게요.","note":""},{"en":"It's chewier than I expected.","ko":"생각보다 질기네요.","cat":"lunch","exEn":"The squid's not bad, but it's chewier than I expected.","exKo":"오징어 나쁘진 않은데 생각보다 질기네요.","note":""},{"en":"Half the tablets were dead.","ko":"태블릿 절반이 방전돼 있었어요.","cat":"class","exEn":"Half the tablets were dead, so we ended up doing it on paper.","exKo":"태블릿 절반이 방전돼 있어서 결국 종이로 했어요.","note":""},{"en":"The system's been down all morning.","ko":"시스템이 아침 내내 먹통이에요.","cat":"admin","exEn":"I can't submit anything — the system's been down all morning.","exKo":"아무것도 상신을 못 하고 있어요. 시스템이 아침 내내 먹통이에요.","note":""},{"en":"They went heavy on the salt today.","ko":"오늘 간이 좀 세네요.","cat":"lunch","exEn":"Is it just me, or did they go heavy on the salt today?","exKo":"저만 그런가요, 오늘 간이 좀 센 것 같은데.","note":"go heavy on ~ = ~을 많이 넣다. 반대는 go easy on."},{"en":"The wifi keeps dropping in that room.","ko":"그 교실은 와이파이가 자꾸 끊겨요.","cat":"class","exEn":"The wifi keeps dropping in that room, so don't plan anything online there.","exKo":"그 교실은 와이파이가 자꾸 끊기니까 온라인으로 하는 건 넣지 마세요.","note":""},{"en":"It logged me out before I could save anything.","ko":"저장도 못 했는데 로그아웃돼 버렸어요.","cat":"admin","exEn":"I typed the whole report in and it logged me out before I could save anything.","exKo":"보고서 다 입력했는데 저장도 못 하고 로그아웃돼 버렸어요.","note":""},{"en":"This is pretty bland, honestly.","ko":"이거 좀 심심하네요.","cat":"lunch","exEn":"This is pretty bland, honestly. Pass me the chili paste.","exKo":"이거 솔직히 좀 심심해요. 고추장 좀 주세요.","note":"bland는 '맛없다'가 아니라 '간이 약하다, 밍밍하다'."},{"en":"I pulled him aside after class.","ko":"수업 끝나고 걔만 따로 불렀어요.","cat":"class","exEn":"I pulled him aside after class and asked what was going on.","exKo":"수업 끝나고 걔만 따로 불러서 무슨 일 있냐고 물어봤어요.","note":""},{"en":"It won't let me upload the file.","ko":"파일 업로드가 안 돼요.","cat":"admin","exEn":"I've tried three times and it won't let me upload the file.","exKo":"세 번이나 해봤는데 파일 업로드가 안 돼요.","note":"'won't let me + 동사' 가 '~가 안 된다'의 가장 구어적인 표현."},{"en":"I need something to wash this down.","ko":"뭐 마실 거 있어야겠어요.","cat":"lunch","exEn":"That was way too dry — I need something to wash this down.","exKo":"너무 퍽퍽했어요. 뭐 마실 거 있어야겠네요.","note":"wash down = 음식을 음료로 넘기다. 씻는다는 뜻이 아님."},{"en":"He's not slow, he just tunes out.","ko":"머리가 나쁜 게 아니라 그냥 딴생각을 해요.","cat":"class","exEn":"He's not slow, he just tunes out the second it gets hard.","exKo":"머리가 나쁜 게 아니라 조금만 어려워지면 바로 딴생각을 해요.","note":"tune out = 귀를 닫다, 집중을 놓다."},{"en":"I'm absolutely stuffed.","ko":"배 터질 것 같아요.","cat":"lunch","exEn":"No dessert for me, thanks — I'm absolutely stuffed.","exKo":"디저트는 됐어요. 배 터질 것 같아요.","note":"full보다 강한 표현. I'm so full 대신 자주 씀."},{"en":"She's miles ahead of the rest.","ko":"걔는 다른 애들보다 한참 앞서 있어요.","cat":"class","exEn":"She's miles ahead of the rest — I give her something extra to chew on.","exKo":"걔는 다른 애들보다 한참 앞서 있어서 따로 할 걸 더 줘요.","note":""},{"en":"I always overdo it at lunch.","ko":"점심은 늘 과식하게 되네요.","cat":"lunch","exEn":"I always overdo it at lunch and then I'm useless all afternoon.","exKo":"점심을 늘 과식해서 오후 내내 정신을 못 차려요.","note":""},{"en":"I'm doing one-on-ones with the bottom few.","ko":"하위권 몇 명은 따로 개별 지도하고 있어요.","cat":"class","exEn":"I'm doing one-on-ones with the bottom few during lunch twice a week.","exKo":"하위권 몇 명은 일주일에 두 번 점심시간에 따로 개별 지도하고 있어요.","note":"one-on-one이 개별 상담·지도의 표준 표현."},{"en":"I'm going to regret this at three o'clock.","ko":"세 시쯤 후회할 것 같아요.","cat":"lunch","exEn":"Second helping of rice — I'm going to regret this at three o'clock.","exKo":"밥 한 그릇 더 먹었네요. 세 시쯤 후회할 것 같아요.","note":""},{"en":"He still mixes up the alphabet, honestly.","ko":"솔직히 걔는 아직 알파벳도 헷갈려 해요.","cat":"class","exEn":"He still mixes up the alphabet, honestly, so the textbook is way over his head.","exKo":"솔직히 걔는 아직 알파벳도 헷갈려 해서 교과서는 수준이 한참 위예요.","note":""},{"en":"I'm trying to cut back on carbs.","ko":"탄수화물 좀 줄여보려고요.","cat":"lunch","exEn":"Just half a bowl for me — I'm trying to cut back on carbs.","exKo":"저는 밥 반 공기만요. 탄수화물 좀 줄여보려고요.","note":"cut back on ~ = ~을 줄이다. 다이어트 얘기의 기본 표현."},{"en":"Don't call on him cold — he freezes up.","ko":"걔는 갑자기 시키지 마세요, 얼어붙어요.","cat":"class","exEn":"Don't call on him cold — he freezes up. Give him a heads-up first.","exKo":"걔는 갑자기 시키지 마세요, 얼어붙어요. 미리 귀띔해 주세요.","note":"call on = 지목해서 시키다. cold = 예고 없이."},{"en":"I'm trying to cut down to one coffee a day.","ko":"커피를 하루 한 잔으로 줄여보는 중이에요.","cat":"lunch","exEn":"I'd love one, but I'm trying to cut down to one coffee a day.","exKo":"마시고 싶은데, 커피를 하루 한 잔으로 줄이는 중이라서요.","note":""},{"en":"Let's put them in threes this time.","ko":"이번엔 3명씩 묶읍시다.","cat":"class","exEn":"Let's put them in threes this time — fours are too easy to hide in.","exKo":"이번엔 3명씩 묶읍시다. 4명이면 숨어 있기 너무 쉬워요.","note":""},{"en":"There's a snack stash in our office if you need it.","ko":"우리 교무실에 간식 쟁여둔 거 있어요, 필요하면 말해요.","cat":"lunch","exEn":"Hungry around fourth period? There's a snack stash in our office if you need it.","exKo":"4교시쯤 배고프면, 우리 교무실에 간식 쟁여둔 거 있어요.","note":"stash = 몰래 쟁여둔 것. 교무실 간식 서랍에 딱 맞는 단어."},{"en":"One kid ends up doing all the work.","ko":"결국 한 명이 다 하게 돼요.","cat":"class","exEn":"In that group one kid ends up doing all the work and the rest just watch.","exKo":"그 모둠은 결국 한 명이 다 하고 나머지는 구경만 해요.","note":""},{"en":"Want to split this with me?","ko":"이거 저랑 나눠 드실래요?","cat":"lunch","exEn":"It's way too much for one person — want to split this with me?","exKo":"혼자 먹기엔 너무 많아요. 저랑 나눠 드실래요?","note":""},{"en":"Their skit went completely off the rails.","ko":"역할극이 완전히 산으로 갔어요.","cat":"class","exEn":"Their skit went completely off the rails — it turned into a comedy show.","exKo":"역할극이 완전히 산으로 갔어요. 개그로 끝났어요.","note":"go off the rails = 산으로 가다, 통제를 벗어나다."},{"en":"How's the apartment hunt going?","ko":"집 구하는 건 잘 되고 있어요?","cat":"lunch","exEn":"How's the apartment hunt going? Did you see anything near the school?","exKo":"집 구하는 건 잘 되고 있어요? 학교 근처에 괜찮은 데 봤어요?","note":""},{"en":"Give each of them a job or they'll just sit there.","ko":"한 명씩 역할을 줘야지 안 그러면 가만히 앉아만 있어요.","cat":"class","exEn":"Give each of them a job or they'll just sit there — timer, writer, speaker.","exKo":"타이머, 기록, 발표 이렇게 한 명씩 역할을 줘야지 안 그러면 가만히 앉아만 있어요.","note":""},{"en":"They want the whole deposit up front.","ko":"보증금을 한 번에 다 달라고 하더라고요.","cat":"lunch","exEn":"I found a nice place, but they want the whole deposit up front.","exKo":"괜찮은 집을 찾았는데, 보증금을 한 번에 다 달라고 하네요.","note":""},{"en":"It got loud, but it was the good kind of loud.","ko":"시끄럽긴 했는데 좋은 의미로 시끄러웠어요.","cat":"class","exEn":"It got loud, but it was the good kind of loud — they were actually using English.","exKo":"시끄럽긴 했는데 좋은 의미로 시끄러웠어요. 실제로 영어를 쓰고 있었거든요.","note":""},{"en":"Have you got the delivery apps sorted out?","ko":"배달앱은 좀 익히셨어요?","cat":"lunch","exEn":"Have you got the delivery apps sorted out, or are you still ordering by phone?","exKo":"배달앱은 좀 익히셨어요, 아니면 아직 전화로 시키세요?","note":""},{"en":"I'm about halfway through the marking.","ko":"채점은 절반쯤 했어요.","cat":"class","exEn":"I'm about halfway through the marking — I should finish tonight.","exKo":"채점은 절반쯤 했어요. 오늘 밤엔 끝날 것 같아요.","note":""},{"en":"You can walk into any clinic without an appointment.","ko":"동네 병원은 예약 없이 그냥 가도 돼요.","cat":"lunch","exEn":"Don't wait for a referral — you can walk into any clinic without an appointment.","exKo":"소견서 기다릴 필요 없어요. 동네 병원은 예약 없이 그냥 가도 돼요.","note":"미국·영국은 예약이 기본이라 이 점을 꼭 설명해 줘야 한다."},{"en":"A parent called about his son's score.","ko":"학부모가 아들 점수 때문에 전화했어요.","cat":"class","exEn":"A parent called about his son's score, so I had to pull the answer sheet back out.","exKo":"학부모가 아들 점수 때문에 전화해서 답안지를 다시 꺼내 봐야 했어요.","note":""},{"en":"Are you still taking Korean lessons?","ko":"한국어 수업 아직 다니세요?","cat":"lunch","exEn":"Are you still taking Korean lessons, or are you just picking it up as you go?","exKo":"한국어 수업 아직 다니세요, 아니면 그냥 부딪히면서 배우세요?","note":""},{"en":"I went back through the answer key — the question was fine.","ko":"답안지 다시 확인했는데 문제는 이상 없었어요.","cat":"class","exEn":"He filed a complaint, but I went back through the answer key — the question was fine.","exKo":"이의 신청이 들어왔는데, 답안지 다시 확인해 보니 문제는 이상 없었어요.","note":"answer key = 정답표. 이의 신청은 file a complaint / contest."},{"en":"What's tripping you up the most?","ko":"뭐가 제일 헷갈리세요?","cat":"lunch","exEn":"With Korean, what's tripping you up the most — the verbs?","exKo":"한국어 배울 때 뭐가 제일 헷갈리세요? 동사요?","note":""},{"en":"I'm writing their record comments this week.","ko":"이번 주에 생기부 문구 쓰고 있어요.","cat":"class","exEn":"I'm writing their record comments this week — thirty kids, three lines each.","exKo":"이번 주에 생기부 문구 쓰고 있어요. 30명, 한 명당 세 줄씩요.","note":""},{"en":"How's everyone doing back home?","ko":"고향 가족분들은 다들 잘 지내세요?","cat":"lunch","exEn":"How's everyone doing back home? Did your sister have the baby yet?","exKo":"고향 가족분들 다들 잘 지내세요? 여동생분 출산했어요?","note":"back home = 본국·고향. 원어민 교사에게 쓰기 딱 좋은 표현."},{"en":"I need something specific to write, not just \"hardworking\".","ko":"'성실함' 말고 구체적으로 쓸 게 필요해요.","cat":"class","exEn":"Did he stand out in your class? I need something specific to write, not just \"hardworking\".","exKo":"그 학생 선생님 수업에서 눈에 띄었나요? '성실함' 말고 구체적으로 쓸 게 필요해서요.","note":"코티칭 교사에게 생기부 소재 물을 때 딱 쓰기 좋음."},{"en":"It hits you around the holidays, doesn't it?","ko":"명절 때쯤 되면 확 오죠, 그렇죠?","cat":"lunch","exEn":"Missing home is fine most of the year, but it hits you around the holidays, doesn't it?","exKo":"평소엔 괜찮다가도 명절 때쯤 되면 확 오죠?","note":""},{"en":"I see it differently, but let's try it your way.","ko":"제 생각은 좀 다르지만 그쪽 방식대로 해보죠.","cat":"class","exEn":"I see it differently, but let's try it your way and see how they take it.","exKo":"제 생각은 좀 다르지만 그쪽 방식대로 해보고 애들 반응을 보죠.","note":"의견이 갈릴 때 부드럽게 물러서는 표현. I don't agree보다 훨씬 안전함."},{"en":"My son finally moved out last month.","ko":"아들이 지난달에 드디어 독립했어요.","cat":"lunch","exEn":"The house is so quiet now — my son finally moved out last month.","exKo":"집이 너무 조용해요. 아들이 지난달에 드디어 독립했거든요.","note":""},{"en":"Can I give you some honest feedback?","ko":"솔직한 피드백 하나 드려도 될까요?","cat":"class","exEn":"Can I give you some honest feedback? The instructions ran a bit long today.","exKo":"솔직한 피드백 하나 드려도 될까요? 오늘 설명이 좀 길었어요.","note":"먼저 허락을 구하고 말하는 게 예의. 바로 지적하면 무례하게 들림."},{"en":"How's the puppy settling in?","ko":"강아지는 좀 적응했어요?","cat":"lunch","exEn":"How's the puppy settling in? Is he sleeping through the night yet?","exKo":"강아지는 좀 적응했어요? 밤에 안 깨고 자요?","note":""},{"en":"Tell me if I'm talking too much up there.","ko":"제가 앞에서 말이 너무 많으면 얘기해 주세요.","cat":"class","exEn":"Tell me if I'm talking too much up there — I can't tell from where I stand.","exKo":"제가 앞에서 말이 너무 많으면 얘기해 주세요. 제 자리에선 잘 모르겠어서요.","note":""},{"en":"My dog had me up at five this morning.","ko":"강아지 때문에 새벽 다섯 시에 깼어요.","cat":"lunch","exEn":"Sorry if I'm slow today — my dog had me up at five this morning.","exKo":"오늘 좀 느려도 이해해 주세요. 강아지 때문에 다섯 시에 깼어요.","note":""},{"en":"We were talking over each other a bit today.","ko":"오늘 우리 둘이 말이 좀 겹쳤어요.","cat":"class","exEn":"We were talking over each other a bit today — let's decide who leads each part.","exKo":"오늘 우리 둘이 말이 좀 겹쳤어요. 파트별로 누가 이끌지 정합시다.","note":""},{"en":"I've started going to the gym before work.","ko":"요즘 출근 전에 운동하러 다녀요.","cat":"lunch","exEn":"I've started going to the gym before work. Ask me again in a month if I'm still going.","exKo":"요즘 출근 전에 운동하러 다녀요. 한 달 뒤에도 가는지 다시 물어봐 주세요.","note":""},{"en":"Let's agree on who handles the discipline.","ko":"생활지도는 누가 맡을지 정해 둡시다.","cat":"class","exEn":"Let's agree on who handles the discipline — right now they know we won't both step in.","exKo":"생활지도는 누가 맡을지 정해 둡시다. 지금은 애들이 우리 둘 다 안 나선다는 걸 알아요.","note":"discipline = 생활지도·훈육. control이라고 하면 어색함."},{"en":"My legs are still sore from Saturday.","ko":"토요일에 무리해서 아직도 다리가 아파요.","cat":"lunch","exEn":"My legs are still sore from Saturday. That last stretch up the mountain was no joke.","exKo":"토요일 산행 때문에 아직도 다리가 아파요. 마지막 오르막이 장난 아니었어요.","note":"sore = 근육통. painful은 다치거나 아픈 느낌이라 어색하다."},{"en":"I'm proctoring in the gym all morning.","ko":"오전 내내 체육관에서 시험 감독이에요.","cat":"class","exEn":"I'm proctoring in the gym all morning, so don't count on me before lunch.","exKo":"오전 내내 체육관에서 시험 감독이라 점심 전엔 저 찾지 마세요.","note":"시험 감독 = proctor(미) / invigilate(영)."},{"en":"What are you watching these days?","ko":"요즘 뭐 보세요?","cat":"lunch","exEn":"What are you watching these days? I've run out of things on Netflix.","exKo":"요즘 뭐 보세요? 넷플릭스에 볼 게 다 떨어졌어요.","note":""},{"en":"I caught him with notes up his sleeve.","ko":"소매 안에 커닝 페이퍼 넣어둔 걸 잡았어요.","cat":"class","exEn":"I caught him with notes up his sleeve, so his paper goes to the head of year.","exKo":"소매 안에 커닝 페이퍼 넣어둔 걸 잡아서 답안지는 학년부장한테 넘어갔어요.","note":"cunning은 콩글리시. 부정행위는 cheating, 쪽지는 notes."},{"en":"I was up till two playing games.","ko":"게임하느라 새벽 두 시까지 안 잤어요.","cat":"lunch","exEn":"I look rough because I was up till two playing games. Worth it, though.","exKo":"몰골이 말이 아닌 게 게임하느라 두 시까지 안 자서요. 그래도 후회는 없어요.","note":""},{"en":"Keep your eyes on your own paper.","ko":"자기 시험지만 보세요.","cat":"class","exEn":"Keep your eyes on your own paper — I can see everything from up here.","exKo":"자기 시험지만 보세요. 여기서 다 보입니다.","note":""},{"en":"My back's been killing me all week.","ko":"이번 주 내내 허리가 너무 아파요.","cat":"lunch","exEn":"My back's been killing me all week. I think it's the chairs in the staff room.","exKo":"이번 주 내내 허리가 너무 아파요. 교무실 의자 때문인 것 같아요.","note":"be killing me = 죽을 만큼 아프다. 가벼운 통증에도 일상적으로 쓴다."},{"en":"His answer sheet was blank — he just gave up.","ko":"답안지가 백지였어요. 그냥 포기한 거죠.","cat":"class","exEn":"His answer sheet was blank — he just gave up about ten minutes in.","exKo":"답안지가 백지였어요. 10분쯤 지나서 그냥 포기한 거죠.","note":""},{"en":"I've got a scratchy throat.","ko":"목이 좀 칼칼해요.","cat":"lunch","exEn":"I've got a scratchy throat — six periods of talking will do that.","exKo":"목이 좀 칼칼해요. 여섯 시간 떠들었으니 그럴 만하죠.","note":"scratchy throat = 감기 초기의 까끌한 목. sore throat보다 가벼운 단계."},{"en":"My seniors are barely in class anymore.","ko":"3학년은 이제 수업에 거의 안 들어와요.","cat":"class","exEn":"My seniors are barely in class anymore — interviews, placements, you name it.","exKo":"3학년은 이제 수업에 거의 안 들어와요. 면접에 현장실습에 별별 게 다 있어요.","note":"고3은 seniors 또는 third-years. 'you name it'은 '뭐든 다'."},{"en":"I tossed and turned all night.","ko":"밤새 뒤척이기만 했어요.","cat":"lunch","exEn":"I went to bed at ten but I tossed and turned all night.","exKo":"열 시에 누웠는데 밤새 뒤척이기만 했어요.","note":"toss and turn = 잠 못 이루고 뒤척이다. 한 덩어리로 외울 것."},{"en":"He's already got a job lined up, so he's coasting.","ko":"걔는 취업이 확정돼서 그냥 설렁설렁해요.","cat":"class","exEn":"He's already got a job lined up, so he's coasting until graduation.","exKo":"걔는 취업이 확정돼서 졸업 때까지 그냥 설렁설렁해요.","note":"coast = 힘 안 들이고 대충 흘러가다."},{"en":"I could fall asleep right here.","ko":"여기서 그냥 잠들 것 같아요.","cat":"lunch","exEn":"Don't let me get too comfortable — I could fall asleep right here.","exKo":"너무 편하게 있으면 안 되겠어요. 여기서 그냥 잠들 것 같아요.","note":""},{"en":"I have to close out grades before the break.","ko":"방학 전에 성적을 마감해야 해요.","cat":"class","exEn":"I have to close out grades before the break, so this week is all paperwork.","exKo":"방학 전에 성적을 마감해야 해서 이번 주는 전부 서류 작업이에요.","note":"close out = 마감하고 확정하다."},{"en":"Peak foliage is supposed to be next weekend.","ko":"단풍은 다음 주말이 절정이래요.","cat":"lunch","exEn":"If you want to see the mountains, peak foliage is supposed to be next weekend.","exKo":"산에 가보고 싶으면, 단풍은 다음 주말이 절정이라고 해요.","note":""},{"en":"Let's pick up where we left off.","ko":"지난번에 하던 데서 이어 갑시다.","cat":"class","exEn":"Books open — let's pick up where we left off on page forty.","exKo":"책 펴세요. 40쪽, 지난번에 하던 데서 이어 갑시다.","note":""},{"en":"You need layers this time of year.","ko":"이맘때는 겹쳐 입어야 해요.","cat":"lunch","exEn":"It's freezing at seven and warm by noon — you need layers this time of year.","exKo":"일곱 시엔 춥다가 정오엔 더워요. 이맘때는 겹쳐 입어야 해요.","note":"일교차를 설명하는 가장 자연스러운 방법. layers를 명사로 쓴다."},{"en":"Quick recap before the bell.","ko":"종 치기 전에 짧게 정리할게요.","cat":"class","exEn":"Quick recap before the bell — three things we learned today.","exKo":"종 치기 전에 짧게 정리할게요. 오늘 배운 세 가지요.","note":""},{"en":"The air quality's awful today.","ko":"오늘 미세먼지 진짜 심하네요.","cat":"lunch","exEn":"The air quality's awful today — they're keeping the kids inside.","exKo":"오늘 미세먼지가 진짜 심해요. 애들 실내에 있게 한대요.","note":"fine dust는 콩글리시에 가깝다. air quality가 훨씬 자연스럽다."},{"en":"That's it for today — nice work.","ko":"오늘은 여기까지. 다들 잘했어요.","cat":"class","exEn":"That's it for today — nice work. Leave the worksheets on my desk.","exKo":"오늘은 여기까지. 다들 잘했어요. 학습지는 제 책상에 두고 가세요.","note":""},{"en":"Have you made any New Year's resolutions?","ko":"새해 계획 세운 거 있어요?","cat":"lunch","exEn":"Have you made any New Year's resolutions, or do you not bother?","exKo":"새해 계획 세운 거 있어요, 아니면 그냥 안 세우세요?","note":""},{"en":"Sorry, you lost me there.","ko":"죄송해요, 중간에 놓쳤어요.","cat":"lunch","exEn":"Sorry, you lost me there. Could you back up a bit?","exKo":"죄송해요, 중간에 놓쳤어요. 조금만 앞으로 돌아가 주실래요?","note":""},{"en":"Could you say that again a bit slower?","ko":"조금만 천천히 다시 말해 주실래요?","cat":"lunch","exEn":"Could you say that again a bit slower? You talk fast when you're excited.","exKo":"조금만 천천히 다시 말해 주실래요? 신나면 말이 빨라지시더라고요.","note":""},{"en":"It's on the tip of my tongue.","ko":"아, 그거 입에서 맴도는데.","cat":"lunch","exEn":"What's it called again? It's on the tip of my tongue.","exKo":"그거 뭐라고 하죠? 입에서 맴도는데 생각이 안 나네요.","note":"단어가 생각 안 날 때 침묵 대신 던지는 문장."},{"en":"What's the word — the thing you carry your tray on?","ko":"그거 뭐라고 하죠, 식판 받치는 거요.","cat":"lunch","exEn":"What's the word — the thing you carry your tray on? Right, a cart.","exKo":"그거 뭐라고 하죠, 식판 받치는 거요. 아, 카트요.","note":""},{"en":"I'm useless before coffee.","ko":"커피 마시기 전엔 사람 구실을 못 해요.","cat":"lunch","exEn":"Don't ask me anything important yet — I'm useless before coffee.","exKo":"중요한 건 아직 묻지 마세요. 커피 마시기 전엔 사람 구실을 못 해요.","note":""},{"en":"I'd forget my own head if it wasn't attached.","ko":"머리도 안 붙어 있으면 두고 다닐 사람이에요.","cat":"lunch","exEn":"I left the worksheets in the copy room again. I'd forget my own head if it wasn't attached.","exKo":"학습지를 또 복사실에 두고 왔어요. 머리도 안 붙어 있으면 두고 다닐 사람이에요.","note":""},{"en":"That's the most exercise I've had all year.","ko":"올해 운동한 거 그게 다예요.","cat":"lunch","exEn":"I walked up four flights of stairs. That's the most exercise I've had all year.","exKo":"계단 네 층 올라갔어요. 올해 운동한 게 그게 다예요.","note":""},{"en":"That makes two of us.","ko":"저도 똑같아요.","cat":"lunch","exEn":"You're counting down to Friday? That makes two of us.","exKo":"금요일만 기다리신다고요? 저도 똑같아요.","note":"상대와 같은 처지일 때 쓰는 맞장구. Me too보다 세련됨."},{"en":"I hear you.","ko":"무슨 말인지 알죠.","cat":"lunch","exEn":"Grading on top of paperwork? I hear you.","exKo":"공문에 채점까지요? 무슨 말인지 알죠.","note":"'들린다'가 아니라 '공감한다'는 뜻. 짧은 맞장구로 아주 흔하다."},{"en":"Where did the year go?","ko":"한 해가 어떻게 갔는지 모르겠어요.","cat":"lunch","exEn":"It's already the last week of December. Where did the year go?","exKo":"벌써 12월 마지막 주네요. 한 해가 어떻게 갔는지 모르겠어요.","note":""},{"en":"Have you booked your flight home yet?","ko":"고향 가는 비행기표는 예약했어요?","cat":"lunch","exEn":"You're going back for Christmas, right? Have you booked your flight home yet?","exKo":"크리스마스에 본국 가시죠? 고향 가는 비행기표는 예약했어요?","note":"원어민에게 home은 한국 집이 아니라 본국을 뜻함. go home과 go back home 둘 다 자연스러움."},{"en":"Text me when you land.","ko":"도착하면 문자 줘요.","cat":"lunch","exEn":"Have a safe trip — text me when you land.","exKo":"조심히 잘 다녀와요. 도착하면 문자 줘요.","note":""},{"en":"Do you do New Year's resolutions?","ko":"새해 다짐 같은 거 세우는 편이에요?","cat":"lunch","exEn":"Do you do New Year's resolutions? I never last past January.","exKo":"새해 다짐 같은 거 세우는 편이에요? 저는 1월도 못 넘겨요.","note":"make가 아니라 do를 쓰는 게 더 캐주얼. '그런 거 하는 사람이냐'는 뉘앙스."},{"en":"I plan to do absolutely nothing over the break.","ko":"방학 때는 진짜 아무것도 안 할 생각이에요.","cat":"lunch","exEn":"No trips, no projects — I plan to do absolutely nothing over the break.","exKo":"여행도 없고 일도 없고, 방학 때는 진짜 아무것도 안 할 생각이에요.","note":""},{"en":"See you on the other side of the new year.","ko":"새해에 봬요.","cat":"lunch","exEn":"This is my last lunch before the break — see you on the other side of the new year.","exKo":"방학 전 마지막 점심이네요. 새해에 봬요.","note":""},{"en":"Friday's a half day, then they're off.","ko":"금요일은 단축수업이고 그러고 나면 방학이에요.","cat":"event","exEn":"We've got the closing assembly at ten — Friday's a half day, then they're off.","exKo":"10시에 방학식 하고요, 금요일은 단축수업이고 그러고 나면 방학이에요.","note":""},{"en":"The year-end party's on the twenty-eighth — are you in?","ko":"송년회가 28일인데, 오실 거죠?","cat":"event","exEn":"The year-end party's on the twenty-eighth — are you in? It's just dinner, no drinking games.","exKo":"송년회가 28일인데, 오실 거죠? 그냥 저녁만 먹어요, 술 게임 같은 거 없어요.","note":"Are you in? 은 '참석할래요?'의 가장 짧고 편한 말. year-end party가 송년회의 표준 표현."},{"en":"I want my desk cleared before I walk out Friday.","ko":"금요일에 퇴근하기 전에 책상은 다 치워놓고 싶어요.","cat":"event","exEn":"I'm not bringing any of this home — I want my desk cleared before I walk out Friday.","exKo":"이거 집에 안 가져갈 거예요. 금요일에 퇴근하기 전에 책상은 다 치워놓고 싶어요.","note":""},{"en":"The first day back is mostly greetings and coffee.","ko":"새해 첫 출근날은 인사 다니고 커피 마시는 게 거의 다예요.","cat":"event","exEn":"Don't stress about January second — the first day back is mostly greetings and coffee.","exKo":"1월 2일 걱정 안 해도 돼요. 새해 첫 출근날은 인사 다니고 커피 마시는 게 거의 다예요.","note":""},{"en":"Everything has to be settled before the books close.","ko":"회계 마감 전에 정산은 다 끝내야 돼요.","cat":"admin","exEn":"Send me the last instructor invoices today — everything has to be settled before the books close.","exKo":"마지막 강사료 청구서 오늘 보내주세요. 회계 마감 전에 정산은 다 끝내야 돼요.","note":"the books close = 회계 마감. accounting deadline보다 이 표현이 훨씬 자연스러움."},{"en":"Next year's after-school plan is due before we break.","ko":"내년도 방과후 계획서를 방학 전에 내야 해요.","cat":"admin","exEn":"I can't relax yet — next year's after-school plan is due before we break.","exKo":"아직 쉴 수가 없어요. 내년도 방과후 계획서를 방학 전에 내야 해요.","note":"break를 동사로 쓰면 '방학에 들어가다'. before we break = 방학하기 전에."},{"en":"I'm boxing up this year's files for storage.","ko":"올해 서류들 상자에 넣어서 보관하려고요.","cat":"admin","exEn":"I'm boxing up this year's files for storage — we have to hold on to them for five years.","exKo":"올해 서류들 상자에 넣어서 보관하려고요. 5년은 갖고 있어야 하거든요.","note":""},{"en":"Thanks for everything this year — I mean it.","ko":"올 한 해 정말 고마웠어요, 진심이에요.","cat":"team","exEn":"You saved me more times than I can count. Thanks for everything this year — I mean it.","exKo":"몇 번을 도와주셨는지 몰라요. 올 한 해 정말 고마웠어요, 진심이에요.","note":""},{"en":"Here's to another good year together.","ko":"내년에도 잘해봐요.","cat":"team","exEn":"We got through a lot this year. Here's to another good year together.","exKo":"올해 참 많은 일 있었죠. 내년에도 잘해봐요.","note":"Here's to ~ 는 원래 건배사지만 송년 인사말로도 그대로 씀."}];
+const SEED = [{"en":"How was your summer?","f":"2026-09-02","l":"2026-09-03","e":2,"w":0,"s":0,"n":"2026-09-03"},{"en":"We're back to full periods this week.","f":"2026-09-02","l":"2026-09-04","e":2,"w":0,"s":0,"n":"2026-09-03"},{"en":"I've got sixth and seventh period today.","f":"2026-09-02","l":"2026-09-03","e":2,"w":0,"s":0,"n":"2026-09-03"},{"en":"It's not a regular lesson — it's a mandated topic.","f":"2026-09-02","l":"2026-09-04","e":3,"w":0,"s":0,"n":"2026-09-03"},{"en":"Every school has to cover it.","f":"2026-09-02","l":"2026-09-04","e":2,"w":0,"s":0,"n":"2026-09-03"},{"en":"How did your morning go?","f":"2026-09-03","l":"2026-09-03","e":1,"w":0,"s":0,"n":"2026-09-04"},{"en":"They were pretty wound up today.","f":"2026-09-03","l":"2026-09-03","e":1,"w":0,"s":0,"n":"2026-09-04"},{"en":"The first-years are still settling in.","f":"2026-09-03","l":"2026-09-03","e":1,"w":0,"s":0,"n":"2026-09-04"},{"en":"I had to slow down and go over it again.","f":"2026-09-03","l":"2026-09-03","e":1,"w":0,"s":0,"n":"2026-09-04"},{"en":"Same here.","f":"2026-09-03","l":"2026-09-03","e":1,"w":0,"s":0,"n":"2026-09-04"},{"en":"Any plans for the weekend?","f":"2026-09-04","l":"2026-09-04","e":1,"w":0,"s":0,"n":"2026-09-05"},{"en":"He's out of the country until next Wednesday.","f":"2026-09-04","l":"2026-09-04","e":1,"w":0,"s":0,"n":"2026-09-05"},{"en":"Who's covering his classes?","f":"2026-09-04","l":"2026-09-04","e":1,"w":0,"s":0,"n":"2026-09-05"},{"en":"I'll take his Thursday period.","f":"2026-09-04","l":"2026-09-04","e":1,"w":0,"s":0,"n":"2026-09-05"},{"en":"Have a good one.","f":"2026-09-04","l":"2026-09-04","e":1,"w":0,"s":0,"n":"2026-09-05"}];
+const KEY = 'morning-english-10.v2';
+const OLDKEY = 'morning-english-10.v1';
+const INTERVALS = [1,2,4,7,15];
+const CATNAME = {class:'수업·코티칭',lunch:'급식실 점심',admin:'행정·방과후',duty:'복무·근태',
+  team:'동료 교사',event:'학교 행사',money:'강사료·정산',commute:'출퇴근길',news:'뉴스 화제',mine:'내가 추가'};
+
+/* ---------- date ---------- */
+const pad = n => String(n).padStart(2,'0');
+const ymd = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const today = () => ymd(new Date());
+function addDays(s,n){ const [y,m,d]=s.split('-').map(Number); return ymd(new Date(y,m-1,d+n)); }
+function korDate(s){ const [y,m,d]=s.split('-').map(Number); const dt=new Date(y,m-1,d);
+  return `${y}년 ${m}월 ${d}일 (${'일월화수목금토'[dt.getDay()]})`; }
+
+/* ---------- state ---------- */
+let storageOK = true;
+function blank(){
+  const entries = {};
+  SEED.forEach(s => { const p = POOL.find(x => x.en === s.en); if(!p) return;
+    entries[s.en] = {en:p.en, ko:p.ko, cat:p.cat, firstSeen:s.f, lastSeen:s.l,
+      exposures:s.e, wrongCount:s.w, stage:s.s, nextReview:s.n}; });
+  return {version:2, entries, custom:[], questions:[], priority:[], session:null, ui:{exprIdx:0,quizIdx:0,exprAll:false,quizAll:false}};
+}
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY) || localStorage.getItem(OLDKEY);
+    if(raw){
+      const s = JSON.parse(raw);
+      s.version = 2;
+      s.entries = s.entries || {};
+      s.custom = s.custom || [];
+      s.questions = s.questions || [];
+      s.priority = s.priority || [];
+      s.ui = Object.assign({exprIdx:0,quizIdx:0,exprAll:false,quizAll:false}, s.ui||{});
+      return s;
+    }
+  }catch(e){ storageOK = false; }
+  return blank();
+}
+let state = load();
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); }
+  catch(e){ storageOK = false; $('storeWarn').hidden = false; }
+}
+
+/* ---------- working pool (내 표현이 앞에 = 신규로 먼저 나옴) ---------- */
+let IDX = {};
+function WP(){ return state.custom.concat(POOL); }
+function reindex(){ IDX = {}; WP().forEach(p => IDX[p.en] = p); }
+reindex();
+const P = en => IDX[en] || {en, ko:'', cat:'mine', exEn:en, exKo:'', note:''};
+
+/* ---------- session ---------- */
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+function newQueue(){
+  const seen = state.entries;
+  const pri = state.priority.filter(en => IDX[en] && !seen[en]);
+  const priSet = new Set(pri);
+  return pri.map(en => IDX[en]).concat(WP().filter(p => !seen[p.en] && !priSet.has(p.en)));
+}
+
+function buildSession(){
+  const t = today();
+  if(state.session && state.session.date === t && Array.isArray(state.session.items)){
+    const q = state.session.quiz;
+    if(!state.session.graded && Array.isArray(q) && q.some(x => x.dir !== 'ko2en')){
+      state.session.quiz = makeQuiz(state.session.items);
+      state.session.answers = state.session.items.map(()=>null);
+      state.ui.quizIdx = 0; save();
+    }
+    return state.session;
+  }
+  const seen = state.entries;
+  const newItems = newQueue().slice(0,5).map(p => p.en);
+  const need = 10 - newItems.length;
+  const cand = Object.values(seen).filter(e => IDX[e.en]);
+  const due = cand.filter(e => e.nextReview <= t);
+  due.sort((a,b) => b.wrongCount - a.wrongCount ||
+    (a.nextReview < b.nextReview ? -1 : a.nextReview > b.nextReview ? 1 : 0) || a.exposures - b.exposures);
+  let review = due.slice(0, need).map(e => e.en);
+  if(review.length < need){
+    const picked = new Set(review);
+    const rest = cand.filter(e => !picked.has(e.en))
+      .sort((a,b) => (a.lastSeen < b.lastSeen ? -1 : a.lastSeen > b.lastSeen ? 1 : 0) || a.exposures - b.exposures);
+    review = review.concat(rest.slice(0, need - review.length).map(e => e.en));
+  }
+  const items = newItems.map(en => ({en, type:'new'})).concat(review.map(en => ({en, type:'review'})));
+  state.session = {date:t, items, quiz:makeQuiz(items), answers:items.map(()=>null), graded:false};
+  state.ui.exprIdx = 0; state.ui.quizIdx = 0;
+  save();
+  return state.session;
+}
+
+function makeQuiz(items){
+  const all = WP();
+  return shuffle(items.map(it => {
+    const p = P(it.en);
+    const correct = p.en;
+    const same = shuffle(all.filter(x => x.cat === p.cat && x.en !== correct));
+    const other = shuffle(all.filter(x => x.cat !== p.cat && x.en !== correct));
+    const used = new Set([correct]); const ds = [];
+    for(const x of same.concat(other)){
+      if(ds.length >= 3) break;
+      if(!x.en || used.has(x.en)) continue;
+      used.add(x.en); ds.push(x.en);
+    }
+    const choices = shuffle([correct, ...ds]);
+    return {en:p.en, dir:'ko2en', prompt:p.ko, choices, answer:choices.indexOf(correct)};
+  }));
+}
+
+
+/* ---------- helpers ---------- */
+const $ = id => document.getElementById(id);
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let toastT;
+function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('on');
+  clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('on'),2600); }
+let practice = null;
+
+/* ---------- tabs ---------- */
+const PANELS = {today:'p-today', quiz:'p-quiz', ask:'p-ask', rec:'p-rec'};
+function go(tab){
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+  Object.entries(PANELS).forEach(([k,id]) => $(id).hidden = (k !== tab));
+  window.scrollTo({top:0, behavior:'instant'});
+  try{ localStorage.setItem(KEY+'.tab', tab); }catch(e){}
+}
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => go(b.dataset.tab));
+$('goQuiz').onclick = () => go('quiz');
+
+/* ---------- render ---------- */
+function render(){ reindex(); renderToday(); renderQuiz(); renderAnswers(); renderRecords(); renderAsk(); renderBadges(); }
+
+function renderBadges(){
+  const s = state.session;
+  const left = s.answers.filter(a => a === null).length;
+  const d = $('dotQuiz');
+  d.hidden = s.graded || left === 0;
+  d.textContent = left;
+  const q = $('dotAsk');
+  q.hidden = state.questions.length === 0;
+  q.textContent = state.questions.length;
+}
+
+function renderToday(){
+  const s = state.session, t = s.date;
+  const nN = s.items.filter(i => i.type === 'new').length, rN = s.items.length - nN;
+  const mN = s.items.filter(i => P(i.en).cat === 'mine').length;
+  const cats = [...new Set(s.items.map(i => P(i.en).cat))].map(c => CATNAME[c] || c);
+  const total = WP().length, learned = Object.keys(state.entries).length;
+
+  $('statbar').innerHTML = [
+    ['배운 표현', learned+'개'], ['남은 신규', (total-learned)+'개'],
+    ['오늘 복습 대상', Object.values(state.entries).filter(e => e.nextReview <= t).length+'개'],
+    ['누적 오답', Object.values(state.entries).reduce((a,e)=>a+e.wrongCount,0)+'회'],
+  ].map(([k,v]) => `<div class="stat"><b>${v}</b><span>${k}</span></div>`).join('');
+
+  $('today').innerHTML = `<div class="d">${korDate(t)}</div>
+    <div class="t">오늘의 주제 · ${esc(cats.slice(0,3).join(' / '))}</div>
+    <div class="pills"><span class="pill n">신규 ${nN}개</span><span class="pill r">복습 ${rN}개</span>
+    ${mN?`<span class="pill m">내 표현 ${mN}개</span>`:''}
+    ${total-learned===0?`<span class="pill g">신규 표현 모두 소진 — 복습 중심</span>`:''}</div>`;
+
+  const n = s.items.length;
+  if(state.ui.exprIdx >= n) state.ui.exprIdx = Math.max(0, n-1);
+  const all = state.ui.exprAll;
+  $('exprCnt').innerHTML = `<button class="lnk" data-tog="exprAll">${all?'하나씩 보기':'전체 보기'}</button>`;
+
+  const body = (it,i,solo) => {
+    const p = P(it.en), mine = p.cat === 'mine';
+    const cls = mine ? 'm' : (it.type === 'new' ? 'n' : 'r');
+    const lab = mine ? '내 표현' : (it.type === 'new' ? '신규' : '복습');
+    const ex = p.exEn ? `<div class="ex"><div class="e">${esc(p.exEn)}</div>${p.exKo?`<div class="k">${esc(p.exKo)}</div>`:''}</div>` : '';
+    const nt = p.note ? `<div class="note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span>${esc(p.note)}</span></div>` : '';
+    if(solo) return `<div class="solo"><span class="tag ${cls} stag">${lab}</span>
+      <div class="sen">${esc(p.en)}</div><div class="sko">${esc(p.ko)}</div>${ex}${nt}</div>`;
+    return `<div class="card"><div class="hd"><div class="num">${i+1}</div>
+      <div class="en">${esc(p.en)}</div><span class="tag ${cls}">${lab}</span></div>
+      <div class="ko">${esc(p.ko)}</div>${ex}${nt}</div>`;
+  };
+
+  if(all){
+    $('exprs').innerHTML = s.items.map((it,i) => body(it,i,false)).join('');
+    $('goQuiz').textContent = '퀴즈 풀러 가기';
+    $('goQuiz').hidden = false;
+    return;
+  }
+  const i = state.ui.exprIdx, last = i >= n-1;
+  $('exprs').innerHTML = `
+    <div class="stepper"><div class="prog"><i style="width:${((i+1)/n*100).toFixed(1)}%"></i></div>
+      <span class="stepn">${i+1} / ${n}</span></div>
+    ${body(s.items[i], i, true)}
+    <div class="nav">
+      <button class="btn" data-ex="-1" ${i===0?'disabled':''}>‹ 이전</button><span class="sp"></span>
+      ${last ? `<button class="btn p" data-goq="1">퀴즈 풀러 가기</button>`
+             : `<button class="btn p" data-ex="1">다음 ›</button>`}
+    </div>`;
+  $('goQuiz').hidden = true;
+}
+
+const aQuiz = () => practice ? practice.quiz : state.session.quiz;
+const aAns  = () => practice ? practice.answers : state.session.answers;
+const locked = () => practice ? practice.graded : state.session.graded;
+
+function renderQuiz(){
+  const qs = aQuiz(), ans = aAns(), lk = locked();
+  const n = qs.length;
+  if(state.ui.quizIdx >= n) state.ui.quizIdx = Math.max(0, n-1);
+  const all = state.ui.quizAll || lk;
+  $('quizCnt').innerHTML = (practice ? '<span style="margin-right:10px">연습 모드 · 기록 미반영</span>' : '')
+    + (lk ? '' : `<button class="lnk" data-tog="quizAll">${all?'하나씩 보기':'전체 보기'}</button>`);
+
+  const optsOf = (q,i,big) => q.choices.map((c,j) => {
+    let cls='opt';
+    if(lk){ if(j===q.answer) cls+=' right'; else if(ans[i]===j) cls+=' wrong'; }
+    else if(ans[i]===j) cls+=' sel';
+    return `<button class="${cls}" data-q="${i}" data-c="${j}" ${lk?'disabled':''}>
+      <span class="k">${'ABCD'[j]}</span><span>${esc(c)}</span></button>`;
+  }).join('');
+
+  if(all){
+    $('quiz').innerHTML = qs.map((q,i) => `<div class="q ${lk?'locked':''}">
+      <div class="qh"><div class="qn">${i+1}</div><div class="qt">${esc(q.prompt)}</div>
+      </div>
+      <div class="opts">${optsOf(q,i,false)}</div></div>`).join('');
+  } else {
+    const i = state.ui.quizIdx, q = qs[i], done = ans.every(a => a !== null);
+    $('quiz').innerHTML = `
+      <div class="stepper"><div class="prog"><i style="width:${((i+1)/n*100).toFixed(1)}%"></i></div>
+        <span class="stepn">${i+1} / ${n}</span></div>
+      <div class="qsolo"><span class="sdir">한글 → 영어</span>
+        <div class="sqt">${esc(q.prompt)}</div>
+        <div class="opts">${optsOf(q,i,true)}</div></div>
+      <div class="nav">
+        <button class="btn" data-qn="-1" ${i===0?'disabled':''}>‹ 이전</button><span class="sp"></span>
+        ${i < n-1 ? `<button class="btn" data-qn="1">다음 ›</button>`
+                  : (done ? '' : `<span class="stepn">남은 문항 ${ans.filter(a=>a===null).length}개</span>`)}
+      </div>`;
+  }
+
+  const done = ans.every(a => a !== null);
+  $('gradeBtn').disabled = lk || !done;
+  $('gradeBtn').textContent = lk ? '채점 완료' : (done ? '채점하기' : `채점하기 (${ans.filter(a=>a!==null).length}/${n})`);
+  $('retryBtn').hidden = !state.session.graded;
+  $('retryBtn').textContent = practice ? '오늘 결과 보기' : '다시 풀어보기';
+  $('quizHint').textContent = practice ? '연습 모드입니다. 여기서 푼 결과는 기록에 반영되지 않습니다.'
+    : (state.session.graded ? '오늘 채점은 끝났습니다. 복습 일정이 기록에 반영되었습니다.'
+       : (all ? '10문항을 모두 고르면 채점할 수 있습니다.'
+              : '답을 고르면 다음 문항으로 넘어갑니다. ← → 키로도 이동할 수 있고, 이전으로 돌아가 고쳐도 됩니다.'));
+}
+
+function renderAnswers(){
+  const show = practice ? practice.graded : state.session.graded;
+  $('ansBlk').hidden = !show;
+  if(!show) return;
+  const qs = aQuiz(), ans = aAns();
+  const c = qs.filter((q,i) => ans[i] === q.answer).length;
+  $('score').innerHTML = `<b>${c} / ${qs.length}</b><span>${
+    practice ? '연습 모드 결과 — 기록에 반영되지 않았습니다'
+    : c === qs.length ? '전부 맞혔습니다. 복습 간격이 한 단계씩 늘어납니다'
+    : `틀린 ${qs.length-c}개는 내일 다시 나옵니다`}</span>`;
+  $('answers').innerHTML = qs.map((q,i) => {
+    const p = P(q.en), ok = ans[i] === q.answer;
+    const exp = p.note || p.exEn || p.ko;
+    return `<div class="arow"><div class="abadge ${ok?'o':'x'}">${ok?'O':'X'}</div>
+      <div><div class="ans">${i+1}. ${'ABCD'[q.answer]} — ${esc(q.choices[q.answer])}</div>
+      <div class="exp">${esc(exp)}</div></div></div>`;
+  }).join('');
+}
+
+function renderRecords(){
+  const es = Object.values(state.entries);
+  const totalQ = es.reduce((a,e) => a + e.exposures, 0);
+  const totalW = es.reduce((a,e) => a + e.wrongCount, 0);
+  const total = WP().length, learned = Object.keys(state.entries).length;
+  $('recgrid').innerHTML = [
+    ['누적 정답률', (totalQ ? Math.round((totalQ-totalW)/totalQ*100) : 0) + '%'],
+    ['복습 완료 단계', es.filter(e => e.stage >= 4).length + '개'],
+    ['진도', learned + ' / ' + total],
+    ['남은 일수(신규 기준)', Math.ceil((total - learned)/5) + '일'],
+  ].map(([k,v]) => `<div class="rec"><b>${v}</b><span>${k}</span></div>`).join('');
+
+  const worst = es.filter(e => e.wrongCount > 0)
+    .sort((a,b) => b.wrongCount - a.wrongCount || (a.nextReview < b.nextReview ? -1 : 1)).slice(0,8);
+  $('wrongBox').innerHTML = worst.length
+    ? `<div class="list">${worst.map(e => `<div class="wrow"><div class="we">${esc(e.en)}
+        <div class="wk">${esc(e.ko)} · 다음 복습 ${e.nextReview}</div></div>
+        <span class="wcount">오답 ${e.wrongCount}회</span></div>`).join('')}</div>`
+    : `<div class="empty">아직 오답 기록이 없습니다.</div>`;
+
+  $('mineCnt').textContent = state.custom.length ? state.custom.length + '개' : '';
+  $('mineBox').innerHTML = state.custom.length
+    ? `<div class="list">${state.custom.map((c,i) => {
+        const e = state.entries[c.en];
+        return `<div class="wrow"><div class="we">${esc(c.en)}
+          <div class="wk">${esc(c.ko)}${e ? ` · 노출 ${e.exposures}회 · 다음 복습 ${e.nextReview}` : ' · 아직 안 나옴'}</div></div>
+          <button class="btn sm dgr" data-del="${i}">삭제</button></div>`;
+      }).join('')}</div>`
+    : `<div class="empty">아직 없습니다.<br>질문 탭에서 직접 추가하면 다음 날 학습에 신규로 들어갑니다.</div>`;
+}
+
+/* ---------- 질문 탭 ---------- */
+function renderAsk(){
+  $('poolN').textContent = WP().length;
+  doSearch();
+  $('qCnt').textContent = state.questions.length ? state.questions.length + '개' : '';
+  $('qlist').innerHTML = state.questions.length
+    ? `<div class="list">${state.questions.map((q,i) => `<div class="qrow">
+        <div class="qx"><div class="qq">${esc(q.q)}</div><div class="qd">${q.d}</div></div>
+        <button class="btn sm dgr" data-qdel="${i}">삭제</button></div>`).join('')}
+       </div><div class="actions"><button class="btn sm" id="qCopy">목록 복사</button>
+       <button class="btn sm dgr" id="qClear">전체 비우기</button></div>`
+    : `<div class="empty">담아 둔 질문이 없습니다.</div>`;
+  const cp = $('qCopy');
+  if(cp) cp.onclick = () => {
+    const txt = '아래 표현들을 영어로 어떻게 말하는지 알려줘. 각각 영어 표현 / 한글 뜻 / 예문 / 예문 뜻 / 메모 형식으로.\n\n'
+      + state.questions.map((q,i) => `${i+1}. ${q.q}`).join('\n');
+    navigator.clipboard.writeText(txt).then(() => toast('복사했습니다. 클로드에 붙여넣으세요.'),
+      () => toast('복사 실패 — 직접 선택해서 복사해 주세요.'));
+  };
+  const cl = $('qClear');
+  if(cl) cl.onclick = () => { if(confirm('담아 둔 질문을 모두 지울까요?')){ state.questions=[]; save(); renderAsk(); renderBadges(); } };
+}
+
+function doSearch(){
+  const raw = ($('sq').value || '').trim();
+  if(!raw){ $('sres').innerHTML = ''; return; }
+  const k = raw.toLowerCase();
+  const hits = WP().filter(p =>
+    (p.en+' '+p.ko+' '+(p.exEn||'')+' '+(p.exKo||'')+' '+(p.note||'')).toLowerCase().includes(k)
+  ).slice(0,25);
+  if(!hits.length){
+    $('sres').innerHTML = `<div class="empty">"${esc(raw)}"에 맞는 표현이 없습니다.<br>아래에서 직접 추가하거나 물어볼 것에 담아 두세요.</div>`;
+    return;
+  }
+  $('sres').innerHTML = hits.map(p => {
+    const e = state.entries[p.en];
+    const queued = state.priority.includes(p.en);
+    return `<div class="res">
+      <div class="re">${esc(p.en)}</div>
+      <div class="rk">${esc(p.ko)}</div>
+      ${p.exEn ? `<div class="rx">${esc(p.exEn)}${p.exKo?'<br>'+esc(p.exKo):''}</div>` : ''}
+      <div class="rf"><span class="chip">${CATNAME[p.cat]||p.cat}</span>
+        ${e ? `<span class="chip done">배움 · 다음 복습 ${e.nextReview}</span>`
+            : queued ? `<span class="chip done">다음 학습 예약됨</span>`
+            : `<button class="btn sm" data-pri="${esc(p.en)}">먼저 배우기</button>`}
+      </div></div>`;
+  }).join('') + (hits.length === 25 ? `<p class="hint">상위 25개만 보여줍니다. 검색어를 더 좁혀 보세요.</p>` : '');
+}
+$('sq').oninput = doSearch;
+
+$('addBtn').onclick = () => {
+  const en = $('aEn').value.trim(), ko = $('aKo').value.trim();
+  if(!en || !ko){ toast('영어 표현과 한글 뜻은 반드시 넣어 주세요.'); return; }
+  if(IDX[en]){ toast('이미 있는 표현입니다.'); return; }
+  state.custom.unshift({en, ko, cat:'mine',
+    exEn: $('aExEn').value.trim() || en,
+    exKo: $('aExKo').value.trim() || ko,
+    note: $('aNote').value.trim()});
+  save(); reindex();
+  ['aEn','aKo','aExEn','aExKo','aNote'].forEach(id => $(id).value = '');
+  render();
+  toast('추가했습니다. 다음 학습에 신규로 나옵니다.');
+};
+
+$('qAdd').onclick = () => {
+  const q = $('qq').value.trim();
+  if(!q){ return; }
+  state.questions.unshift({q, d: today()});
+  $('qq').value = '';
+  save(); renderAsk(); renderBadges();
+  toast('담았습니다.');
+};
+$('qq').onkeydown = e => { if(e.key === 'Enter') $('qAdd').click(); };
+
+/* ---------- 클릭 위임 ---------- */
+document.addEventListener('click', ev => {
+  const ex = ev.target.closest('[data-ex]');
+  if(ex && !ex.disabled){ stepExpr(Number(ex.dataset.ex)); return; }
+  if(ev.target.closest('[data-goq]')){ go('quiz'); return; }
+  const qn = ev.target.closest('[data-qn]');
+  if(qn && !qn.disabled){ stepQuiz(Number(qn.dataset.qn)); return; }
+  const tg = ev.target.closest('[data-tog]');
+  if(tg){ const k = tg.dataset.tog; state.ui[k] = !state.ui[k]; save();
+    if(k === 'exprAll') renderToday(); else renderQuiz(); return; }
+
+  const opt = ev.target.closest('.opt');
+  if(opt && !locked()){
+    const qi = Number(opt.dataset.q);
+    aAns()[qi] = Number(opt.dataset.c);
+    if(!practice) save();
+    renderQuiz(); renderBadges();
+    if(!(state.ui.quizAll || locked()) && qi < aQuiz().length - 1 && qi === state.ui.quizIdx){
+      setTimeout(() => { if(state.ui.quizIdx === qi) stepQuiz(1); }, 380);
+    }
+    return;
+  }
+  const pri = ev.target.closest('[data-pri]');
+  if(pri){
+    const en = pri.dataset.pri;
+    if(!state.priority.includes(en)) state.priority.unshift(en);
+    save(); doSearch();
+    toast('다음 학습에 먼저 나옵니다.');
+    return;
+  }
+  const del = ev.target.closest('[data-del]');
+  if(del){
+    const i = Number(del.dataset.del), c = state.custom[i];
+    if(confirm(`"${c.en}" 을(를) 지울까요? 학습 기록도 함께 지워집니다.`)){
+      delete state.entries[c.en];
+      state.custom.splice(i,1);
+      state.priority = state.priority.filter(x => x !== c.en);
+      if(state.session) state.session.items = state.session.items.filter(x => x.en !== c.en);
+      save(); reindex();
+      if(state.session && state.session.items.length < 10){ state.session = null; buildSession(); }
+      render();
+      toast('지웠습니다.');
+    }
+    return;
+  }
+  const qd = ev.target.closest('[data-qdel]');
+  if(qd){ state.questions.splice(Number(qd.dataset.qdel),1); save(); renderAsk(); renderBadges(); return; }
+});
+
+
+/* ---------- 한 장씩 넘기기 ---------- */
+function stepExpr(d){
+  const n = state.session.items.length;
+  state.ui.exprIdx = Math.min(n-1, Math.max(0, state.ui.exprIdx + d));
+  save(); renderToday();
+}
+function stepQuiz(d){
+  const n = aQuiz().length;
+  state.ui.quizIdx = Math.min(n-1, Math.max(0, state.ui.quizIdx + d));
+  if(!practice) save();
+  renderQuiz();
+}
+document.addEventListener('keydown', ev => {
+  if(ev.metaKey || ev.ctrlKey || ev.altKey) return;
+  const el = ev.target;
+  if(el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) return;
+  if(ev.key !== 'ArrowLeft' && ev.key !== 'ArrowRight') return;
+  const d = ev.key === 'ArrowRight' ? 1 : -1;
+  if(!$('p-today').hidden && !state.ui.exprAll){ ev.preventDefault(); stepExpr(d); }
+  else if(!$('p-quiz').hidden && !(state.ui.quizAll || locked())){ ev.preventDefault(); stepQuiz(d); }
+});
+
+/* ---------- 채점 ---------- */
+$('gradeBtn').onclick = () => {
+  if(practice){ practice.graded = true; renderQuiz(); renderAnswers(); return; }
+  const s = state.session, t = s.date;
+  s.quiz.forEach((q,i) => {
+    const ok = s.answers[i] === q.answer;
+    const p = P(q.en);
+    let e = state.entries[q.en];
+    if(!e){ e = {en:p.en, ko:p.ko, cat:p.cat, firstSeen:t, lastSeen:t,
+      exposures:0, wrongCount:0, stage:0, nextReview:t}; state.entries[q.en] = e; }
+    e.exposures += 1; e.lastSeen = t;
+    if(ok){
+      e.nextReview = addDays(t, INTERVALS[Math.min(e.stage, INTERVALS.length-1)]);
+      e.stage = Math.min(e.stage + 1, INTERVALS.length - 1);
+    } else { e.wrongCount += 1; e.stage = 0; e.nextReview = addDays(t, 1); }
+  });
+  state.priority = state.priority.filter(en => !state.entries[en]);
+  s.graded = true; save(); render();
+  $('ansBlk').scrollIntoView({behavior:'smooth', block:'start'});
+};
+
+$('retryBtn').onclick = () => {
+  if(practice) practice = null;
+  else practice = {quiz:makeQuiz(state.session.items), answers:state.session.items.map(()=>null), graded:false};
+  renderQuiz(); renderAnswers();
+  window.scrollTo({top:0, behavior:'smooth'});
+};
+
+/* ---------- 백업 ---------- */
+$('exportBtn').onclick = () => {
+  const data = {
+    meta:{ owner:'평택마이스터고 영어교사 / 방과후학교 부장',
+      purpose:'아침 영어 10 학습 기록. 노출 횟수·오답 횟수·다음 복습일 관리.',
+      updated: today(), intervals: INTERVALS,
+      fields:'en=영어 표현, ko=한글 뜻, cat=분류, firstSeen=첫 노출일, lastSeen=마지막 노출일, exposures=노출 횟수, wrongCount=오답 횟수, stage=복습 단계, nextReview=다음 복습 예정일' },
+    entries: Object.values(state.entries).sort((a,b) => a.firstSeen < b.firstSeen ? -1 : a.firstSeen > b.firstSeen ? 1 : 0),
+    custom: state.custom,
+    questions: state.questions,
+    priority: state.priority
+  };
+  const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'learning-log.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast('learning-log.json 을 받았습니다.');
+};
+$('importBtn').onclick = () => $('importFile').click();
+$('importFile').onchange = ev => {
+  const f = ev.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try{
+      const d = JSON.parse(r.result);
+      if(!d || !Array.isArray(d.entries)) throw new Error('형식이 다릅니다');
+      if(Array.isArray(d.custom)) d.custom.forEach(c => { if(c && c.en && !state.custom.some(x => x.en === c.en)) state.custom.push(c); });
+      if(Array.isArray(d.questions)) d.questions.forEach(q => { if(q && q.q && !state.questions.some(x => x.q === q.q)) state.questions.push(q); });
+      if(Array.isArray(d.priority)) d.priority.forEach(en => { if(!state.priority.includes(en)) state.priority.push(en); });
+      reindex();
+      let n = 0;
+      d.entries.forEach(e => {
+        if(!e.en || !IDX[e.en]) return;
+        const cur = state.entries[e.en];
+        if(!cur || (e.exposures||0) >= (cur.exposures||0)){
+          state.entries[e.en] = {en:e.en, ko:IDX[e.en].ko, cat:IDX[e.en].cat,
+            firstSeen:e.firstSeen||today(), lastSeen:e.lastSeen||today(),
+            exposures:e.exposures||0, wrongCount:e.wrongCount||0,
+            stage:Math.min(e.stage||0, INTERVALS.length-1), nextReview:e.nextReview||today()};
+          n++;
+        }
+      });
+      state.session = null; save();
+      buildSession(); render();
+      toast(`기록 ${n}건을 불러왔습니다.`);
+      go('today');
+    }catch(err){ alert('불러오기 실패: ' + err.message); }
+    ev.target.value = '';
+  };
+  r.readAsText(f);
+};
+$('printBtn').onclick = () => window.print();
+
+/* ---------- start ---------- */
+if(!storageOK) $('storeWarn').hidden = false;
+buildSession();
+render();
+try{ const t = localStorage.getItem(KEY+'.tab'); if(t && PANELS[t]) go(t); }catch(e){}
+</script>
+</body>
+</html>
