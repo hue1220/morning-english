@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>아침 영어 10</title>
+<meta name="apple-mobile-web-app-title" content="아침영어">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <style>
 :root{
   --bg:#ffffff; --surface:#F8FAFD; --surface2:#F1F5FB; --line:#E4EAF3;
@@ -162,6 +166,7 @@ textarea.inp{resize:vertical;min-height:74px;line-height:1.6}
 .empty{color:var(--muted);font-size:14px;padding:26px;text-align:center;background:var(--surface);border-radius:var(--r);line-height:1.7}
 .hint{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.6}
 .warn{background:var(--rev-soft);color:#8A5214;border-radius:12px;padding:12px 15px;font-size:13.5px;margin-bottom:16px}
+.gradrow{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}
 .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(12px);background:var(--ink);color:#fff;
   padding:12px 20px;border-radius:12px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.22s;z-index:80;
   box-shadow:0 8px 24px rgba(21,25,52,.22)}
@@ -361,6 +366,13 @@ input[type=file]{display:none}
     </div>
     <div class="blk">
       <div class="bhead">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>
+        <h2>졸업한 표현</h2>
+      </div>
+      <div id="gradBox"></div>
+    </div>
+    <div class="blk">
+      <div class="bhead">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 5.9L12 15.9 6.7 19l1.4-5.9-4.6-4 6.1-.5z"/></svg>
         <h2>내가 추가한 표현</h2>
         <span class="cnt" id="mineCnt"></span>
@@ -465,20 +477,20 @@ function buildSession(){
     return state.session;
   }
   const seen = state.entries;
-  const newItems = newQueue().slice(0,5).map(p => p.en);
-  const need = 10 - newItems.length;
-  const cand = Object.values(seen).filter(e => IDX[e.en]);
-  const due = cand.filter(e => e.nextReview <= t);
-  due.sort((a,b) => b.wrongCount - a.wrongCount ||
+  // 졸업한 표현은 빼고, 복습은 '때가 된 것'만 최대 5개. 남는 칸은 신규 표현으로 채워 같은 표현이 매일 반복되지 않게.
+  const cand = Object.values(seen).filter(e => IDX[e.en] && !e.done);
+  const due = cand.filter(e => e.nextReview <= t).sort((a,b) =>
+    b.wrongCount - a.wrongCount ||
     (a.nextReview < b.nextReview ? -1 : a.nextReview > b.nextReview ? 1 : 0) || a.exposures - b.exposures);
-  let review = due.slice(0, need).map(e => e.en);
-  if(review.length < need){
-    const picked = new Set(review);
-    const rest = cand.filter(e => !picked.has(e.en))
-      .sort((a,b) => (a.lastSeen < b.lastSeen ? -1 : a.lastSeen > b.lastSeen ? 1 : 0) || a.exposures - b.exposures);
-    review = review.concat(rest.slice(0, need - review.length).map(e => e.en));
+  let rev = due.slice(0, 5).map(e => e.en);
+  const news = newQueue().slice(0, 10 - rev.length).map(p => p.en);
+  if(news.length + rev.length < 10){
+    const got = new Set(rev.concat(news));
+    rev = rev.concat(cand.filter(e => !got.has(e.en))
+      .sort((a,b) => (a.lastSeen < b.lastSeen ? -1 : a.lastSeen > b.lastSeen ? 1 : 0) || a.exposures - b.exposures)
+      .slice(0, 10 - news.length - rev.length).map(e => e.en));
   }
-  const items = newItems.map(en => ({en, type:'new'})).concat(review.map(en => ({en, type:'review'})));
+  const items = news.map(en => ({en,type:'new'})).concat(rev.map(en => ({en,type:'review'})));
   state.session = {date:t, items, quiz:makeQuiz(items), answers:items.map(()=>null), graded:false};
   state.ui.exprIdx = 0; state.ui.quizIdx = 0;
   save();
@@ -537,6 +549,21 @@ function renderBadges(){
   q.textContent = state.questions.length;
 }
 
+function gradBtn(en){
+  const e = state.entries[en];
+  return e && e.done
+    ? `<div class="gradrow"><span class="chip done">🎓 졸업한 표현</span><button class="lnk" data-ungrad="${esc(en)}">되돌리기</button></div>`
+    : `<div class="gradrow"><button class="btn sm" data-grad="${esc(en)}">✓ 이미 알아요 · 졸업</button></div>`;
+}
+function graduate(en, on){
+  if(on && !confirm('이 표현을 졸업시킬까요?\n더 이상 복습에 나오지 않아요. (기록 탭에서 되돌릴 수 있어요)')) return;
+  const t = today(); let e = state.entries[en];
+  if(!e){ const p = P(en); e = state.entries[en] = {en, ko:p.ko, cat:p.cat, firstSeen:t, lastSeen:t, exposures:0, wrongCount:0, stage:0, nextReview:t}; }
+  if(on){ e.done = true; e.doneAt = t; }
+  else { delete e.done; delete e.doneAt; e.stage = 0; e.nextReview = addDays(t, 1); }
+  save(); renderToday(); renderRecords();
+  toast(on ? '졸업! 이제 복습에 나오지 않아요.' : '되돌렸어요. 내일부터 다시 복습에 나와요.');
+}
 function renderToday(){
   const s = state.session, t = s.date;
   const nN = s.items.filter(i => i.type === 'new').length, rN = s.items.length - nN;
@@ -546,7 +573,7 @@ function renderToday(){
 
   $('statbar').innerHTML = [
     ['배운 표현', learned+'개'], ['남은 신규', (total-learned)+'개'],
-    ['오늘 복습 대상', Object.values(state.entries).filter(e => e.nextReview <= t).length+'개'],
+    ['오늘 복습 대상', Object.values(state.entries).filter(e => !e.done && e.nextReview <= t).length+'개'],
     ['누적 오답', Object.values(state.entries).reduce((a,e)=>a+e.wrongCount,0)+'회'],
   ].map(([k,v]) => `<div class="stat"><b>${v}</b><span>${k}</span></div>`).join('');
 
@@ -568,10 +595,10 @@ function renderToday(){
     const ex = p.exEn ? `<div class="ex"><div class="e">${esc(p.exEn)}</div>${p.exKo?`<div class="k">${esc(p.exKo)}</div>`:''}</div>` : '';
     const nt = p.note ? `<div class="note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span>${esc(p.note)}</span></div>` : '';
     if(solo) return `<div class="solo"><span class="tag ${cls} stag">${lab}</span>
-      <div class="sen">${esc(p.en)}</div><div class="sko">${esc(p.ko)}</div>${ex}${nt}</div>`;
+      <div class="sen">${esc(p.en)}</div><div class="sko">${esc(p.ko)}</div>${ex}${nt}${gradBtn(p.en)}</div>`;
     return `<div class="card"><div class="hd"><div class="num">${i+1}</div>
       <div class="en">${esc(p.en)}</div><span class="tag ${cls}">${lab}</span></div>
-      <div class="ko">${esc(p.ko)}</div>${ex}${nt}</div>`;
+      <div class="ko">${esc(p.ko)}</div>${ex}${nt}${gradBtn(p.en)}</div>`;
   };
 
   if(all){
@@ -675,13 +702,19 @@ function renderRecords(){
     ['남은 일수(신규 기준)', Math.ceil((total - learned)/5) + '일'],
   ].map(([k,v]) => `<div class="rec"><b>${v}</b><span>${k}</span></div>`).join('');
 
-  const worst = es.filter(e => e.wrongCount > 0)
+  const worst = es.filter(e => e.wrongCount > 0 && !e.done)
     .sort((a,b) => b.wrongCount - a.wrongCount || (a.nextReview < b.nextReview ? -1 : 1)).slice(0,8);
   $('wrongBox').innerHTML = worst.length
     ? `<div class="list">${worst.map(e => `<div class="wrow"><div class="we">${esc(e.en)}
         <div class="wk">${esc(e.ko)} · 다음 복습 ${e.nextReview}</div></div>
         <span class="wcount">오답 ${e.wrongCount}회</span></div>`).join('')}</div>`
     : `<div class="empty">아직 오답 기록이 없습니다.</div>`;
+  const gd = es.filter(e => e.done);
+  $('gradBox').innerHTML = gd.length
+    ? `<div class="list">${gd.map(e => `<div class="wrow"><div class="we">${esc(e.en)}
+        <div class="wk">${esc(e.ko)} · ${e.doneAt || ''} 졸업</div></div>
+        <button class="btn sm" data-ungrad="${esc(e.en)}">되돌리기</button></div>`).join('')}</div>`
+    : `<div class="empty">아직 졸업한 표현이 없어요.<br>오늘 탭에서 <b>✓ 이미 알아요</b>를 누르면 여기로 와요.</div>`;
 
   $('mineCnt').textContent = state.custom.length ? state.custom.length + '개' : '';
   $('mineBox').innerHTML = state.custom.length
@@ -798,6 +831,10 @@ document.addEventListener('click', ev => {
     toast('다음 학습에 먼저 나옵니다.');
     return;
   }
+  const gr = ev.target.closest('[data-grad]');
+  if(gr){ graduate(gr.dataset.grad, true); return; }
+  const ug = ev.target.closest('[data-ungrad]');
+  if(ug){ graduate(ug.dataset.ungrad, false); return; }
   const del = ev.target.closest('[data-del]');
   if(del){
     const i = Number(del.dataset.del), c = state.custom[i];
@@ -933,7 +970,24 @@ fetch('custom.json?t=' + Date.now(), {cache:'no-store'})
     if(!Array.isArray(list)) return;
     let n = 0;
     list.forEach(c => { if(c && c.en && !state.custom.some(x => x.en === c.en)){ state.custom.push(c); n++; } });
-    if(n){ save(); render(); toast(`새 표현 ${n}개를 받아왔어요.`); }
+    if(n){ save(); reindex(); render(); toast(`새 표현 ${n}개를 받아왔어요.`); }
+  })
+  .catch(() => {})
+  // Claude 페이지에서 졸업시킨 표현은 여기서도 졸업 (한 번만 적용 — 여기서 되돌리면 그대로 둠)
+  .then(() => fetch('graduated.json?t=' + Date.now(), {cache:'no-store'}))
+  .then(r => r && r.ok ? r.json() : null)
+  .then(list => {
+    if(!Array.isArray(list)) return;
+    state.gradSynced = state.gradSynced || [];
+    const t = today(); let n = 0;
+    list.forEach(en => {
+      if(!en || state.gradSynced.includes(en)) return;
+      state.gradSynced.push(en);
+      let e = state.entries[en];
+      if(!e){ if(!IDX[en]) return; const p = P(en); e = state.entries[en] = {en, ko:p.ko, cat:p.cat, firstSeen:t, lastSeen:t, exposures:0, wrongCount:0, stage:0, nextReview:t}; }
+      if(!e.done){ e.done = true; e.doneAt = t; n++; }
+    });
+    save(); if(n) render();
   })
   .catch(() => {});
 try{ const t = localStorage.getItem(KEY+'.tab'); if(t && PANELS[t]) go(t); }catch(e){}
