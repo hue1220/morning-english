@@ -1,0 +1,442 @@
+[
+ {
+  "en": "the head of admin",
+  "ko": "행정실장 (학교 행정실을 총괄하는 사람)",
+  "cat": "mine",
+  "exEn": "I gotta ask the head of admin if we've still got budget left for the after-school program.",
+  "exKo": "방과후 프로그램 예산이 아직 남았는지 행정실장님께 여쭤봐야 해요.",
+  "note": "admin은 administration의 줄임말이라 구어에서 흔히 쓰며, 미국 학교의 'business manager'와 역할이 비슷합니다."
+ },
+ {
+  "en": "the admin office person",
+  "ko": "행정실 담당자 (일상에서 가볍게 부르는 말)",
+  "cat": "mine",
+  "exEn": "Can you ask the admin office person about my payment? I think they're still processing it.",
+  "exKo": "행정실 담당자분께 제 정산 건 좀 물어봐 주실래요? 아직 처리 중인 것 같아요.",
+  "note": "'administration office'는 너무 길고 딱딱해서 구어에선 'admin office'로 줄여 말해요."
+ },
+ {
+  "en": "Mr. Kim from the business office",
+  "ko": "행정실 김 주무관님 (이름을 넣어 소개할 때)",
+  "cat": "mine",
+  "exEn": "Oh, you need to talk to Mr. Kim from the business office. He's the one who does the budget stuff.",
+  "exKo": "아, 행정실 김 주무관님께 얘기하셔야 해요. 예산 관련은 그분이 하세요.",
+  "note": "미국 학교에선 행정·회계 쪽을 'business office'라 하는 경우가 많고, '주무관'은 직함 번역 대신 'Mr./Ms.+성'으로 부르면 자연스러워요."
+ },
+ {
+  "en": "Do you know how the payout works for outside instructors? I'm about to ask the office.",
+  "ko": "외부강사 강사료가 어떻게 나가는지 아세요? 이제 행정실에 물어보려던 참이에요.",
+  "cat": "mine",
+  "exEn": "Do you know how the payout works for outside instructors? I'm about to ask the office, 'cause I'm still not sure.",
+  "exKo": "외부강사 강사료가 어떻게 나가는지 아세요? 아직 잘 몰라서 행정실에 물어보려던 참이에요.",
+  "note": "'정산'을 calculation이나 adjustment로 옮기면 어색하고, 돈이 나가는 절차는 payout이나 get paid로 말합니다."
+ },
+ {
+  "en": "Quick thing, I gotta run down to the office and ask about getting the instructors paid.",
+  "ko": "잠깐만요, 행정실 내려가서 강사료 지급 건 좀 물어보고 올게요.",
+  "cat": "mine",
+  "exEn": "Quick thing, I gotta run down to the office and ask about getting the instructors paid, so I'll be late for lunch.",
+  "exKo": "잠깐만요, 행정실 내려가서 강사료 지급 건 좀 물어봐야 해서 점심에 좀 늦을 거예요.",
+  "note": "gotta는 got to의 구어체 축약이고, '정산'을 settle로 직역하기보다 getting paid로 풀어 쓰는 게 자연스럽습니다."
+ },
+ {
+  "en": "I'm gonna check with the business office about the instructor payments.",
+  "ko": "행정실에 강사료 정산 관련해서 확인해볼 거예요.",
+  "cat": "mine",
+  "exEn": "I'm gonna check with the business office about the instructor payments before I send out the schedule.",
+  "exKo": "일정 보내기 전에 행정실에 강사료 정산 관련해서 확인해볼 거예요.",
+  "note": "'행정실'은 administration office보다 business office가 실제 학교에서 더 자연스럽고, '물어보다'는 ask보다 check with가 구어적입니다."
+ },
+ {
+  "en": "They're basically being told, \"Sorry, you're out next year, no exceptions.\"",
+  "ko": "사실상 \"미안하지만 내년엔 나가셔야 해요, 예외 없어요\"라는 거죠.",
+  "cat": "mine",
+  "exEn": "It sucks, but the deferral people are all getting moved next year, no matter what.",
+  "exKo": "안타깝지만 유예 대상자분들은 내년에 무조건 다 옮기게 돼요.",
+  "note": "'It sucks'는 친한 동료끼리만 쓰는 표현이라 공식적인 자리에서는 피하는 게 좋다. 'no matter what'은 '무조건'에 해당한다."
+ },
+ {
+  "en": "There's a cap on how many teachers can transfer out, so nobody's getting out of it.",
+  "ko": "전출 가능한 인원에 상한이 있어서, 아무도 빠질 수가 없어요.",
+  "cat": "mine",
+  "exEn": "There's a rule that no more than a third of the staff can transfer out, so everyone on the list has to leave.",
+  "exKo": "전체 교원의 3분의 1 넘게 전출 가면 안 되는 규정이 있어서, 명단에 있는 분들은 다 나가야 해요.",
+  "note": "'규정상 ~해야 한다'는 by regulation보다 There's a rule that...이 구어에서 훨씬 자연스럽다. 'a third'는 one-third보다 더 구어적이다."
+ },
+ {
+  "en": "The principal's not granting any deferrals for next year.",
+  "ko": "교장 선생님이 내년 유예는 하나도 안 받아주신대요.",
+  "cat": "mine",
+  "exEn": "Heads up, the principal's not granting any deferrals for next year, so everyone who applied has to go.",
+  "exKo": "참고로 교장 선생님이 내년 유예는 안 받아주신대요, 그래서 신청한 분들은 다 나가셔야 해요.",
+  "note": "'유예'는 defer/deferral로 말하고, 'permit'이나 'delay'는 어색하다. 인사이동은 transfer, 전출은 get transferred out으로 쓴다."
+ },
+ {
+  "en": "Going in won't do much. I'll probably just walk out with a couple of prescriptions.",
+  "ko": "가도 별 소용 없을 거야. 그냥 처방전 몇 장 받아 나오겠지.",
+  "cat": "mine",
+  "exEn": "Going in won't do much. I'll probably just walk out with a couple of prescriptions for the fever and my stomach.",
+  "exKo": "가도 별 소용 없을 거야. 열이랑 속 때문에 처방전 몇 장 받아 나오겠지.",
+  "note": "'병원에 가봤자'를 even if I go로 직역하기 쉬운데, won't do much처럼 결과를 말하는 편이 더 자연스러워요."
+ },
+ {
+  "en": "They'll just give me some fever meds and stomach pills anyway.",
+  "ko": "가봤자 열 내리는 약이랑 위장약 정도나 주겠지.",
+  "cat": "mine",
+  "exEn": "Honestly, why bother going to the clinic? They'll just give me some fever meds and stomach pills anyway.",
+  "exKo": "솔직히 병원은 뭐하러 가? 어차피 해열제랑 위장약이나 주겠지.",
+  "note": "'해열제'는 fever reducer나 fever meds가 자연스럽고, 구어에서는 pills나 meds로 가볍게 말해요."
+ },
+ {
+  "en": "We're taught not to toot our own horn.",
+  "ko": "우린 자기 자랑하지 말라고 배우거든요.",
+  "cat": "mine",
+  "exEn": "Growing up, we're taught not to toot our own horn, so compliments make me kinda awkward.",
+  "exKo": "자라면서 자기 자랑 하지 말라고 배워서, 칭찬받으면 좀 어색해요.",
+  "note": "'toot one's own horn'은 '자기 자랑하다'라는 뜻의 관용구. 'be humble'만 반복하지 않아도 된다."
+ },
+ {
+  "en": "In Asia, being humble's kind of a big deal.",
+  "ko": "아시아에서는 겸손이 꽤 중요한 덕목이거든요.",
+  "cat": "mine",
+  "exEn": "In Asia, being humble's kind of a big deal, so we don't brag much, even when we should.",
+  "exKo": "아시아에선 겸손이 꽤 중요해서, 자랑해도 될 때조차 잘 안 하죠.",
+  "note": "'virtue'는 너무 딱딱해서 구어에선 잘 안 쓰고, 'a big deal'이나 'valued'로 풀어 말한다. 'Asia'는 'the East'보다 자연스럽다."
+ },
+ {
+  "en": "Not eating today?",
+  "ko": "오늘 점심 안 드세요?",
+  "cat": "mine",
+  "exEn": "Not eating today? You're just having coffee.",
+  "exKo": "오늘 점심 안 드세요? 커피만 드시네요.",
+  "note": "급식실에서 가장 흔하게 쓰는 형태. 주어를 아예 빼고 말합니다."
+ },
+ {
+  "en": "It's almost time to head out.",
+  "ko": "슬슬 퇴근할 시간이네요.",
+  "cat": "mine",
+  "exEn": "It's almost time to head out. Did you get the attendance done?",
+  "exKo": "슬슬 퇴근할 시간이네요. 출결은 다 하셨어요?",
+  "note": "head out = 자리를 뜨다·퇴근하다. 퇴근 얘기에 가장 무난한 표현."
+ },
+ {
+  "en": "I'm heading out at three today.",
+  "ko": "저 오늘 3시에 퇴근해요.",
+  "cat": "mine",
+  "exEn": "I'm heading out at three today, so let's talk before lunch.",
+  "exKo": "저 오늘 3시에 퇴근해서요, 점심 전에 얘기하시죠.",
+  "note": "시각은 at three. o'clock은 어른들 대화에서 거의 안 씁니다."
+ },
+ {
+  "en": "He's low-key obnoxious.",
+  "ko": "걔 은근히 재수없어.",
+  "cat": "mine",
+  "exEn": "He's nice enough, but he's low-key obnoxious.",
+  "exKo": "사람은 괜찮은데, 은근히 재수없어.",
+  "note": "low-key = 은근히. 20~30대가 쓰는 캐주얼한 말투라 공식 자리에는 안 맞음. 반대는 high-key(대놓고)."
+ },
+ {
+  "en": "The school is buzzing with gossip about next year's transfers.",
+  "ko": "학교가 내년 인사 문제로 시끄러워.",
+  "cat": "mine",
+  "exEn": "The school is buzzing with gossip about next year's transfers — nobody knows who's going where.",
+  "exKo": "내년 인사 때문에 학교가 시끄러워. 누가 어디로 갈지 아무도 몰라.",
+  "note": "buzzing with gossip = 소문으로 웅성거리다. noisy는 진짜 소음. gossip은 셀 수 없어 s 없음. 인사이동 = transfers."
+ },
+ {
+  "en": "The people this applies to all have to leave next year.",
+  "ko": "여기 해당하는 사람들은 내년에 다 나가야 해요.",
+  "cat": "mine",
+  "exEn": "The people this applies to all have to leave next year — no exceptions.",
+  "exKo": "여기 해당하는 사람들은 예외 없이 내년에 다 나가야 해요.",
+  "note": "해당하다 = apply to. corresponding people 은 안 됨."
+ },
+ {
+  "en": "Everyone affected found out by text message.",
+  "ko": "해당되는 사람들은 다 문자로 알았어요.",
+  "cat": "mine",
+  "exEn": "Everyone affected found out by text message, not in person.",
+  "exKo": "해당되는 사람들은 직접 듣지 못하고 다 문자로 알았어요.",
+  "note": "everyone affected = 영향 받는 사람 모두. 결과를 받는 쪽을 강조."
+ },
+ {
+  "en": "That goes for you too.",
+  "ko": "너도 해당돼.",
+  "cat": "mine",
+  "exEn": "Everyone has to take the training — that goes for you too.",
+  "exKo": "교육은 다 들어야 해요. 선생님도 해당되고요.",
+  "note": "규정·의무가 상대에게도 적용될 때. 앞 문장을 that 으로 받아 씀. 'You're applicable' 은 안 됨."
+ },
+ {
+  "en": "Only a third of the staff can transfer out in a given year.",
+  "ko": "한 해에 전체 교직원의 3분의 1까지만 전출할 수 있어요.",
+  "cat": "mine",
+  "exEn": "Only a third of the staff can transfer out in a given year, so the rest are stuck.",
+  "exKo": "한 해에 3분의 1까지만 전출할 수 있어서 나머지는 발이 묶여요.",
+  "note": "'no more than … cannot' 은 이중 부정. only … can 으로. in a given year = 어느 한 해에."
+ },
+ {
+  "en": "Once you hit five years, you need the principal's sign-off to stay on.",
+  "ko": "5년을 채우면 더 남으려면 교장 결재가 필요해요.",
+  "cat": "mine",
+  "exEn": "Once you hit five years at the same school, you need the principal's sign-off to stay on.",
+  "exKo": "같은 학교에서 5년을 채우면 더 남으려면 교장 결재가 필요해요.",
+  "note": "hit five years = 5년을 채우다. sign-off = 결재. stay on = 잔류하다."
+ },
+ {
+  "en": "The people who were hoping to leave are stuck.",
+  "ko": "나가려던 사람들은 발이 묶였어요.",
+  "cat": "mine",
+  "exEn": "The people with under five years who were hoping to leave are stuck.",
+  "exKo": "5년이 안 돼서 나가려던 사람들은 발이 묶였어요.",
+  "note": "be stuck = 발이 묶이다, 옴짝달싹 못 하다."
+ },
+ {
+  "en": "The same is true of the third-years.",
+  "ko": "3학년도 마찬가지예요.",
+  "cat": "mine",
+  "exEn": "First-years get restless after lunch. The same is true of the third-years, honestly.",
+  "exKo": "1학년은 점심 먹고 나면 산만해져요. 솔직히 3학년도 마찬가지예요.",
+  "note": "true of = 그 서술이 ~에게도 맞다. 관찰·성향에 씀. 규정이면 goes for."
+ },
+ {
+  "en": "That's especially true of homeroom teachers.",
+  "ko": "담임은 특히 그래요.",
+  "cat": "mine",
+  "exEn": "Teachers here are overworked, and that's especially true of homeroom teachers.",
+  "exKo": "여기 선생님들은 일이 너무 많은데, 담임은 특히 그래요.",
+  "note": "especially / particularly true of ~ = ~는 특히 그렇다."
+ },
+ {
+  "en": "Is that true of schools back home?",
+  "ko": "본국 학교도 그래요?",
+  "cat": "mine",
+  "exEn": "Kids here live on their phones. Is that true of schools back home?",
+  "exKo": "여기 애들은 폰을 끼고 살아요. 본국 학교도 그래요?",
+  "note": "상대 경험을 되물을 때. back home = 원어민 교사의 고국."
+ },
+ {
+  "en": "The opposite is true of fourth period.",
+  "ko": "4교시는 정반대예요.",
+  "cat": "mine",
+  "exEn": "My second period is quiet. The opposite is true of fourth period.",
+  "exKo": "2교시는 조용해요. 4교시는 정반대고요.",
+  "note": "the opposite is true of ~ = ~는 정반대다."
+ },
+ {
+  "en": "There's a briefing at three on how exam day runs, and a separate one at four for interviewers.",
+  "ko": "3시에 전형일 운영 연수가 있고, 4시에는 면접위원 연수가 따로 있어요.",
+  "cat": "mine",
+  "exEn": "Don't leave early Friday — there's a briefing at three on how exam day runs, and a separate one at four for interviewers.",
+  "exKo": "금요일에 일찍 가지 마세요. 3시에 전형일 운영 연수가 있고, 4시엔 면접위원 연수가 따로 있어요.",
+  "note": "당일 운영 안내 연수 = briefing (training 아님). 면접위원 = interviewer. a separate one = 별도의 것."
+ },
+ {
+  "en": "I'm running to the post office during my free period.",
+  "ko": "공강 시간에 우체국 좀 다녀오려고요.",
+  "cat": "mine",
+  "exEn": "I'm running to the post office during my free period tomorrow — I've got some paperwork to send.",
+  "exKo": "내일 공강에 우체국 좀 다녀오려고요. 보낼 서류가 있어서요.",
+  "note": "공강 = free period. 볼일은 visit 말고 run to / swing by. 우체국에서 서류는 submit 이 아니라 mail / send."
+ },
+ {
+  "en": "We've got a three-and-a-half-hour layover in Bangkok.",
+  "ko": "방콕에서 3시간 반 환승 대기가 있어요.",
+  "cat": "mine",
+  "exEn": "We fly into Krabi, but we've got a three-and-a-half-hour layover in Bangkok first.",
+  "exKo": "끄라비로 가는데, 그 전에 방콕에서 3시간 반 환승 대기가 있어요.",
+  "note": "환승 대기 = layover. stopover는 경유지에서 하루 이상 머물 때. transfer time은 어색."
+ },
+ {
+  "en": "We don't have to recheck our bags.",
+  "ko": "짐을 다시 부칠 필요는 없어요.",
+  "cat": "mine",
+  "exEn": "It's a connecting flight on the same airline, so we don't have to recheck our bags.",
+  "exKo": "같은 항공사 연결편이라 짐을 다시 부칠 필요는 없어요.",
+  "note": "짐을 다시 부치다 = recheck. '수하물'은 말로는 bags, baggage는 공항 공식 용어."
+ },
+ {
+  "en": "I'm making an app so homeroom teachers can do head counts on field trips.",
+  "ko": "현장체험학습 때 담임들이 인원 확인할 수 있는 앱을 만들고 있어요.",
+  "cat": "mine",
+  "exEn": "I'm making an app so homeroom teachers can do head counts on field trips — kids just punch in a three-digit number.",
+  "exKo": "현장체험학습 때 담임들이 인원 확인할 수 있는 앱을 만들고 있어요. 애들은 세 자리 번호만 누르면 돼요.",
+  "note": "인원 확인 = head count / do a head count. check the number of people 직역은 어색."
+ },
+ {
+  "en": "There's a lot of drama at school over next year's staffing.",
+  "ko": "학교가 내년 인사 문제로 시끄러워요.",
+  "cat": "mine",
+  "exEn": "There's a lot of drama at school over next year's staffing — nobody knows who's going where yet.",
+  "exKo": "내년 인사 때문에 학교가 시끄러워요. 누가 어디로 갈지 아직 아무도 몰라요.",
+  "note": "교사 배치·전보는 staffing / assignments. personnel problem은 징계·인사사고처럼 들림."
+ },
+ {
+  "en": "Everyone's on edge about next year's assignments.",
+  "ko": "다들 내년 배치 때문에 신경이 곤두서 있어요.",
+  "cat": "mine",
+  "exEn": "Everyone's on edge about next year's assignments, so lunch has been kind of quiet.",
+  "exKo": "다들 내년 배치 때문에 신경이 곤두서 있어서 점심 분위기가 좀 조용해요.",
+  "note": "on edge = 초조하고 예민한 상태."
+ },
+ {
+  "en": "Friday's a short day — 40-minute periods, done by one.",
+  "ko": "금요일은 단축수업이에요. 40분 수업에 1시면 끝나요.",
+  "cat": "mine",
+  "exEn": "Heads up — Friday's a short day, 40-minute periods, done by one.",
+  "exKo": "참고로 금요일은 단축수업이에요. 40분 수업에 1시면 끝나요.",
+  "note": "단축수업 = short day. done by one = 1시까지 끝."
+ },
+ {
+  "en": "Monday's the admissions exam, and everyone's on duty.",
+  "ko": "월요일은 신입생 전형일이라 전원 근무예요.",
+  "cat": "mine",
+  "exEn": "Monday's the admissions exam, and everyone's on duty — proctoring, interviews, the works.",
+  "exKo": "월요일은 신입생 전형일이라 전원 투입이에요. 시험 감독, 면접, 다요.",
+  "note": "시험 감독 = proctor(ing). supervise the test보다 미국 학교에서 정해진 말. all teachers must participate보다 everyone's on duty가 말 같음."
+ },
+ {
+  "en": "Be here by eight on Monday.",
+  "ko": "월요일엔 8시까지 오셔야 해요.",
+  "cat": "mine",
+  "exEn": "Be here by eight on Monday — we start setting up right away.",
+  "exKo": "월요일엔 8시까지 오셔야 해요. 바로 준비 시작하거든요.",
+  "note": "by eight = 8시까지(늦어도). at eight는 정각."
+ },
+ {
+  "en": "He switched to horn-rimmed glasses.",
+  "ko": "그 사람 뿔테 안경으로 바꿨어요.",
+  "cat": "mine",
+  "exEn": "He switched to horn-rimmed glasses over the summer — they actually suit him.",
+  "exKo": "그 사람 여름 지나고 뿔테 안경으로 바꿨는데 잘 어울려요.",
+  "note": "뿔테 = horn-rimmed. horn glasses는 안 됨. 금테 gold-rimmed, 무테 rimless."
+ },
+ {
+  "en": "I need to mail some documents for my case.",
+  "ko": "소송 관련 서류를 우편으로 보내야 해요.",
+  "cat": "mine",
+  "exEn": "I need to mail some documents for my case, so I'm heading out during my free period.",
+  "exKo": "소송 관련 서류를 우편으로 보내야 해서 공강 때 잠깐 나가요.",
+  "note": "우체국에서 서류는 mail/send. submit은 창구 제출, 법원 접수는 file. the case라고 하면 소송을 직접 말 안 해도 됨."
+ },
+ {
+  "en": "Some car just cut me off.",
+  "ko": "어떤 차가 갑자기 끼어들었어요.",
+  "cat": "mine",
+  "exEn": "Sorry I'm late — some car just cut me off on the highway and I almost missed my exit.",
+  "exKo": "늦어서 죄송해요. 고속도로에서 어떤 차가 갑자기 끼어들어서 나갈 길을 놓칠 뻔했어요.",
+  "note": "끼어들다 = cut someone off. interrupt는 말을 끊을 때. squeeze in은 억지로 비집고 들어가는 느낌."
+ },
+ {
+  "en": "It's about three and a half applicants for every spot.",
+  "ko": "입학 경쟁률이 3.5대 1쯤 돼요.",
+  "cat": "mine",
+  "exEn": "We've got 421 applicants — it's about three and a half applicants for every spot.",
+  "exKo": "지원자가 421명이에요. 경쟁률이 3.5대 1쯤 돼요.",
+  "note": "경쟁률은 applicants for every spot로 풀어 말함. competition rate는 직역. roughly와 about은 같은 뜻이라 하나만 씀."
+ },
+ {
+  "en": "We're probably skipping the end-of-semester program this year.",
+  "ko": "올해 학기말 방과후는 아마 안 할 것 같아요.",
+  "cat": "mine",
+  "exEn": "We're probably skipping the end-of-semester program this year — the kids are pretty much done by December.",
+  "exKo": "올해 학기말 방과후는 아마 안 할 것 같아요. 12월이면 애들이 거의 손 놓거든요.",
+  "note": "생략하다 = skip. omit은 글에서 빠뜨릴 때만 씀. 학기말은 end-of-semester (end of term은 영국식 느낌)."
+ },
+ {
+  "en": "We're pushing the major classes to winter break.",
+  "ko": "전공 수업은 겨울방학으로 돌렸어요.",
+  "cat": "mine",
+  "exEn": "We're pushing the major classes to winter break so the kids get more hands-on time in the shop.",
+  "exKo": "애들이 실습실에서 더 많이 실습할 수 있게 전공 수업은 겨울방학으로 돌렸어요.",
+  "note": "일정을 옮기다 = push/move ~ to. postpone은 딱딱한 연기 느낌. 미국 고교 전공 수업은 CTE classes, 실습실은 the shop."
+ },
+ {
+  "en": "My smart speaker only does English now, so I'm basically practicing at home.",
+  "ko": "스마트 스피커가 이제 영어만 돼서 집에서도 연습하는 셈이에요.",
+  "cat": "mine",
+  "exEn": "Google dropped Korean on my speaker, so now I'm stuck asking it for the weather in English.",
+  "exKo": "구글이 제 스피커에서 한국어를 빼버려서 이제 날씨도 영어로 물어봐야 해요.",
+  "note": "~하는 셈이다 = basically. only does English처럼 do로 기능을 말하는 게 구어체. stuck은 어쩔 수 없이 ~하게 됐다는 뉘앙스."
+ },
+ {
+  "en": "mackerel sky",
+  "ko": "양털구름(권적운이 하늘에 깔린 모양)",
+  "cat": "mine",
+  "exEn": "Look at that mackerel sky — there's a good chance it'll rain tomorrow.",
+  "exKo": "저 양털구름 좀 봐요. 내일 비 올 가능성이 꽤 높아요.",
+  "note": "cirrocumulus(권적운)는 학술 용어라 대화에선 mackerel sky. '비 올 확률이 높다'는 brings a higher chance보다 there's a good chance it'll rain이 자연스러움."
+ },
+ {
+  "en": "moist air",
+  "ko": "습한 공기",
+  "cat": "mine",
+  "exEn": "Warm, moist air rises high into the sky.",
+  "exKo": "따뜻하고 습한 공기가 하늘 높이 올라가요.",
+  "note": "moist는 형용사, moisture는 명사 → moisture air(X). 날씨가 꿉꿉하다고 할 땐 It's so humid today가 더 흔함."
+ },
+ {
+  "en": "New Student Admissions Day",
+  "ko": "신입생 전형일",
+  "cat": "mine",
+  "exEn": "Next Monday is New Student Admissions Day, and it's also a school-designated day off.",
+  "exKo": "다음 주 월요일은 신입생 전형일이고, 학교 재량휴업일이기도 해요.",
+  "note": "입학 = admission(s). submission(제출)과 헷갈리기 쉬움. 입학 업무·전형은 복수형 admissions로 씀."
+ },
+ {
+  "en": "a school-designated day off",
+  "ko": "학교 재량휴업일",
+  "cat": "mine",
+  "exEn": "There's no class Monday — it's a school-designated day off.",
+  "exKo": "월요일엔 수업 없어요. 학교 재량휴업일이에요.",
+  "note": "a를 빠뜨리기 쉬움(day off는 셀 수 있는 명사). discretionary holiday는 직역이라 어색. 말할 땐 그냥 We're off Monday도 많이 씀."
+ },
+ {
+  "en": "It prints double-sided — Korean on the front, English on the back.",
+  "ko": "양면으로 나와요. 앞은 한국어, 뒤는 영어요.",
+  "cat": "mine",
+  "exEn": "It's set to print at lunch. It prints double-sided — Korean on the front, English on the back.",
+  "exKo": "점심때 출력되게 해놨어요. 양면으로 나와요, 앞은 한국어, 뒤는 영어로요.",
+  "note": "양면 인쇄 = double-sided / print on both sides. 'both-side printing'은 콩글리시. duplex는 프린터 메뉴 용어라 대화에선 잘 안 씀."
+ },
+ {
+  "en": "The first floor's closed for construction, so we're moving the shop classes upstairs.",
+  "ko": "1층이 공사 중이라 실습 수업을 위층으로 옮겨요.",
+  "cat": "mine",
+  "exEn": "Over winter break the first floor's closed for construction, so we're moving the shop classes upstairs.",
+  "exKo": "겨울방학 동안 1층이 공사로 막혀서 실습 수업을 위층으로 옮겨요.",
+  "note": "공사 중 = under construction / closed for construction. 미국은 1층 = first floor(영국식은 ground floor). 실습 수업은 practice class보다 shop classes."
+ },
+ {
+  "en": "If enough kids sign up, the class runs. If not, it gets canceled.",
+  "ko": "신청자가 충분하면 개설되고, 아니면 폐강돼요.",
+  "cat": "mine",
+  "exEn": "Sign-ups open in early November. If enough kids sign up, the class runs. If not, it gets canceled.",
+  "exKo": "11월 초에 수강신청을 받아요. 신청자가 충분하면 개설되고, 아니면 폐강돼요.",
+  "note": "폐강 = the class gets canceled / doesn't run. 'closed class'는 직역이라 어색. 개설되다도 open보다 run이 자연스러움. canceled는 미국식 철자(l 하나)."
+ },
+ {
+  "en": "I'm setting up an AI assistant to handle the after-school program stuff.",
+  "ko": "방과후 업무 맡길 AI 비서를 만들고 있어요.",
+  "cat": "mine",
+  "exEn": "I'm setting up an AI assistant to handle the after-school program stuff, so I'm not buried in messages.",
+  "exKo": "방과후 업무 맡길 AI 비서를 만들고 있어요. 쪽지에 파묻히지 않으려고요.",
+  "note": "'after-school work'라고만 하면 '방과후에 하는 숙제·일'처럼 들려요. 업무는 'after-school program stuff'처럼 program을 넣어야 확실해요."
+ },
+ {
+  "en": "Looking up which class each kid's in takes forever.",
+  "ko": "학생마다 어떤 강좌 듣는지 찾는 데 한참 걸려요.",
+  "cat": "mine",
+  "exEn": "Every time a homeroom teacher asks, looking up which class each kid's in takes forever.",
+  "exKo": "담임 선생님이 물어볼 때마다, 학생마다 어떤 강좌 듣는지 찾는 데 한참 걸려요.",
+  "note": "'It takes much time'은 어색한 직역이에요. 구어로는 'takes forever' 또는 'takes ages'가 자연스럽고, ages는 영국 느낌이 살짝 있어 forever가 더 미국식이에요."
+ },
+ {
+  "en": "I just screenshot the messages and hand them off to it.",
+  "ko": "쪽지는 그냥 캡처해서 걔한테 넘겨줘요.",
+  "cat": "mine",
+  "exEn": "It can't read the messenger on its own, so I just screenshot the messages and hand them off to it.",
+  "exKo": "메신저를 직접 못 읽어서, 쪽지는 그냥 캡처해서 걔한테 넘겨줘요.",
+  "note": "'캡처하다'를 'capture'로 쓰면 '포획하다'처럼 들릴 수 있어요. 미국에선 screenshot을 동사로 써요(I screenshotted it). 'hand off'는 일을 넘긴다는 뜻이에요."
+ }
+]

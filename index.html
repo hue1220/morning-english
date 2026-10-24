@@ -926,6 +926,16 @@ $('printBtn').onclick = () => window.print();
 if(!storageOK) $('storeWarn').hidden = false;
 buildSession();
 render();
+// Claude 페이지에서 매일 밤 추가되는 '내 표현'을 받아와 합치기 (새 것만, 기록은 그대로)
+fetch('custom.json?t=' + Date.now(), {cache:'no-store'})
+  .then(r => r.ok ? r.json() : null)
+  .then(list => {
+    if(!Array.isArray(list)) return;
+    let n = 0;
+    list.forEach(c => { if(c && c.en && !state.custom.some(x => x.en === c.en)){ state.custom.push(c); n++; } });
+    if(n){ save(); render(); toast(`새 표현 ${n}개를 받아왔어요.`); }
+  })
+  .catch(() => {});
 try{ const t = localStorage.getItem(KEY+'.tab'); if(t && PANELS[t]) go(t); }catch(e){}
 </script>
 </body>
