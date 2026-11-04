@@ -702,5 +702,293 @@
     "exEn": "Shameless plug, but I've got a YouTube channel — hit subscribe if you get a chance.",
     "exKo": "대놓고 홍보하는 건데, 저 유튜브 채널 있어요. 시간 되면 구독 눌러 주세요.",
     "note": "'홍보'를 promotion이라고 하면 승진이나 판촉 행사처럼 들려요. 자기 걸 슬쩍 알릴 땐 plug. Shameless plug는 웃으며 쓰는 관용구예요."
+  },
+  {
+    "en": "the worst day in decades",
+    "ko": "수십 년 만의 최악의 날",
+    "cat": "mine",
+    "exEn": "Did you see Intel's stock? It just had its worst day in decades.",
+    "exKo": "인텔 주가 봤어요? 수십 년 만에 최악의 하루였대요.",
+    "note": "in decades는 '수십 년 만에', for decades는 '수십 년 동안'이에요. 뉴스에선 최상급 + in decades 꼴로 자주 나와요(the biggest drop in decades)."
+  },
+  {
+    "en": "pay one's respects",
+    "ko": "조문하다, 경의를 표하다",
+    "cat": "mine",
+    "exEn": "A few of us are heading to the funeral home after work to pay our respects.",
+    "exKo": "우리 몇 명은 퇴근하고 장례식장에 조문 가요.",
+    "note": "respects는 항상 복수형이에요(pay respect ×). one's 자리엔 my/our/his를 넣고, 장례식장은 funeral home이라고 해요."
+  },
+  {
+    "en": "a record haul",
+    "ko": "역대 최대 규모의 수확(전리품)",
+    "cat": "mine",
+    "exEn": "My kid came home with a record haul of candy this Halloween.",
+    "exKo": "우리 애가 이번 핼러윈에 사탕을 역대급으로 받아 왔어요.",
+    "note": "haul은 한 번에 챙긴 양(전리품)이에요. 해킹·절도 뉴스에도, 사탕·쇼핑에도 써요. 여기서 record는 '사상 최고의'라는 형용사처럼 쓰여요."
+  },
+  {
+    "en": "I'm grabbing my after-lunch coffee. Want one?",
+    "ko": "점심 먹고 커피 한잔하러 가는데, 하나 사다 드릴까요?",
+    "cat": "mine",
+    "exEn": "I'm grabbing my after-lunch coffee before fifth period. Want one?",
+    "exKo": "5교시 전에 점심 후 커피 사러 가는데, 하나 드릴까요?",
+    "note": "'커피 한잔하다'를 drink a coffee로 직역하면 어색해요. 사러 가거나 가볍게 마실 땐 grab a coffee가 딱이에요. 'Want one?'만으로도 충분히 공손해요."
+  },
+  {
+    "en": "I cut myself off at two cups a day.",
+    "ko": "전 하루 두 잔까지만 마셔요.",
+    "cat": "mine",
+    "exEn": "One in the morning, one after lunch — I cut myself off at two cups a day.",
+    "exKo": "아침에 한 잔, 점심 먹고 한 잔. 하루 두 잔까지만 마셔요.",
+    "note": "'~까지만 마시다'를 limit to로 직역하면 딱딱해요. 스스로 멈출 땐 cut myself off (at ~). 커피는 cups로 세고, a day 앞에 per를 안 넣어도 돼요."
+  },
+  {
+    "en": "I just reuse the same template and swap out the questions.",
+    "ko": "같은 틀을 그대로 쓰고 문제만 바꿔 넣어요.",
+    "cat": "mine",
+    "exEn": "Making the answer screens is quick now — I just reuse the same template and swap out the questions.",
+    "exKo": "이제 해설 화면 만드는 건 금방이에요. 같은 틀에 문제만 바꿔 넣으면 되거든요.",
+    "note": "'틀'을 frame이라고 하면 액자처럼 들려요. 재사용하는 양식은 template. '바꿔 넣다'는 change보다 swap out이 자연스러워요."
+  },
+  {
+    "en": "a step in the right direction",
+    "ko": "옳은 방향으로 가는 한 걸음",
+    "cat": "mine",
+    "exEn": "It's not perfect, but it's a step in the right direction.",
+    "exKo": "완벽하진 않지만, 옳은 방향으로 가는 한 걸음이에요.",
+    "note": "a를 빼먹기 쉬워요. '옳은 길'이라고 right way로 직역하기보다 이 덩어리 그대로 쓰는 게 자연스럽고, 전치사는 in이에요."
+  },
+  {
+    "en": "packed",
+    "ko": "(사람으로) 꽉 찬, 엄청 붐비는",
+    "cat": "mine",
+    "exEn": "The cafeteria was packed today — I could barely find a seat.",
+    "exKo": "오늘 급식실 꽉 찼더라고요. 앉을 자리 찾기도 힘들었어요.",
+    "note": "'사람이 많았다'를 There were many people로 하면 밋밋해요. 장소를 주어로 'It was packed.' 한마디면 끝. full of people보다 훨씬 자연스러워요."
+  },
+  {
+    "en": "turn out to be",
+    "ko": "알고 보니 ~이다",
+    "cat": "mine",
+    "exEn": "That rumor turned out to be totally fake.",
+    "exKo": "그 소문, 알고 보니 완전 가짜였어요.",
+    "note": "be를 빼고 turned out fake라고 하기 쉬워요. 명사·형용사 앞에는 turn out to be. 문장을 이어 붙일 땐 It turned out (that) ~도 돼요."
+  },
+  {
+    "en": "I put a password on it so only my students can get in.",
+    "ko": "비밀번호를 걸어 놔서 우리 학생들만 들어올 수 있어요.",
+    "cat": "mine",
+    "exEn": "My class materials are online now, but I put a password on it so only my students can get in.",
+    "exKo": "이제 수업 자료가 온라인에 있는데, 비밀번호를 걸어 놔서 우리 학생들만 들어올 수 있어요.",
+    "note": "'비밀번호를 걸다'를 hang/lock a password로 직역하면 틀려요. put a password on ~ 또는 password-protect. '들어오다'는 enter보다 get in이 말할 때 자연스러워요."
+  },
+  {
+    "en": "I'm bumping it up to two videos a week.",
+    "ko": "영상을 일주일에 두 개로 늘리려고요.",
+    "cat": "mine",
+    "exEn": "The channel's doing okay, so I'm bumping it up to two videos a week.",
+    "exKo": "채널이 그럭저럭 잘돼서 영상을 일주일에 두 개로 늘리려고요.",
+    "note": "'늘리다'를 increase라고 하면 보고서 말투예요. 횟수·양을 올릴 땐 bump it up (to). '일주일에'는 in a week가 아니라 a week."
+  },
+  {
+    "en": "I moved my site so it'll actually show up when kids search for it.",
+    "ko": "학생들이 검색하면 제대로 뜨도록 사이트를 옮겼어요.",
+    "cat": "mine",
+    "exEn": "I moved my homepage to the main address so it'll actually show up when kids search for it on Naver.",
+    "exKo": "학생들이 네이버에서 검색하면 제대로 뜨도록 홈페이지를 메인 주소로 옮겼어요.",
+    "note": "'검색에 뜨다'는 appear보다 show up이 훨씬 구어체예요. '~을 검색하다'는 search for ~ — for를 빼면 '~ 안을 뒤지다'라는 뜻이 돼요."
+  },
+  {
+    "en": "sneak through",
+    "ko": "몰래 빠져나가다, 슬쩍 통과하다",
+    "cat": "mine",
+    "exEn": "A couple of kids tried to sneak through the back gate during study hall.",
+    "exKo": "자습 시간에 애들 몇 명이 뒷문으로 몰래 빠져나가려고 했어요.",
+    "note": "과거형은 미국 구어에서 snuck을 더 많이 써요(sneaked도 맞음). '실수가 슬쩍 넘어가다'(a typo snuck through)에도 써요."
+  },
+  {
+    "en": "keep ~ quiet",
+    "ko": "~을 쉬쉬하다, 비밀로 하다",
+    "cat": "mine",
+    "exEn": "They kept it quiet until the official announcement came out.",
+    "exKo": "공식 발표가 나올 때까지 그걸 쉬쉬했어요.",
+    "note": "목적어를 꼭 사이에 넣어요: keep it quiet. it을 빼고 keep quiet만 하면 '(내가) 입 다물고 있다'는 뜻이 돼요."
+  },
+  {
+    "en": "drag down",
+    "ko": "끌어내리다, 발목을 잡다",
+    "cat": "mine",
+    "exEn": "One bad quiz really dragged his grade down.",
+    "exKo": "퀴즈 하나 망친 게 성적을 확 끌어내렸어요.",
+    "note": "과거형은 dragged — drug는 비표준 사투리라 피하세요. 대명사 목적어는 가운데: drag it down (drag down it ×)."
+  },
+  {
+    "en": "cut corners",
+    "ko": "(시간·돈·노력 아끼려고) 대충 하다, 날림으로 하다",
+    "cat": "mine",
+    "exEn": "If we cut corners on the plan now, we'll just end up redoing it.",
+    "exKo": "지금 계획서를 대충 하면 결국 다시 하게 될 거예요.",
+    "note": "부정적 뉘앙스라 '효율적으로 아끼다'로 칭찬할 때 쓰면 오해받아요. 말장난: 'I can't' 종이 모서리(t)를 자르면 'I can' → 이럴 땐 좋은 cut corners!"
+  },
+  {
+    "en": "I sent out the wrong info and had to walk it back.",
+    "ko": "안내를 잘못 보내서 번복해야 했어요.",
+    "cat": "mine",
+    "exEn": "I sent out the wrong info about the performance and had to walk it back an hour later.",
+    "exKo": "공연 안내를 잘못 보내서 한 시간 뒤에 번복해야 했어요.",
+    "note": "'번복하다'를 reverse라고 하면 판결 뒤집는 느낌이에요. 한 말·발표를 거둬들일 땐 walk it back. '정보'는 informations가 아니라 info(셀 수 없음)."
+  },
+  {
+    "en": "We locked in the dates — the 17th through the 19th.",
+    "ko": "날짜 확정했어요 — 17일부터 19일까지요.",
+    "cat": "mine",
+    "exEn": "The principal's doing a special session in February. We locked in the dates — the 17th through the 19th.",
+    "exKo": "교장선생님이 2월에 특강을 하세요. 날짜는 17일부터 19일까지로 확정했어요.",
+    "note": "'확정하다'를 confirm만 쓰면 딱딱해요. 말할 땐 lock in이 자연스러워요. '~부터 ~까지'는 미국식으로 through(끝날 포함) — from ~ to보다 헷갈림이 없어요."
+  },
+  {
+    "en": "I finally got it up and running on my home computer.",
+    "ko": "드디어 집 컴퓨터에서 돌아가게 만들었어요.",
+    "cat": "mine",
+    "exEn": "That AI tool took forever to install, but I finally got it up and running on my home computer.",
+    "exKo": "그 AI 프로그램 설치가 엄청 오래 걸렸는데, 드디어 집 컴퓨터에서 돌아가게 했어요.",
+    "note": "'설치 성공했다'를 I succeeded installing이라고 하면 어색해요. 제대로 작동하게 됐다는 건 get it up and running. '집 컴퓨터'는 house computer가 아니라 home computer."
+  },
+  {
+    "en": "open the door to",
+    "ko": "~의 길을 열다, ~할 여지를 주다",
+    "cat": "mine",
+    "exEn": "This pilot program could open the door to more after-school classes next year.",
+    "exKo": "이 시범 운영이 내년에 방과후 강좌를 더 늘릴 길을 열어 줄 수도 있어요.",
+    "note": "to 뒤에는 명사나 -ing가 와요(open the door to hire ×, to hiring ○). '가능성을 열다'를 open the possibility로 직역하면 어색해요."
+  },
+  {
+    "en": "money down the drain",
+    "ko": "돈 낭비, 헛돈",
+    "cat": "mine",
+    "exEn": "We paid for that software and nobody uses it — total money down the drain.",
+    "exKo": "그 프로그램 돈 주고 샀는데 아무도 안 써요. 완전 헛돈이에요.",
+    "note": "'돈 낭비'를 money waste라고 하면 틀려요. a waste of money 또는 money down the drain. 동사로는 That money went down the drain."
+  },
+  {
+    "en": "We're doing Koh Lanta instead of the island-hopping tour.",
+    "ko": "섬 투어 대신 코란타로 가기로 했어요.",
+    "cat": "mine",
+    "exEn": "We looked at Phi Phi, but we're doing Koh Lanta instead of the island-hopping tour.",
+    "exKo": "피피섬도 알아봤는데, 섬 투어 대신 코란타로 가기로 했어요.",
+    "note": "'~에 가기로 했다'를 We decided to go to ~로만 하면 딱딱해요. 말할 땐 We're doing + 장소. 여러 섬 도는 투어는 island tour보다 island-hopping tour."
+  },
+  {
+    "en": "I only book places with free cancellation, just in case.",
+    "ko": "혹시 몰라서 무료 취소 되는 데만 예약해요.",
+    "cat": "mine",
+    "exEn": "That hotel looks great, but I only book places with free cancellation, just in case.",
+    "exKo": "그 호텔 좋아 보이는데, 혹시 몰라서 무료 취소 되는 데만 예약해요.",
+    "note": "'무료 취소'를 free cancel이라고 하기 쉬운데 명사 cancellation이 맞아요. '혹시 몰라서'는 for safety가 아니라 just in case."
+  },
+  {
+    "en": "I give my after-school kids a quick quiz to see where they're at.",
+    "ko": "방과후 애들한테 짧은 퀴즈를 내서 실력이 어느 정도인지 봐요.",
+    "cat": "mine",
+    "exEn": "I give my after-school TOEIC kids a quick Google Form quiz after class to see where they're at.",
+    "exKo": "방과후 토익반 애들한테 수업 끝나고 구글 폼 퀴즈를 내서 실력이 어느 정도인지 봐요.",
+    "note": "'실력을 확인하다'를 check their level로 직역하면 어색해요. 원어민은 see where they're at을 많이 써요. 학생들은 말할 땐 students보다 kids가 자연스러워요."
+  },
+  {
+    "en": "jot down",
+    "ko": "간단히 적어 두다",
+    "cat": "mine",
+    "exEn": "Could you jot down a few notes on the kids?",
+    "exKo": "애들에 대해 메모 좀 간단히 적어 줄 수 있어요?",
+    "note": "write down보다 가볍게 '휘리릭 적어 두는' 느낌. '메모하다'를 do a memo로 직역하면 어색해요."
+  },
+  {
+    "en": "stand out",
+    "ko": "눈에 띄다",
+    "cat": "mine",
+    "exEn": "Just the ones who really stood out.",
+    "exKo": "정말 눈에 띄었던 애들만요.",
+    "note": "사람·작품이 두드러질 땐 catch my eye보다 stand out. 과거형은 stood out."
+  },
+  {
+    "en": "No rush.",
+    "ko": "급하지 않아요.",
+    "cat": "mine",
+    "exEn": "Friday is fine — no rush.",
+    "exKo": "금요일도 괜찮아요. 급하지 않아요.",
+    "note": "Don't hurry.는 '서두르지 마'라는 지시처럼 들려요. 부탁할 땐 No rush. / Take your time."
+  },
+  {
+    "en": "from scratch",
+    "ko": "처음부터 직접",
+    "cat": "mine",
+    "exEn": "I'm making Pepero from scratch.",
+    "exKo": "빼빼로를 처음부터 직접 만들고 있어요.",
+    "note": "'직접 손으로'를 by my hands로 직역하면 틀려요. 재료부터 직접 = from scratch, 손으로 만든 = homemade."
+  },
+  {
+    "en": "go all out",
+    "ko": "제대로 힘주다",
+    "cat": "mine",
+    "exEn": "I'm going all out this year!",
+    "exKo": "올해는 제대로 힘줄 거예요!",
+    "note": "do my best는 '노력한다'일 뿐, 시간·돈 아끼지 않고 크게 벌일 땐 go all out."
+  },
+  {
+    "en": "hand out",
+    "ko": "나눠 주다",
+    "cat": "mine",
+    "exEn": "Save me one before you hand them out!",
+    "exKo": "나눠 주기 전에 내 거 하나 남겨 둬요!",
+    "note": "'나눠 주다'를 divide로 하면 '쪼개다'예요. 여러 명에게 돌릴 땐 hand out / pass out. Save me one = 하나 남겨 둬."
+  },
+  {
+    "en": "I can only hit the gym once or twice a week, so I just do a quick full-body workout.",
+    "ko": "헬스는 일주일에 한두 번밖에 못 가서, 그냥 짧게 전신 운동해요.",
+    "cat": "mine",
+    "exEn": "These days I can only hit the gym once or twice a week, so I just do a quick full-body workout.",
+    "exKo": "요즘 헬스는 일주일에 한두 번밖에 못 가서, 그냥 짧게 전신 운동해요.",
+    "note": "'헬스 가다'를 go to health라고 하면 안 통해요. hit the gym / go to the gym. 상체·하체 같이 = full-body."
+  },
+  {
+    "en": "I stopped doing the Instagram cards. I kinda lost interest.",
+    "ko": "인스타 카드 만드는 거 그만뒀어요. 좀 흥미가 떨어졌어요.",
+    "cat": "mine",
+    "exEn": "Yeah, I stopped doing the Instagram cards. I kinda lost interest.",
+    "exKo": "응, 인스타 카드 만드는 거 그만뒀어요. 좀 흥미가 떨어졌어요.",
+    "note": "'흥미가 떨어졌다'를 It became boring이나 I'm not interesting으로 하면 틀려요(내가 재미없는 사람). I lost interest가 자연스러워요."
+  },
+  {
+    "en": "The nightly sync kept getting stuck, but I think I finally figured out the fix.",
+    "ko": "밤마다 도는 동기화가 계속 막혔는데, 드디어 해결법을 찾은 것 같아요.",
+    "cat": "mine",
+    "exEn": "My app's nightly sync kept getting stuck, but I think I finally figured out the fix.",
+    "exKo": "제 앱의 밤마다 도는 동기화가 계속 막혔는데, 드디어 해결법을 찾은 것 같아요.",
+    "note": "'막히다'를 be blocked로 하면 차단당한 느낌. 진행이 멈출 땐 get stuck. '해결법을 찾다'는 find the solution보다 figure out the fix."
+  },
+  {
+    "en": "I'm judging the project showcase this afternoon.",
+    "ko": "오늘 오후에 프로젝트 작품전 심사해요.",
+    "cat": "mine",
+    "exEn": "I'm judging the senior project showcase this afternoon, so I'll skip my free period.",
+    "exKo": "오늘 오후에 3학년 프로젝트 작품전 심사라서 공강 시간은 못 쉬어요.",
+    "note": "'심사하다'를 examine이나 screen으로 하면 검사하는 느낌. 발표·작품 심사는 judge. showcase는 작품전·발표회에 딱 맞는 말."
+  },
+  {
+    "en": "The kids are watching the presentations on TV in their classrooms.",
+    "ko": "애들은 교실 TV로 발표를 보고 있어요.",
+    "cat": "mine",
+    "exEn": "The kids are watching the presentations on TV in their classrooms during fifth period.",
+    "exKo": "애들은 5교시에 교실 TV로 발표를 보고 있어요.",
+    "note": "'TV로 보다'는 watch ~ on TV. by TV나 through TV는 어색해요. '5교시'는 fifth period."
+  },
+  {
+    "en": "Club period is the last two periods today.",
+    "ko": "오늘 동아리는 마지막 두 시간이에요.",
+    "cat": "mine",
+    "exEn": "Club period is the last two periods today, so I'll be wrapped up around 4:40.",
+    "exKo": "오늘 동아리가 마지막 두 시간이라 4시 40분쯤 끝나요.",
+    "note": "'6, 7교시'를 sixth, seventh hour라고 하면 어색. period를 쓰고 '마지막 두 시간'은 the last two periods. wrapped up은 '마무리됐다'."
   }
 ]
