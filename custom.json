@@ -990,5 +990,29 @@
     "exEn": "Club period is the last two periods today, so I'll be wrapped up around 4:40.",
     "exKo": "오늘 동아리가 마지막 두 시간이라 4시 40분쯤 끝나요.",
     "note": "'6, 7교시'를 sixth, seventh hour라고 하면 어색. period를 쓰고 '마지막 두 시간'은 the last two periods. wrapped up은 '마무리됐다'."
+  },
+  {
+    "en": "I'm still chasing people for their forms.",
+    "ko": "아직도 사람들한테 서류 내라고 쫓아다니는 중이야.",
+    "cat": "mine",
+    "exEn": "I'm still chasing people for their forms, and it's due today.",
+    "exKo": "아직도 서류 내라고 사람들 쫓아다니는 중인데, 오늘이 마감이야.",
+    "note": "'독촉하다'를 urge나 push로 직역하면 어색해요. 서류·답을 받으려고 재촉할 때는 chase가 자연스러워요."
+  },
+  {
+    "en": "It's due by end of day.",
+    "ko": "오늘 안으로 내야 해.",
+    "cat": "mine",
+    "exEn": "The exam planning notes are due by end of day, so I'm slammed.",
+    "exKo": "시험 출제 협의록이 오늘까지라서 정신없어.",
+    "note": "'오늘 중'을 until today로 쓰기 쉬운데, 마감은 due by/due가 자연스러워요. end of day를 EOD라고도 해요."
+  },
+  {
+    "en": "Let me knock this out real quick.",
+    "ko": "이것만 얼른 해치울게.",
+    "cat": "mine",
+    "exEn": "Let me knock this out real quick, and then we can grab lunch.",
+    "exKo": "이것만 얼른 해치우고 점심 먹자.",
+    "note": "finish를 쓰면 딱딱해요. 가벼운 일을 빨리 끝낼 때는 knock out이 구어체에서 아주 흔해요."
   }
 ]
