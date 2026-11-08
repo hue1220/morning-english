@@ -1038,5 +1038,29 @@
     "exEn": "They want our feedback on the pre-admission assignments by Monday.",
     "exKo": "월요일까지 입학 전 과제에 대한 의견을 달라고 해요.",
     "note": "'의견 회신'을 reply opinion으로 옮기면 어색해요. give feedback on ~ / want feedback on ~이 자연스러워요."
+  },
+  {
+    "en": "We need to narrow it down to eight finalists.",
+    "ko": "결선 진출자를 8명으로 추려야 해요.",
+    "cat": "mine",
+    "exEn": "We need to narrow it down to eight finalists by tonight.",
+    "exKo": "오늘 밤까지 결선 진출자를 8명으로 추려야 해요.",
+    "note": "'본선 진출자'를 main-round people로 옮기면 어색해요. 대회 결선은 finalists, 추리다는 narrow down이 자연스러워요."
+  },
+  {
+    "en": "I'm going to give the judges a heads-up.",
+    "ko": "심사위원들한테 미리 알려줄게요.",
+    "cat": "mine",
+    "exEn": "I'm going to give the judges a heads-up before the list goes out.",
+    "exKo": "명단 나가기 전에 심사위원들한테 미리 알려줄게요.",
+    "note": "'통보'를 notify/announce로만 쓰면 딱딱해요. 가볍게 미리 알려줄 땐 give someone a heads-up이 구어체예요."
+  },
+  {
+    "en": "I'd like a fifty-fifty split on pros and cons.",
+    "ko": "찬성·반대를 반반으로 맞추고 싶어요.",
+    "cat": "mine",
+    "exEn": "Ideally, I'd like a fifty-fifty split on pros and cons.",
+    "exKo": "가능하면 찬성·반대를 반반으로 맞추고 싶어요.",
+    "note": "'반반'을 half and half로 직역하기 쉬운데, 비율 배분엔 fifty-fifty split이 더 자연스러워요. pros and cons 순서도 기억하세요."
   }
 ]
