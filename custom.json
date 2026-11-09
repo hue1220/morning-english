@@ -1062,5 +1062,29 @@
     "exEn": "Ideally, I'd like a fifty-fifty split on pros and cons.",
     "exKo": "가능하면 찬성·반대를 반반으로 맞추고 싶어요.",
     "note": "'반반'을 half and half로 직역하기 쉬운데, 비율 배분엔 fifty-fifty split이 더 자연스러워요. pros and cons 순서도 기억하세요."
+  },
+  {
+    "en": "I'm stapling the exam packets together.",
+    "ko": "시험지를 묶음별로 스테이플러로 철하고 있어요.",
+    "cat": "mine",
+    "exEn": "Sorry, I'm stapling the exam packets together, so I'll be late for lunch.",
+    "exKo": "미안해요, 시험지 철하느라 점심에 좀 늦을 거예요.",
+    "note": "'분철'을 separate로 옮기면 어색해요. 시험지를 한 부씩 묶는 건 staple ~ together / collate가 자연스럽고, 시험은 test나 exam, 시험지 한 벌은 packet이라고 해요."
+  },
+  {
+    "en": "We're running the copies for the juniors tomorrow.",
+    "ko": "내일 3학년 시험지를 인쇄하는 중이에요.",
+    "cat": "mine",
+    "exEn": "We're running the copies for the juniors tomorrow, so the copier's slammed.",
+    "exKo": "내일 3학년 시험지를 뽑아야 해서 복사기가 계속 돌아가요.",
+    "note": "미국 고등학교에서 3학년은 junior(2학년 sophomore, 1학년 freshman)예요. 'third-year'는 어색해요. 인쇄는 print보다 run copies를 많이 써요."
+  },
+  {
+    "en": "I've got to double-check the page order.",
+    "ko": "페이지 순서를 한 번 더 확인해야 해요.",
+    "cat": "mine",
+    "exEn": "I've got to double-check the page order before the exam.",
+    "exKo": "시험 보기 전에 페이지 순서를 한 번 더 확인해야 해요.",
+    "note": "'다시 체크'를 check again으로만 쓰면 평범해요. double-check가 훨씬 자연스러운 구어 표현이에요. 빠진 장이 있는지 볼 땐 'make sure none are missing'도 좋아요."
   }
 ]
