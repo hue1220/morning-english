@@ -1086,5 +1086,29 @@
     "exEn": "I've got to double-check the page order before the exam.",
     "exKo": "시험 보기 전에 페이지 순서를 한 번 더 확인해야 해요.",
     "note": "'다시 체크'를 check again으로만 쓰면 평범해요. double-check가 훨씬 자연스러운 구어 표현이에요. 빠진 장이 있는지 볼 땐 'make sure none are missing'도 좋아요."
+  },
+  {
+    "en": "I'm proctoring his performance test during my class.",
+    "ko": "내 수업 시간에 그 선생님 수행평가 감독을 해요.",
+    "cat": "mine",
+    "exEn": "I'm proctoring his performance test during my fourth period today.",
+    "exKo": "오늘 4교시에 그 선생님 수행평가 감독을 해요.",
+    "note": "'감독하다'를 supervise나 watch로 옮기면 어색해요. 미국 학교에서 시험 감독은 proctor가 딱 맞는 말이에요."
+  },
+  {
+    "en": "He asked me to cover his assessment.",
+    "ko": "그분이 자기 수행평가 좀 맡아달라고 했어요.",
+    "cat": "mine",
+    "exEn": "He asked me to cover his assessment since he's got a meeting.",
+    "exKo": "회의가 있어서 자기 수행평가를 좀 맡아달라고 하더라고요.",
+    "note": "'부탁받았다'를 I was requested라고 하면 딱딱해요. He asked me to ~가 자연스럽고, 대신 맡아주는 건 cover를 써요."
+  },
+  {
+    "en": "It'll be a quiet period for me.",
+    "ko": "저는 조용히 보내는 시간이 될 거예요.",
+    "cat": "mine",
+    "exEn": "It'll be a quiet period for me, just walking around and watching.",
+    "exKo": "돌아다니면서 지켜보기만 하면 되니까 저한텐 조용한 시간이 될 거예요.",
+    "note": "'교시'를 hour나 class time으로 쓰면 어색해요. period가 맞고, 4교시는 fourth period라고 해요."
   }
 ]
