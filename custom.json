@@ -1110,5 +1110,29 @@
     "exEn": "It'll be a quiet period for me, just walking around and watching.",
     "exKo": "돌아다니면서 지켜보기만 하면 되니까 저한텐 조용한 시간이 될 거예요.",
     "note": "'교시'를 hour나 class time으로 쓰면 어색해요. period가 맞고, 4교시는 fourth period라고 해요."
+  },
+  {
+    "en": "Sixth period's a disability awareness session for the freshmen.",
+    "ko": "6교시는 1학년 장애인식개선교육이에요.",
+    "cat": "mine",
+    "exEn": "No English today — sixth period's a disability awareness session for the freshmen.",
+    "exKo": "오늘 영어 수업 없어요. 6교시는 1학년 장애인식개선교육이거든요.",
+    "note": "'장애인식개선교육'을 disability recognition improvement education처럼 직역하면 어색해요. 미국 학교에선 disability awareness session(training)이라고 짧게 말해요."
+  },
+  {
+    "en": "Seventh period's all about screen time — basically, how not to get hooked on your phone.",
+    "ko": "7교시는 스마트폰 과의존 예방교육이에요. 한마디로 폰에 빠지지 말자는 거죠.",
+    "cat": "mine",
+    "exEn": "Seventh period's all about screen time, which is kinda funny since half the kids will be on their phones.",
+    "exKo": "7교시는 스마트폰 과의존 예방교육인데, 애들 절반은 폰 보고 있을 테니 좀 웃기죠.",
+    "note": "'과의존'을 overdependence로 옮기면 딱딱해요. 원어민은 screen time, phone addiction, get hooked on one's phone처럼 말해요."
+  },
+  {
+    "en": "I'm just sitting in on it, making sure nobody's on their phone.",
+    "ko": "저는 그냥 같이 들어가서 폰 하는 애 없나 보는 거죠.",
+    "cat": "mine",
+    "exEn": "I don't have to teach anything. I'm just sitting in on it, making sure nobody's on their phone.",
+    "exKo": "제가 가르칠 건 없어요. 그냥 같이 들어가서 폰 하는 애 없나 보는 거죠.",
+    "note": "수업·교육에 '같이 들어가 있다'는 attend보다 sit in on이 자연스러워요. 전치사 on까지 꼭 붙이세요."
   }
 ]
