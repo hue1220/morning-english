@@ -1134,5 +1134,29 @@
     "exEn": "I don't have to teach anything. I'm just sitting in on it, making sure nobody's on their phone.",
     "exKo": "제가 가르칠 건 없어요. 그냥 같이 들어가서 폰 하는 애 없나 보는 거죠.",
     "note": "수업·교육에 '같이 들어가 있다'는 attend보다 sit in on이 자연스러워요. 전치사 on까지 꼭 붙이세요."
+  },
+  {
+    "en": "The seniors are taking their finals today.",
+    "ko": "오늘 3학년 기말고사 봐요.",
+    "cat": "mine",
+    "exEn": "It's pretty quiet in the building. The seniors are taking their finals today.",
+    "exKo": "건물이 꽤 조용하네요. 오늘 3학년 기말고사 보거든요.",
+    "note": "'시험을 보다'를 see a test로 직역하면 안 돼요. take a test/finals가 맞고, 고3은 third graders보다 seniors가 미국식이에요."
+  },
+  {
+    "en": "All their projects are due today, so I'm buried in grading.",
+    "ko": "오늘 수행평가 제출 마감이라 채점에 파묻혀 있어요.",
+    "cat": "mine",
+    "exEn": "Sorry I'm late. All their projects are due today, so I'm buried in grading.",
+    "exKo": "늦어서 미안해요. 오늘 수행평가 마감이라 채점에 파묻혀 있어요.",
+    "note": "'제출하다'를 매번 submit으로 쓰면 딱딱해요. 마감은 be due, 채점은 grading이 일상어고 performance assessment보다 project가 더 흔해요."
+  },
+  {
+    "en": "I've got to get my grades in by next week.",
+    "ko": "다음 주까지 성적 입력해야 해요.",
+    "cat": "mine",
+    "exEn": "No weekend for me. I've got to get my grades in by next week.",
+    "exKo": "저는 주말이 없어요. 다음 주까지 성적 입력해야 하거든요.",
+    "note": "'성적 입력'을 input grades라고 하면 어색해요. 원어민은 get/put grades in, enter grades라고 해요."
   }
 ]
