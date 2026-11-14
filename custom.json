@@ -1158,5 +1158,29 @@
     "exEn": "No weekend for me. I've got to get my grades in by next week.",
     "exKo": "저는 주말이 없어요. 다음 주까지 성적 입력해야 하거든요.",
     "note": "'성적 입력'을 input grades라고 하면 어색해요. 원어민은 get/put grades in, enter grades라고 해요."
+  },
+  {
+    "en": "Our kids are taking their trade certification exams this week.",
+    "ko": "우리 애들 이번 주에 기능사 실기 시험 봐요.",
+    "cat": "mine",
+    "exEn": "Our kids are taking their trade certification exams this week, so the shop's off-limits to everyone else.",
+    "exKo": "우리 애들 이번 주에 기능사 실기 시험 봐서, 실습실은 다른 사람 출입 금지예요.",
+    "note": "'기능사'를 craftsman license로 직역하면 미국인은 못 알아들어요. 미국에선 trade certification(또는 certification test)이 자연스러워요."
+  },
+  {
+    "en": "It's the hands-on part, not the written one.",
+    "ko": "필기 말고 실기 시험이에요.",
+    "cat": "mine",
+    "exEn": "They already passed the written test — this round's the hands-on part.",
+    "exKo": "필기는 이미 붙었고, 이번엔 실기예요.",
+    "note": "'실기'를 practical exam이라고 해도 되지만, 대화에선 hands-on part/hands-on test가 더 입에 붙어요. '필기'는 written test."
+  },
+  {
+    "en": "Fingers crossed they all pass.",
+    "ko": "다 붙었으면 좋겠어요.",
+    "cat": "mine",
+    "exEn": "Results come out in a couple weeks — fingers crossed they all pass.",
+    "exKo": "결과는 2주쯤 뒤에 나와요. 다 붙었으면 좋겠어요.",
+    "note": "'I hope they pass'도 맞지만 원어민은 Fingers crossed를 훨씬 자주 써요. a couple weeks처럼 of를 빼는 것도 미국식 구어예요."
   }
 ]
